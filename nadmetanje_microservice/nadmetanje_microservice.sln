@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nadmetanje_microservice", "nadmetanje_microservice\nadmetanje_microservice.csproj", "{5E10BC6A-9F71-4BB2-A78B-4A6BDF9451E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nadmetanje_microserviceWebApp", "nadmetanje_microservice\nadmetanje_microserviceWebApp.csproj", "{5E10BC6A-9F71-4BB2-A78B-4A6BDF9451E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nadmetanje_microserviceDLL", "nadmetanje_microserviceDLL\nadmetanje_microserviceDLL.csproj", "{9C700171-4A40-4121-B91E-99F394AE0461}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nadmetanje_microserviceDAL", "nadmetanje_microserviceDLL\nadmetanje_microserviceDAL.csproj", "{9C700171-4A40-4121-B91E-99F394AE0461}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nadmetanje_microserviceBLL", "nadmetanje_microserviceBLL\nadmetanje_microserviceBLL.csproj", "{1BDA902E-9A5F-4272-8C4F-B4D716780BBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nadmetanje_microserviceBLL", "nadmetanje_microserviceBLL\nadmetanje_microserviceBLL.csproj", "{1BDA902E-9A5F-4272-8C4F-B4D716780BBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

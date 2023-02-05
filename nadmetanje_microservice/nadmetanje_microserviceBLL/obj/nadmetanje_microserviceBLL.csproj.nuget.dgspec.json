@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vukas\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceBLL\\nadmetanje_microserviceBLL.csproj": {}
+    "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceBLL\\nadmetanje_microserviceBLL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vukas\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceBLL\\nadmetanje_microserviceBLL.csproj": {
+    "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceBLL\\nadmetanje_microserviceBLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vukas\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceBLL\\nadmetanje_microserviceBLL.csproj",
+        "projectUniqueName": "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceBLL\\nadmetanje_microserviceBLL.csproj",
         "projectName": "nadmetanje_microserviceBLL",
-        "projectPath": "C:\\Users\\vukas\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceBLL\\nadmetanje_microserviceBLL.csproj",
+        "projectPath": "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceBLL\\nadmetanje_microserviceBLL.csproj",
         "packagesPath": "C:\\Users\\vukas\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\vukas\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceBLL\\obj\\",
         "projectStyle": "PackageReference",

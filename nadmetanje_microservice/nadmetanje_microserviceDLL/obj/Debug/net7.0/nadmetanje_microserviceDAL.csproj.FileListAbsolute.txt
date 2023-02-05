@@ -1,0 +1,14 @@
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microserviceDLL\bin\Debug\net7.0\nadmetanje_microserviceDAL.deps.json
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microserviceDLL\bin\Debug\net7.0\nadmetanje_microserviceDAL.runtimeconfig.json
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microserviceDLL\bin\Debug\net7.0\nadmetanje_microserviceDAL.dll
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microserviceDLL\bin\Debug\net7.0\nadmetanje_microserviceDAL.pdb
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microserviceDLL\obj\Debug\net7.0\nadmetanje_microserviceDAL.csproj.AssemblyReference.cache
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microserviceDLL\obj\Debug\net7.0\nadmetanje_microserviceDAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microserviceDLL\obj\Debug\net7.0\nadmetanje_microserviceDAL.AssemblyInfoInputs.cache
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microserviceDLL\obj\Debug\net7.0\nadmetanje_microserviceDAL.AssemblyInfo.cs
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microserviceDLL\obj\Debug\net7.0\nadmetanje_microserviceDAL.csproj.CoreCompileInputs.cache
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microserviceDLL\obj\Debug\net7.0\nadmetanje_microserviceDAL.dll
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microserviceDLL\obj\Debug\net7.0\refint\nadmetanje_microserviceDAL.dll
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microserviceDLL\obj\Debug\net7.0\nadmetanje_microserviceDAL.pdb
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microserviceDLL\obj\Debug\net7.0\nadmetanje_microserviceDAL.genruntimeconfig.cache
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microserviceDLL\obj\Debug\net7.0\ref\nadmetanje_microserviceDAL.dll

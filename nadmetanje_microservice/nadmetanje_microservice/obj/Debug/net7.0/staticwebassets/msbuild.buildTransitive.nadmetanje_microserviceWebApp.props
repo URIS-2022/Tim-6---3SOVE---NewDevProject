@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\nadmetanje_microserviceWebApp.props" />
+</Project>

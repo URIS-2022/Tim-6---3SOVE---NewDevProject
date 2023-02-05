@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vukas\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDLL.csproj": {}
+    "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDLL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vukas\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDLL.csproj": {
+    "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vukas\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDLL.csproj",
+        "projectUniqueName": "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDLL.csproj",
         "projectName": "nadmetanje_microserviceDLL",
-        "projectPath": "C:\\Users\\vukas\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDLL.csproj",
+        "projectPath": "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDLL.csproj",
         "packagesPath": "C:\\Users\\vukas\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\vukas\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\obj\\",
         "projectStyle": "PackageReference",
@@ -45,6 +45,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

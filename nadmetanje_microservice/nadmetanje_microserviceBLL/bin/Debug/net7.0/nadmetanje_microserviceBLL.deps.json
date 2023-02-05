@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "nadmetanje_microserviceBLL/1.0.0": {
+        "runtime": {
+          "nadmetanje_microserviceBLL.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "nadmetanje_microserviceBLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
