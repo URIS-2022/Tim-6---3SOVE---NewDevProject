@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace nadmetanje_microserviceBLL.DTOs.Etapa.DataOut
 {
-    internal class EtapaDTO
+    public class EtapaDataOut
     {
+        public Guid Id { get; set; }
+        public Guid LicitacijaId { get; set; }
+        public DateTime Datum { get; set; }
+        public TimeSpan VremePocetka { get; set; }
+        public TimeSpan VremeZavrsetka { get; set; }
     }
 }

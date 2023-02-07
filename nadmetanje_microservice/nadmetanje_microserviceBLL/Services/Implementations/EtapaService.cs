@@ -45,7 +45,8 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
         public async Task<ResponsePackage<EtapaDataOut>> GetByIdAsync(Guid id)
         {
             var etapaDb = await _etapaRepository.GetByIdAsync(id);
-
+            if (etapaDb == null)
+                return new ResponsePackage<EtapaDataOut>(ResponseStatus.NotFound, "Etapa nije pronadjena.");
             var dataOut = _mapper.Map<EtapaDataOut>(etapaDb);
 
             return new ResponsePackage<EtapaDataOut>(dataOut, ResponseStatus.OK);
@@ -54,10 +55,12 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
         public async Task<ResponsePackageNoData> Remove(Guid id)
         {
             var etapaDb = await _etapaRepository.GetByIdAsync(id);
+            if(etapaDb == null)
+                return new ResponsePackageNoData(ResponseStatus.NotFound,"Etapa nije pronadjena.");
             _etapaRepository.Remove(etapaDb);
             await _etapaRepository.CompleteAsync();
 
-            return new ResponsePackageNoData(ResponseStatus.OK, "Eetapa uspesno izbrisana.");
+            return new ResponsePackageNoData(ResponseStatus.OK, "Etapa uspesno izbrisana.");
         }
 
         public async Task<ResponsePackageNoData> Save(EtapaSaveDataIn dataIn)

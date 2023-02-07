@@ -77,3 +77,7 @@ C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_m
 C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microservice\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microservice\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microservice\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microservice\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microservice\bin\Debug\net7.0\nadmetanje_microserviceBLL.dll
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microservice\bin\Debug\net7.0\nadmetanje_microserviceBLL.pdb
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microservice\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
