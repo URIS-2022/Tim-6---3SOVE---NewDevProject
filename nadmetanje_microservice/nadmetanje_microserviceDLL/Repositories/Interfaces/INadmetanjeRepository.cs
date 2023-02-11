@@ -11,6 +11,8 @@ namespace nadmetanje_microserviceDAL.Repositories.Interfaces
     {
         Task<List<Nadmetanje>> GetAllByEtapaIdAsync(Guid licitacijaId);
         Task<List<Nadmetanje>> GetAllByStatusAsync(StatusNadmetanja status);
+        Task<List<Nadmetanje>> GetAllByStatusDrugiKrugAsync(StatusDrugiKrug status);
+        Task<List<Nadmetanje>> GetAllByKrugNadmetanjaAsync(KrugNadmetanja status);
         Task PokretanjeDrugogKruga();
         Task<Nadmetanje> GetFirstSortedByRedniBroj();
         Task SetEtapaIdToAllNadmetanjaByIds(List<Guid> nadmetanjaIds, Guid etapaId);
