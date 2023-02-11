@@ -22,7 +22,7 @@ namespace nadmetanje_microserviceDAL.Repositories.Implementations
 
         public async Task<List<Etapa>> GetAllByLicitacijaIdAsync(Guid licitacijaId)
         {
-            return await _dbContext.Set<Etapa>().Where(x => x.LicitacijaId == licitacijaId).ToListAsync();
+            return await _dbContext.Set<Etapa>().Where(x => x.LicitacijaId == licitacijaId && x.IsDeleted == false).ToListAsync();
         }
     }
 }

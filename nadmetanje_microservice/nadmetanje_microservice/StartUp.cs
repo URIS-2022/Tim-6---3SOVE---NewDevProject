@@ -123,6 +123,9 @@ namespace nadmetanje_microservice
             services.AddHttpContextAccessor();
             services.AddTransient<IEtapaService, EtapaService>();
             services.AddTransient<IEtapaRepository, EtapaRepository>();
+            
+            services.AddTransient<INadmetanjeService, NadmetanjeService>();
+            services.AddTransient<INadmetanjeRepository, NadmetanjeRepository>();
         }
     }
 }

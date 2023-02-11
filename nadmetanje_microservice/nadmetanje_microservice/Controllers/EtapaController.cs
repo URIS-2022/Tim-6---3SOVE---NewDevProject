@@ -33,7 +33,7 @@ namespace nadmetanje_microserviceWebApp.Controllers
         }
 
         [HttpDelete("getEtapaById/{etapaId}")]
-        public async Task<ActionResult<List<EtapaDataOut>>> getEtapaById(Guid etapaId)
+        public async Task<ActionResult<List<EtapaDataOut>>> GetEtapaById(Guid etapaId)
         {
             return Ok(await _etapaService.GetByIdAsync(etapaId));
         }
