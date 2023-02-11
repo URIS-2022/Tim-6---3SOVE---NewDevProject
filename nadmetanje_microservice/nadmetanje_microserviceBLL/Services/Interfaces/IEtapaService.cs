@@ -18,5 +18,6 @@ namespace nadmetanje_microserviceBLL.Services.Interfaces
         Task<ResponsePackage<List<EtapaDataOut>>> GetAllAsync();
         Task<ResponsePackage<List<EtapaDataOut>>> GetAllByLicitacijaIdAsync(Guid licitacijaId);
         Task<ResponsePackageNoData> Save(EtapaSaveDataIn dataIn);
+        Task<ResponsePackage<Guid>> CreateEtapaForConnectionToNadmetanje(EtapaSaveDataIn dataIn);
     }
 }

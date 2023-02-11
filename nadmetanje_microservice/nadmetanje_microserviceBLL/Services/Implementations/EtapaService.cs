@@ -96,6 +96,21 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
             return new ResponsePackageNoData(ResponseStatus.OK, "Etapa uspesno izmenjena.");
 
         }
+
+        public async Task<ResponsePackage<Guid>> CreateEtapaForConnectionToNadmetanje(EtapaSaveDataIn dataIn)
+        {
+            var etapa = _mapper.Map<Etapa>(dataIn);
+            //create
+            var newId = Guid.NewGuid();
+            while (await _etapaRepository.GetByIdAsync(newId) != null)
+            {
+                newId = Guid.NewGuid();
+            }
+            etapa.Id = newId;
+            await _etapaRepository.AddAsync(etapa);
+            await _etapaRepository.CompleteAsync();
+            return new ResponsePackage<Guid>(etapa.Id,ResponseStatus.OK, "Etapa uspesno kreirana.");
+        }
     }
 }
 

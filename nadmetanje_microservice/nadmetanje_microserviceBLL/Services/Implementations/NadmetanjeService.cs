@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using nadmetanje_microserviceBLL.Common;
+using nadmetanje_microserviceBLL.DTOs;
 using nadmetanje_microserviceBLL.DTOs.Etapa;
 using nadmetanje_microserviceBLL.DTOs.Etapa.DataIn;
 using nadmetanje_microserviceBLL.DTOs.Etapa.DataOut;
@@ -20,11 +21,13 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
     public class NadmetanjeService : INadmetanjeService
     {
         private readonly INadmetanjeRepository _nadmetanjeRepository;
+        private readonly IEtapaService _etapaService;
         private readonly IMapper _mapper;
 
-        public NadmetanjeService(INadmetanjeRepository nadmetanjeRepository, IMapper mapper)
+        public NadmetanjeService(INadmetanjeRepository nadmetanjeRepository, IMapper mapper, IEtapaService etapaService)
         {
             _nadmetanjeRepository = nadmetanjeRepository;
+            _etapaService = etapaService;
             _mapper = mapper;
         }
         public async Task<ResponsePackage<List<NadmetanjeDataOut>>> GetAllAsync()
@@ -92,6 +95,16 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
                 }
                 nadmetanje.Id = newId;
                 nadmetanje.RedniBroj = redniBroj;
+                //Default vrijednosti top priority
+                if (TipNadmetanjaTopPriority.TipNadmetanjaTop != null)
+                    nadmetanje.Tip = TipNadmetanjaTopPriority.TipNadmetanjaTop.Value;
+                else if (dataIn.Tip == null)
+                    nadmetanje.Tip = TipNadmetanja.JavnoNadmetanje;
+                if (TipNadmetanjaTopPriority.CenaPoHektaru != null)
+                    nadmetanje.CenaPoHektaru = TipNadmetanjaTopPriority.CenaPoHektaru.Value;
+                if (TipNadmetanjaTopPriority.DuzinaZakupa != null)
+                    nadmetanje.DuzinaZakupa = TipNadmetanjaTopPriority.DuzinaZakupa.Value;
+
                 await _nadmetanjeRepository.AddAsync(nadmetanje);
                 await _nadmetanjeRepository.CompleteAsync();
                 return new ResponsePackageNoData(ResponseStatus.OK, "Nadmetanje uspesno kreirano.");
@@ -143,5 +156,102 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
             string[] tipovi = Enum.GetNames(typeof(StatusDrugiKrug));
             return tipovi.Select((name) => new DictionaryItem<string> { Key = (int)Enum.Parse(typeof(StatusDrugiKrug), name), Value = name }).ToList();
         }
+
+        public ResponsePackageNoData SetTipNadmetanjaDefault(TipNadmetanja? dataIn)
+        {
+            TipNadmetanjaTopPriority.TipNadmetanjaTop = dataIn;
+            return new ResponsePackageNoData(ResponseStatus.OK, "Uspjesno postavljen defoltni tip nadmetanja.");
+        }
+        public ResponsePackageNoData SetCenaPoHektaruNadmetanjaDefault(double? dataIn)
+        {
+            TipNadmetanjaTopPriority.CenaPoHektaru = dataIn;
+            return new ResponsePackageNoData(ResponseStatus.OK, "Uspjesno postavljen defoltni tip nadmetanja.");
+        }
+        public ResponsePackageNoData SetDuzinaZakupaNadmetanjaDefault(int? dataIn)
+        {
+            TipNadmetanjaTopPriority.DuzinaZakupa = dataIn;
+            return new ResponsePackageNoData(ResponseStatus.OK, "Uspjesno postavljen defoltni tip nadmetanja.");
+        }
+
+        public async Task<ResponsePackage<double>> GetVrednostJavnogNadmetanja(Guid id)
+        {
+            var javnoNadmetanje = await _nadmetanjeRepository.GetByIdAsync(id);
+            if(javnoNadmetanje == null)
+                return new ResponsePackage<double>(ResponseStatus.NotFound, "Javno nadmetanje nije pronadjeno.");
+            return new ResponsePackage<double>(javnoNadmetanje.VrednostJavnogNadmetanja, ResponseStatus.OK);
+        }
+
+        public async Task<ResponsePackageNoData> SetVrednostJavnogNadmetanja(VrednostJavnogNadmetanjaDataIn dataIn)
+        {
+            var javnoNadmetanje = await _nadmetanjeRepository.GetByIdAsync(dataIn.JavnoNadmetanjeId);
+            if (javnoNadmetanje == null)
+                return new ResponsePackageNoData(ResponseStatus.NotFound, "Javno nadmetanje nije pronadjeno.");
+            javnoNadmetanje.VrednostJavnogNadmetanja = dataIn.VrednostJavnogNadmetanja;
+            await _nadmetanjeRepository.CompleteAsync();
+            return new ResponsePackageNoData(ResponseStatus.OK, "Vrijednost javnog nadmetanja uspjesno setovana.");
+        }
+
+        public async Task<ResponsePackageNoData> CreateEtapaAndConnectToNadmetanja(CreateEtapaAndConnectToNadmetanjaDataIn dataIn)
+        {
+            var etapaId = await _etapaService.CreateEtapaForConnectionToNadmetanje(dataIn.EtapaInfos);
+            await _nadmetanjeRepository.SetEtapaIdToAllNadmetanjaByIds(dataIn.NadmetanjaIds, etapaId.Data);
+            return new ResponsePackageNoData(ResponseStatus.OK, "Uspjesno kreirana etapa i povezana sa selektovanim nadmetanjima.");
+        }
+
+        public async Task<ResponsePackageNoData> SetStatusNadmetanja(SetTipNadmetanjaDataIn<StatusNadmetanja> dataIn)
+        {
+            var nadmetanje = await _nadmetanjeRepository.GetByIdAsync(dataIn.NadmetanjeId);
+            if(nadmetanje == null)
+                return new ResponsePackageNoData(ResponseStatus.NotFound, "Nadmetanje nije pronadjeno.");
+            nadmetanje.Status = dataIn.Enumeracija;
+            await _nadmetanjeRepository.CompleteAsync();
+            return new ResponsePackageNoData(ResponseStatus.OK, "Uspjesno setovan novi status nadmetanju.");
+        }
+
+        public async Task<ResponsePackage<List<Nadmetanje>>> GetAllByStatusNadmetanja(StatusNadmetanja status)
+        {
+            var nadmetanja = await _nadmetanjeRepository.GetAllByStatusAsync(status);
+            return new ResponsePackage<List<Nadmetanje>>(nadmetanja,ResponseStatus.OK);
+        }
+
+        public async Task<ResponsePackageNoData> SetStatusDrugiKrugNadmetanja(SetTipNadmetanjaDataIn<StatusDrugiKrug> dataIn)
+        {
+            var nadmetanje = await _nadmetanjeRepository.GetByIdAsync(dataIn.NadmetanjeId);
+            if (nadmetanje == null)
+                return new ResponsePackageNoData(ResponseStatus.NotFound, "Nadmetanje nije pronadjeno.");
+            nadmetanje.StatusDrugiKrug = dataIn.Enumeracija;
+            await _nadmetanjeRepository.CompleteAsync();
+            return new ResponsePackageNoData(ResponseStatus.OK, "Uspjesno setovan novi status drugog kruga nadmetanju.");
+        }
+
+        public async Task<ResponsePackage<List<Nadmetanje>>> GetAllByStatusDrugiKrugAsync(StatusDrugiKrug status)
+        {
+            var nadmetanja = await _nadmetanjeRepository.GetAllByStatusDrugiKrugAsync(status);
+            return new ResponsePackage<List<Nadmetanje>>(nadmetanja, ResponseStatus.OK);
+        }
+
+        public async Task<ResponsePackageNoData> SetKrugNadmetanja(SetTipNadmetanjaDataIn<KrugNadmetanja> dataIn)
+        {
+            var nadmetanje = await _nadmetanjeRepository.GetByIdAsync(dataIn.NadmetanjeId);
+            if (nadmetanje == null)
+                return new ResponsePackageNoData(ResponseStatus.NotFound, "Nadmetanje nije pronadjeno.");
+            nadmetanje.KrugNadmetanja = dataIn.Enumeracija;
+            await _nadmetanjeRepository.CompleteAsync();
+            return new ResponsePackageNoData(ResponseStatus.OK, "Uspjesno setovan novi status drugog kruga nadmetanju.");
+        }
+
+        public async Task<ResponsePackage<List<Nadmetanje>>> GetAllByKrugNadmetanjaAsync(KrugNadmetanja status)
+        {
+            var nadmetanja = await _nadmetanjeRepository.GetAllByKrugNadmetanjaAsync(status);
+            return new ResponsePackage<List<Nadmetanje>>(nadmetanja, ResponseStatus.OK);
+        }
+
+        public async Task<ResponsePackageNoData> PokretanjeDrugogKruga()
+        {
+            await _nadmetanjeRepository.PokretanjeDrugogKruga();
+            return new ResponsePackageNoData(ResponseStatus.OK, "Drugi krug uspjesno pokrenut");
+        }
+
+
     }
 }

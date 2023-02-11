@@ -10,7 +10,7 @@ namespace nadmetanje_microserviceBLL.DTOs.Nadmetanje.DataIn
     public class NadmetanjeDataIn
     {
         public Guid? Id { get; set; }
-        public int Tip { get; set; }
+        public int? Tip { get; set; }
         public int Status { get; set; }
         public double CenaPoHektaru { get; set; }
         public int DuzinaZakupa { get; set; }

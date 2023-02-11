@@ -10,6 +10,9 @@ namespace nadmetanje_microserviceDAL.Repositories.Interfaces
     public interface INadmetanjeRepository : IRepository<Nadmetanje>
     {
         Task<List<Nadmetanje>> GetAllByEtapaIdAsync(Guid licitacijaId);
+        Task<List<Nadmetanje>> GetAllByStatusAsync(StatusNadmetanja status);
+        Task PokretanjeDrugogKruga();
         Task<Nadmetanje> GetFirstSortedByRedniBroj();
+        Task SetEtapaIdToAllNadmetanjaByIds(List<Guid> nadmetanjaIds, Guid etapaId);
     } 
 }

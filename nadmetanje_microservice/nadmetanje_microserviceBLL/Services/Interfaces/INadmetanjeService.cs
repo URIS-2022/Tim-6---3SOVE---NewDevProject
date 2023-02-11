@@ -4,6 +4,7 @@ using nadmetanje_microserviceBLL.DTOs.Etapa.DataIn;
 using nadmetanje_microserviceBLL.DTOs.Etapa.DataOut;
 using nadmetanje_microserviceBLL.DTOs.Nadmetanje.DataIn;
 using nadmetanje_microserviceBLL.DTOs.Nadmetanje.DataOut;
+using nadmetanje_microserviceDLL.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,5 +24,23 @@ namespace nadmetanje_microserviceBLL.Services.Interfaces
         List<DictionaryItem<string>> GetStatusiForOptions();
         List<DictionaryItem<string>> GetKrugForOptions();
         List<DictionaryItem<string>> GetStatusiDrugiKrugForOptions();
+        ResponsePackageNoData SetTipNadmetanjaDefault(TipNadmetanja? dataIn);
+        ResponsePackageNoData SetCenaPoHektaruNadmetanjaDefault(double? dataIn);
+        ResponsePackageNoData SetDuzinaZakupaNadmetanjaDefault(int? dataIn);
+        Task<ResponsePackageNoData> SetVrednostJavnogNadmetanja(VrednostJavnogNadmetanjaDataIn dataIn);
+        Task<ResponsePackage<double>> GetVrednostJavnogNadmetanja(Guid id);
+        Task<ResponsePackageNoData> CreateEtapaAndConnectToNadmetanja(CreateEtapaAndConnectToNadmetanjaDataIn dataIn);
+
+        //Enumeracije
+        Task<ResponsePackageNoData> SetStatusNadmetanja(SetTipNadmetanjaDataIn<StatusNadmetanja> dataIn);
+        Task<ResponsePackage<List<Nadmetanje>>> GetAllByStatusNadmetanja(StatusNadmetanja dataIn);
+        Task<ResponsePackageNoData> SetStatusDrugiKrugNadmetanja(SetTipNadmetanjaDataIn<StatusDrugiKrug> dataIn);
+        Task<ResponsePackage<List<Nadmetanje>>> GetAllByStatusDrugiKrugAsync(StatusDrugiKrug dataIn);
+        Task<ResponsePackageNoData> SetKrugNadmetanja(SetTipNadmetanjaDataIn<KrugNadmetanja> dataIn);
+        Task<ResponsePackage<List<Nadmetanje>>> GetAllByKrugNadmetanjaAsync(KrugNadmetanja dataIn);
+        //
+
+        Task<ResponsePackageNoData> PokretanjeDrugogKruga();
+
     }
 }
