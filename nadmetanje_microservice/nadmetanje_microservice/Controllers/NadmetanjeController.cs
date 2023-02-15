@@ -88,11 +88,11 @@ namespace nadmetanje_microserviceWebApp.Controllers
             return Ok(_nadmetanjeService.SetDuzinaZakupaNadmetanjaDefault(dataIn));
         }
 
-        [HttpPost("setVrednostJavnogNadmetanja")]
-        public async Task<ActionResult<ResponsePackageNoData>> SetVrednostJavnogNadmetanja([FromBody]VrednostJavnogNadmetanjaDataIn dataIn)
-        {
-            return Ok(await _nadmetanjeService.SetVrednostJavnogNadmetanja(dataIn));
-        }
+        //[HttpGet("setVrednostJavnogNadmetanja")]
+        //public async Task<ActionResult<ResponsePackageNoData>> SetVrednostJavnogNadmetanja()
+        //{
+        //    return Ok(await _nadmetanjeService.SetVrednostJavnogNadmetanja());
+        //}
 
         [HttpGet("getVrednostJavnogNadmetanja/{id}")]
         public async Task<ActionResult<ResponsePackage<double>>> GetVrednostJavnogNadmetanja(Guid id)
@@ -142,9 +142,22 @@ namespace nadmetanje_microserviceWebApp.Controllers
             return Ok(await _nadmetanjeService.GetAllByKrugNadmetanjaAsync(dataIn));
         }
 
+        [HttpGet("pokretanjeDrugogKruga")]
         public async Task<ActionResult<ResponsePackageNoData>> PokretanjeDrugogKruga()
         {
             return Ok(await _nadmetanjeService.PokretanjeDrugogKruga());
+        }
+
+        [HttpGet("getUkupnaZakupljenaPovrsinaByKupacId/{kupacId}")]
+        public async Task<ActionResult<ResponsePackage<double>>> GetUkupnaZakupljenaPovrsinaByKupacId(Guid kupacId)
+        {
+            return Ok(await _nadmetanjeService.GetUkupnaZakupljenaPovrsinaByKupacId(kupacId));
+        }
+
+        [HttpGet("getMaksimalnaPovrsina/{nadmetanjeId}")]
+        public async Task<ActionResult<ResponsePackage<double>>> GetMaksimalnaPovrsina(Guid nadmetanjeId)
+        {
+            return Ok(await _nadmetanjeService.GetMaksimalnaPovrsina(nadmetanjeId));
         }
     }
 }

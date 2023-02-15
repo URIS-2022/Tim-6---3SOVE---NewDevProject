@@ -1,4 +1,5 @@
-﻿using nadmetanje_microserviceBLL.Common;
+﻿using Microsoft.AspNetCore.Mvc;
+using nadmetanje_microserviceBLL.Common;
 using nadmetanje_microserviceBLL.DTOs.Etapa;
 using nadmetanje_microserviceBLL.DTOs.Etapa.DataIn;
 using nadmetanje_microserviceBLL.DTOs.Etapa.DataOut;
@@ -27,7 +28,7 @@ namespace nadmetanje_microserviceBLL.Services.Interfaces
         ResponsePackageNoData SetTipNadmetanjaDefault(TipNadmetanja? dataIn);
         ResponsePackageNoData SetCenaPoHektaruNadmetanjaDefault(double? dataIn);
         ResponsePackageNoData SetDuzinaZakupaNadmetanjaDefault(int? dataIn);
-        Task<ResponsePackageNoData> SetVrednostJavnogNadmetanja(VrednostJavnogNadmetanjaDataIn dataIn);
+        //Task<ResponsePackageNoData> SetVrednostJavnogNadmetanja(VrednostJavnogNadmetanjaDataIn dataIn);
         Task<ResponsePackage<double>> GetVrednostJavnogNadmetanja(Guid id);
         Task<ResponsePackageNoData> CreateEtapaAndConnectToNadmetanja(CreateEtapaAndConnectToNadmetanjaDataIn dataIn);
 
@@ -41,6 +42,9 @@ namespace nadmetanje_microserviceBLL.Services.Interfaces
         //
 
         Task<ResponsePackageNoData> PokretanjeDrugogKruga();
+        //komunikacija sa drugim servisima
+        Task<ActionResult<ResponsePackage<double>>> GetUkupnaZakupljenaPovrsinaByKupacId(Guid kupacId);
+        Task<ActionResult<ResponsePackage<double>>> GetMaksimalnaPovrsina(Guid nadmetanjeId);
 
     }
 }

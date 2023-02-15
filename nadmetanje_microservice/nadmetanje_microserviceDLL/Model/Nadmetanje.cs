@@ -18,7 +18,7 @@ namespace nadmetanje_microserviceDLL.Model
         public Guid? EtapaId { get; set; }
         public KrugNadmetanja KrugNadmetanja { get; set; }
         public StatusDrugiKrug? StatusDrugiKrug { get; set; }
-        public double VrednostJavnogNadmetanja { get; set; }
+        public Guid? KupacId { get; set; }
 
     }
 

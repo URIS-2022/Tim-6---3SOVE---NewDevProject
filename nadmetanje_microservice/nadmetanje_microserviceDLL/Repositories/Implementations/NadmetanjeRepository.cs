@@ -78,5 +78,13 @@ namespace nadmetanje_microserviceDAL.Repositories.Implementations
             await _dbContext.SaveChangesAsync();
         }
 
+        public async Task<List<Guid>> GetAllNadmetanjeIdsByKupacId(Guid kupacId)
+        {
+            var ids = await _dbContext.Set<Nadmetanje>()
+                .Where(x => x.KupacId == kupacId && x.IsDeleted == false && x.Status == StatusNadmetanja.ZavrsenoUpsesno).Select(x => x.Id)
+                .ToListAsync();
+            return ids;
+        }
+
     }
 }

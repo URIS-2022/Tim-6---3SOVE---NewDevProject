@@ -11,5 +11,6 @@ namespace nadmetanje_microserviceBLL.DTOs.Nadmetanje.DataIn
     {
         public T Enumeracija { get; set; }
         public Guid NadmetanjeId { get; set; }
+        public Guid? KupacId { get; set; }
     }
 }

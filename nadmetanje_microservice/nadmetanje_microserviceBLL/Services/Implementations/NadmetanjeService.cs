@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using nadmetanje_microserviceBLL.Common;
 using nadmetanje_microserviceBLL.DTOs;
 using nadmetanje_microserviceBLL.DTOs.Etapa;
@@ -175,21 +176,25 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
 
         public async Task<ResponsePackage<double>> GetVrednostJavnogNadmetanja(Guid id)
         {
+            // dobavljamo iz servisa za parcele
+            var ukupnaPovrsina = 1;
+            //
             var javnoNadmetanje = await _nadmetanjeRepository.GetByIdAsync(id);
             if(javnoNadmetanje == null)
                 return new ResponsePackage<double>(ResponseStatus.NotFound, "Javno nadmetanje nije pronadjeno.");
-            return new ResponsePackage<double>(javnoNadmetanje.VrednostJavnogNadmetanja, ResponseStatus.OK);
+            var vrednostJavnogNadmetanja = (ukupnaPovrsina * javnoNadmetanje.CenaPoHektaru) * javnoNadmetanje.DuzinaZakupa;
+            return new ResponsePackage<double>(vrednostJavnogNadmetanja, ResponseStatus.OK);
         }
 
-        public async Task<ResponsePackageNoData> SetVrednostJavnogNadmetanja(VrednostJavnogNadmetanjaDataIn dataIn)
-        {
-            var javnoNadmetanje = await _nadmetanjeRepository.GetByIdAsync(dataIn.JavnoNadmetanjeId);
-            if (javnoNadmetanje == null)
-                return new ResponsePackageNoData(ResponseStatus.NotFound, "Javno nadmetanje nije pronadjeno.");
-            javnoNadmetanje.VrednostJavnogNadmetanja = dataIn.VrednostJavnogNadmetanja;
-            await _nadmetanjeRepository.CompleteAsync();
-            return new ResponsePackageNoData(ResponseStatus.OK, "Vrijednost javnog nadmetanja uspjesno setovana.");
-        }
+        //public async Task<ResponsePackageNoData> SetVrednostJavnogNadmetanja(VrednostJavnogNadmetanjaDataIn dataIn)
+        //{
+        //    var javnoNadmetanje = await _nadmetanjeRepository.GetByIdAsync(dataIn.JavnoNadmetanjeId);
+        //    if (javnoNadmetanje == null)
+        //        return new ResponsePackageNoData(ResponseStatus.NotFound, "Javno nadmetanje nije pronadjeno.");
+        //    javnoNadmetanje.VrednostJavnogNadmetanja = dataIn.VrednostJavnogNadmetanja;
+        //    await _nadmetanjeRepository.CompleteAsync();
+        //    return new ResponsePackageNoData(ResponseStatus.OK, "Vrijednost javnog nadmetanja uspjesno setovana.");
+        //}
 
         public async Task<ResponsePackageNoData> CreateEtapaAndConnectToNadmetanja(CreateEtapaAndConnectToNadmetanjaDataIn dataIn)
         {
@@ -203,7 +208,10 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
             var nadmetanje = await _nadmetanjeRepository.GetByIdAsync(dataIn.NadmetanjeId);
             if(nadmetanje == null)
                 return new ResponsePackageNoData(ResponseStatus.NotFound, "Nadmetanje nije pronadjeno.");
+            if (dataIn.Enumeracija == StatusNadmetanja.ZavrsenoUpsesno && dataIn.KupacId == null)
+                return new ResponsePackageNoData(ResponseStatus.BadRequest, "Id kupca pobjednika je obavezan ukoliko je uspjesno zavrseno nadmetanje.");
             nadmetanje.Status = dataIn.Enumeracija;
+            nadmetanje.KupacId = dataIn.KupacId;
             await _nadmetanjeRepository.CompleteAsync();
             return new ResponsePackageNoData(ResponseStatus.OK, "Uspjesno setovan novi status nadmetanju.");
         }
@@ -250,6 +258,25 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
         {
             await _nadmetanjeRepository.PokretanjeDrugogKruga();
             return new ResponsePackageNoData(ResponseStatus.OK, "Drugi krug uspjesno pokrenut");
+        }
+
+        public async Task<ActionResult<ResponsePackage<double>>> GetUkupnaZakupljenaPovrsinaByKupacId(Guid kupacId)
+        {
+            var nadmetanjaIds = await _nadmetanjeRepository.GetAllNadmetanjeIdsByKupacId(kupacId);
+            //Dobavljam iz servisa za parcele
+            double ukupnaPovrsinaKupca = 1;
+            //
+            return new ResponsePackage<double>(ukupnaPovrsinaKupca, ResponseStatus.OK);
+        }
+
+        public async Task<ActionResult<ResponsePackage<double>>> GetMaksimalnaPovrsina(Guid nadmetanjeId)
+        {
+            var nadmetanje = await _nadmetanjeRepository.GetByIdAsync(nadmetanjeId, x => x.Etapa);
+            var licitacijaId = nadmetanje.Etapa.LicitacijaId;
+            //Dobavljam iz servisa za licitaciju
+            double maksimalnaPovrsina = 1;
+            //
+            return new ResponsePackage<double>(maksimalnaPovrsina, ResponseStatus.OK);
         }
 
 

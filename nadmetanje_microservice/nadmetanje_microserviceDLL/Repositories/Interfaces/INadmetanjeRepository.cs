@@ -16,5 +16,6 @@ namespace nadmetanje_microserviceDAL.Repositories.Interfaces
         Task PokretanjeDrugogKruga();
         Task<Nadmetanje> GetFirstSortedByRedniBroj();
         Task SetEtapaIdToAllNadmetanjaByIds(List<Guid> nadmetanjaIds, Guid etapaId);
+        Task<List<Guid>> GetAllNadmetanjeIdsByKupacId(Guid kupacId);
     } 
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using nadmetanje_microserviceDLL.Context;
 
@@ -11,9 +12,11 @@ using nadmetanje_microserviceDLL.Context;
 namespace nadmetanjemicroserviceDAL.Migrations
 {
     [DbContext(typeof(NadmetanjeContext))]
-    partial class NadmetanjeContextModelSnapshot : ModelSnapshot
+    [Migration("20230215093517_kupacId")]
+    partial class kupacId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,6 +87,9 @@ namespace nadmetanjemicroserviceDAL.Migrations
 
                     b.Property<int>("Tip")
                         .HasColumnType("int");
+
+                    b.Property<double>("VrednostJavnogNadmetanja")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
