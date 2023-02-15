@@ -3266,23 +3266,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vukas\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Korisnik\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceBLL\\nadmetanje_microserviceBLL.csproj",
+      "projectUniqueName": "C:\\Users\\Korisnik\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceBLL\\nadmetanje_microserviceBLL.csproj",
       "projectName": "nadmetanje_microserviceBLL",
-      "projectPath": "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceBLL\\nadmetanje_microserviceBLL.csproj",
-      "packagesPath": "C:\\Users\\vukas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceBLL\\obj\\",
+      "projectPath": "C:\\Users\\Korisnik\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceBLL\\nadmetanje_microserviceBLL.csproj",
+      "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Korisnik\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceBLL\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\vukas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3296,8 +3292,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDAL.csproj": {
-              "projectPath": "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDAL.csproj"
+            "C:\\Users\\Korisnik\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDAL.csproj": {
+              "projectPath": "C:\\Users\\Korisnik\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDAL.csproj"
             }
           }
         }
