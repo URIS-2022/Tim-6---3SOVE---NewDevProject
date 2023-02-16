@@ -24,12 +24,14 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
         private readonly INadmetanjeRepository _nadmetanjeRepository;
         private readonly IEtapaService _etapaService;
         private readonly IMapper _mapper;
+        private readonly IHttpService<double> _httpService;
 
-        public NadmetanjeService(INadmetanjeRepository nadmetanjeRepository, IMapper mapper, IEtapaService etapaService)
+        public NadmetanjeService(INadmetanjeRepository nadmetanjeRepository, IMapper mapper, IEtapaService etapaService, IHttpService<double> httpService)
         {
             _nadmetanjeRepository = nadmetanjeRepository;
             _etapaService = etapaService;
             _mapper = mapper;
+            _httpService = httpService;
         }
         public async Task<ResponsePackage<List<NadmetanjeDataOut>>> GetAllAsync()
         {
@@ -264,7 +266,9 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
         {
             var nadmetanjaIds = await _nadmetanjeRepository.GetAllNadmetanjeIdsByKupacId(kupacId);
             //Dobavljam iz servisa za parcele
-            double ukupnaPovrsinaKupca = 1;
+            StringBuilder sb = new StringBuilder();
+            nadmetanjaIds.ForEach(x => sb.Append(x.ToString()+','));
+            double ukupnaPovrsinaKupca = await _httpService.SendGetRequestAsync("tempUrl?ids"+sb.ToString(),"tempToken");
             //
             return new ResponsePackage<double>(ukupnaPovrsinaKupca, ResponseStatus.OK);
         }

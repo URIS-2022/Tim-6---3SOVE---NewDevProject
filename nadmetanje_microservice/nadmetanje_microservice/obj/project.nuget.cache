@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QEc7WQQ/mv7sJMZkrr4ZjhA1BCH96gMb8EEhbhRTAoO3mP63psORK6h6lpJGCYX7yAIagkBTiLMnqJZ7p+y09A==",
+  "dgSpecHash": "OXC1rJ7gLTBeR0g6n4RrcEVNo4ijYe2gm1Kb10a8+8uD22R4w5WFD+H/MibcrbfNYlOYjHE+nNvWcbmW8xr6wg==",
   "success": true,
   "projectFilePath": "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microservice\\nadmetanje_microserviceWebApp.csproj",
   "expectedPackageFiles": [
@@ -47,6 +47,7 @@
     "C:\\Users\\vukas\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\vukas\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\vukas\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\vukas\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\vukas\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "C:\\Users\\vukas\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "C:\\Users\\vukas\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
