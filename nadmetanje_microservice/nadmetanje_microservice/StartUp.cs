@@ -7,6 +7,7 @@ using nadmetanje_microserviceDAL.Repositories.Implementations;
 using Microsoft.OpenApi.Models;
 using nadmetanje_microserviceBLL.Mappings;
 using Microsoft.OpenApi.Any;
+using System.ComponentModel.Design;
 
 namespace nadmetanje_microservice
 {
@@ -126,6 +127,8 @@ namespace nadmetanje_microservice
             
             services.AddTransient<INadmetanjeService, NadmetanjeService>();
             services.AddTransient<INadmetanjeRepository, NadmetanjeRepository>();
+
+            services.AddTransient<IHttpService<double>, HttpService<double>>();
         }
     }
 }

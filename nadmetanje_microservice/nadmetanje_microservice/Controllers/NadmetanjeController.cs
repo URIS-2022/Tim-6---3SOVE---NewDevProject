@@ -34,7 +34,7 @@ namespace nadmetanje_microserviceWebApp.Controllers
             return Ok(await _nadmetanjeService.Save(dataIn));
         }
 
-        [HttpDelete("getNadmetanjeById/{NadmetanjeId}")]
+        [HttpGet("getNadmetanjeById/{NadmetanjeId}")]
         public async Task<ActionResult<List<NadmetanjeDataOut>>> GetNadmetanjeById(Guid NadmetanjeId)
         {
             return Ok(await _nadmetanjeService.GetByIdAsync(NadmetanjeId));

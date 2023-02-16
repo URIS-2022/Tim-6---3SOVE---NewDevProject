@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Korisnik\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDAL.csproj": {}
+    "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Korisnik\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDAL.csproj": {
+    "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Korisnik\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDAL.csproj",
+        "projectUniqueName": "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDAL.csproj",
         "projectName": "nadmetanje_microserviceDAL",
-        "projectPath": "C:\\Users\\Korisnik\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDAL.csproj",
-        "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Korisnik\\Source\\Repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\obj\\",
+        "projectPath": "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\nadmetanje_microserviceDAL.csproj",
+        "packagesPath": "C:\\Users\\vukas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vukas\\source\\repos\\URIS-2022\\Tim-6---3SOVE---NewDevProject\\nadmetanje_microservice\\nadmetanje_microserviceDLL\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vukas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
