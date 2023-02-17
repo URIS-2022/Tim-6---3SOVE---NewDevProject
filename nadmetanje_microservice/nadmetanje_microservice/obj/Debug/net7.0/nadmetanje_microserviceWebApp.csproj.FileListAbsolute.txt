@@ -164,3 +164,4 @@ C:\Users\Korisnik\Source\Repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanj
 C:\Users\Korisnik\Source\Repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microservice\obj\Debug\net7.0\nadmetanje_microserviceWebApp.pdb
 C:\Users\Korisnik\Source\Repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microservice\obj\Debug\net7.0\nadmetanje_microserviceWebApp.genruntimeconfig.cache
 C:\Users\Korisnik\Source\Repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microservice\obj\Debug\net7.0\ref\nadmetanje_microserviceWebApp.dll
+C:\Users\vukas\source\repos\URIS-2022\Tim-6---3SOVE---NewDevProject\nadmetanje_microservice\nadmetanje_microservice\bin\Debug\net7.0\Newtonsoft.Json.dll
