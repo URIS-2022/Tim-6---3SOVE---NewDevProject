@@ -1,4 +1,5 @@
-﻿namespace MikroservisKomsija.Services.KomisijaClanService
+﻿using MikroservisKomsija.Models;
+namespace MikroservisKomsija.Services.KomisijaClanService
 {
     public interface IKomisijaClan
     {

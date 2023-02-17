@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "ce3fbcca-27a3-4b1b-8eab-4852c80414bc",
+		"name": "PLicKolekcija",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAllPLic",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7269/api/PrijavaNaLicitaciju",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7269",
+					"path": [
+						"api",
+						"PrijavaNaLicitaciju"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostPLic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7269/api/PrijavaNaLicitaciju",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7269",
+					"path": [
+						"api",
+						"PrijavaNaLicitaciju"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutPLic",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7269/api/PrijavaNaLicitaciju",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7269",
+					"path": [
+						"api",
+						"PrijavaNaLicitaciju"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePLic",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7269/api/PrijavaNaLicitaciju",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7269",
+					"path": [
+						"api",
+						"PrijavaNaLicitaciju"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

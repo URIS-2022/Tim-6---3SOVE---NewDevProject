@@ -1,4 +1,5 @@
 ﻿using MikroservisKomsija.Services;
+using MikroservisKomsija.Models;
 namespace MikroservisKomsija.Services.ClanService
 {
     public interface IClan
