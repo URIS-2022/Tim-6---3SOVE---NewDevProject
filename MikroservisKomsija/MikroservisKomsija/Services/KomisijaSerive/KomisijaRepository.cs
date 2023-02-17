@@ -1,4 +1,6 @@
-﻿namespace MikroservisKomsija.Services.KomisijaSerive
+﻿using MikroservisKomsija.Data;
+using MikroservisKomsija.Models;
+namespace MikroservisKomsija.Services.KomisijaSerive
 {
     public class KomisijaRepository : IKomisija
     {

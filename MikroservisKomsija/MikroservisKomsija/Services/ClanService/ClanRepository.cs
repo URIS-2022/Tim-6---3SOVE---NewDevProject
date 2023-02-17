@@ -1,4 +1,7 @@
-﻿    using MikroservisKomsija.Services;
+﻿ using MikroservisKomsija.Services;
+using MikroservisKomsija.Data;
+using MikroservisKomsija.Models;
+using MikroservisKomsija.Services.ClanService;
 
 namespace MikroservisKomsija.Services.ClanService
 {

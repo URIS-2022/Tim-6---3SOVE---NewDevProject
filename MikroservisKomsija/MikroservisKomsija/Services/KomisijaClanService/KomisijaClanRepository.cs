@@ -1,4 +1,6 @@
 ﻿using MikroservisKomsija.Services;
+using MikroservisKomsija.Data;
+using MikroservisKomsija.Models;
 namespace MikroservisKomsija.Services.KomisijaClanService
 {
     public class KomisijaClanRepository : IKomisijaClan

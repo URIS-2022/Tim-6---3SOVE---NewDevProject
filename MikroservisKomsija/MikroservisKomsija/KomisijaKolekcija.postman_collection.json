@@ -1,0 +1,257 @@
+{
+	"info": {
+		"_postman_id": "c26c0578-486c-47a8-9faa-9d5ef2549579",
+		"name": "KomisijaKolekcija",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAllClan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/api/Clan",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"api",
+						"Clan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutClan",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/api/Clan",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"api",
+						"Clan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "PostClan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/api/Clan",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"api",
+						"Clan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteClan",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/api/Clan",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"api",
+						"Clan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllKomisija",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/api/Komisija",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"api",
+						"Komisija"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostKomisija",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/api/Komisija",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"api",
+						"Komisija"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutKomisija",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/api/Komisija",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"api",
+						"Komisija"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteKomisija",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/api/Komisija",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"api",
+						"Komisija"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllKomisijaClan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/api/KomisijaClan",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"api",
+						"KomisijaClan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostKomisijaClan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/api/KomisijaClan",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"api",
+						"KomisijaClan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutKomisijaClan",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/api/KomisijaClan",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"api",
+						"KomisijaClan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteKomisijaClan",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7244/api/KomisijaClan",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7244",
+					"path": [
+						"api",
+						"KomisijaClan"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
