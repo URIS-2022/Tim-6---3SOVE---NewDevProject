@@ -1,0 +1,543 @@
+{
+	"info": {
+		"_postman_id": "d3ab73f9-2b46-4eea-86d4-751203ba2acc",
+		"name": "KupacMicroservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetKupci",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/api/kupac",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"kupac"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetKupacById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/api/kupac/e65bada3-210e-4fad-9d4e-14cb41cc1ae1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"kupac",
+						"e65bada3-210e-4fad-9d4e-14cb41cc1ae1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostKupac",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"kupacId\": \"2481983F-E6B5-4B56-9A52-774F833CDBCE\",\r\n  \"adresaKupac\": \"Novi Sad\",\r\n  \"ostvarenaPovrsina\": 500.00,\r\n  \"imaZabranu\": true,\r\n  \"datumPocetkaZabrane\": \"2021-01-14\",\r\n  \"duzinaTrajanjaZabraneGod\": 4,\r\n  \"brojTelefona1\": \"string\",\r\n  \"brojTelefona2\": \"string\",\r\n  \"email\": \"kupac@gmail.com\",\r\n  \"brojRacuna\": \"string\",\r\n  \"iznosUplata\": \"239000\",\r\n  \"prioritet\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7017/api/kupac",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"kupac"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutKupac",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"kupacId\": \"7d463740-c870-47c8-9149-ba55d731bf06\",\r\n  \"adresaKupac\": \"Arandjelovac\",\r\n  \"ostvarenaPovrsina\": 400,\r\n  \"imaZabranu\": true,\r\n  \"datumPocetkaZabrane\": \"2019-01-16\",\r\n  \"duzinaTrajanjaZabraneGod\": 4,\r\n  \"brojTelefona1\": \"0612832902\",\r\n  \"brojTelefona2\": \"string\",\r\n  \"email\": \"string\",\r\n  \"brojRacuna\": \"string\",\r\n  \"iznosUplata\": \"string\",\r\n  \"prioritet\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7017/api/kupac/7d463740-c870-47c8-9149-ba55d731bf06",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"kupac",
+						"7d463740-c870-47c8-9149-ba55d731bf06"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteKupac",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/api/kupac/7d463740-c870-47c8-9149-ba55d731bf06",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"kupac",
+						"7d463740-c870-47c8-9149-ba55d731bf06"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetFizickoLica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/api/fizickolice",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"fizickolice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetFizickoLiceById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/api/fizickolice/16fd3722-e965-494f-9de6-fc4046d49f31",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"fizickolice",
+						"16fd3722-e965-494f-9de6-fc4046d49f31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostFizickoLice",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fizickoliceId\": \"C6C5B58B-6012-4D27-8858-63B32140AF42\",\r\n  \"kupacId\": \"e65bada3-210e-4fad-9d4e-14cb41cc1ae1\",\r\n  \"ime\": \"Mirko\",\r\n  \"prezime\": \"Kozic\",\r\n  \"jmbg\": \"string\",\r\n  \"adresaFizickoLice\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7017/api/fizickolice",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"fizickolice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteFizickoLice",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/api/fizickolice/16fd3722-e965-494f-9de6-fc4046d49f31",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"fizickolice",
+						"16fd3722-e965-494f-9de6-fc4046d49f31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPravnaLica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/api/pravnolice",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"pravnolice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPravnoLiceById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/api/pravnolice/594b1f58-522c-4314-9072-7553eabb72b6",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"pravnolice",
+						"594b1f58-522c-4314-9072-7553eabb72b6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostPravnoLice",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"pravnoliceId\": \"F308DC64-3B12-439D-AB7C-3E55D056A6AD\",\r\n  \"kupacId\": \"16a17928-85a4-43a0-a4f1-a48a0788bdfb\",\r\n  \"naziv\": \"Ogrev\",\r\n  \"maticniBroj\": \"4738292\",\r\n  \"faks\": \"728-288-819\",\r\n  \"adresaPravnoLice\": \"string\",\r\n  \"kontaktOsobaIme\": \"string\",\r\n  \"kontaktOsobaPrezime\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7017/api/pravnolice",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"pravnolice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutPravnoLice",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"pravnoliceId\": \"4422d9d6-b4e5-4470-a00f-520dca57118b\",\r\n  \"kupacId\": \"32c2d78f-adc0-41bf-83f4-b7f4e13da966\",\r\n  \"naziv\": \"Emezeta\",\r\n  \"maticniBroj\": \"83829202\",\r\n  \"faks\": \"string\",\r\n  \"adresaPravnoLice\": \"string\",\r\n  \"kontaktOsobaIme\": \"string\",\r\n  \"kontaktOsobaPrezime\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7017/api/pravnolice/4422d9d6-b4e5-4470-a00f-520dca57118b",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"pravnolice",
+						"4422d9d6-b4e5-4470-a00f-520dca57118b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePravnoLice",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/api/pravnolice/594b1f58-522c-4314-9072-7553eabb72b6",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"pravnolice",
+						"594b1f58-522c-4314-9072-7553eabb72b6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetLiciteri",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/api/liciter",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"liciter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetLiciterById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/api/liciter/b76bc440-2e4f-468d-b5e4-7529767cf9be",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"liciter",
+						"b76bc440-2e4f-468d-b5e4-7529767cf9be"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostLiciter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"liciterId\": \"B2350AEC-0BE3-4FD8-9271-18A7A390188B\",\r\n  \"imeLiciter\": \"Nikola\",\r\n  \"prezimeLiciter\": \"Nikolic\",\r\n  \"jmbgLiciter\": \"2906000855002\",\r\n  \"brojpasosa\": \"string\",\r\n  \"drzavastranac\": \"string\",\r\n  \"adresaLiciter\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7017/api/liciter",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"liciter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutLiciter",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"liciterId\": \"908495a9-e786-46ec-b0f6-35ad56fd796a\",\r\n  \"imeLiciter\": \"Jovan\",\r\n  \"prezimeLiciter\": \"Peric\",\r\n  \"jmbgLiciter\": \"string\",\r\n  \"brojpasosa\": \"string\",\r\n  \"drzavastranac\": \"string\",\r\n  \"adresaLiciter\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7017/api/liciter/908495a9-e786-46ec-b0f6-35ad56fd796a",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"liciter",
+						"908495a9-e786-46ec-b0f6-35ad56fd796a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteLiciter",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/api/liciter/908495a9-e786-46ec-b0f6-35ad56fd796a",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"liciter",
+						"908495a9-e786-46ec-b0f6-35ad56fd796a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetKupacOptions",
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/api/kupac",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"kupac"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetLiciterOptions",
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/api/liciter",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"liciter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetFizickoLiceOptions",
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/api/fizickolice",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"fizickolice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPravnoLiceOptions",
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7017/api/pravnolice",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7017",
+					"path": [
+						"api",
+						"pravnolice"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

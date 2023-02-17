@@ -29,7 +29,7 @@ namespace KorisnikSistemaServis.Controllers
         /// <param name="korisnickoIme">korisnickoIme = "sanja123"</param>
         /// <returns>Lista korisnika</returns>
         /// <response code="200">Vraća listu korisnika</response>
-        /// <response code="404">Nije pronađena ni jedan jedini korisnik</response>
+        /// <response code="404">Nije pronađen nijedan korisnik</response>
         [HttpGet]
         [HttpHead]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -107,7 +107,7 @@ namespace KorisnikSistemaServis.Controllers
         /// </summary>
         /// <param name="korisnikId">ID prijave ispita</param>
         /// <returns>Status 204 (NoContent)</returns>
-        /// <response code="204">Korisnik uspje[no obrisan</response>
+        /// <response code="204">Korisnik uspješno obrisan</response>
         /// <response code="404">Nije pronađen korisnik za brisanje</response>
         /// <response code="500">Došlo je do greške na serveru prilikom brisanja korisnika</response>
         [HttpDelete("{korisnikId}")]
