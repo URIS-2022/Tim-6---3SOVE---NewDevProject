@@ -1,0 +1,552 @@
+{
+	"info": {
+		"_postman_id": "45894eee-e90d-4766-8dbd-81180e57820d",
+		"name": "DokumentMicroservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetDokumenti",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7030/api/dokument",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"dokument"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDokumentById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7030/api/dokument/418af1d2-483f-4461-8d82-31b257527a4f",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"dokument",
+						"418af1d2-483f-4461-8d82-31b257527a4f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDokumentOptions",
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7030/api/dokument",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"dokument"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostDokument",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dokumentId\": \"DC6DBACC-FD52-49AA-BCFB-7B8B25D0CE7C\",\r\n  \"sablon\": \"sablon\",\r\n  \"datumDonosenjaDokumenta\": \"2022-01-16T09:50:19.658Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7030/api/dokument",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"dokument"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutDokument",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dokumentId\": \"9e2474b3-caf5-4123-944d-11b4ab186b6b\",\r\n  \"sablon\": \"ImePrezimeGodine\",\r\n  \"datumDonosenjaDokumenta\": \"2019-02-16\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7030/api/dokument/9e2474b3-caf5-4123-944d-11b4ab186b6b",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"dokument",
+						"9e2474b3-caf5-4123-944d-11b4ab186b6b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteDokument",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7030/api/dokument/dc6dbacc-fd52-49aa-bcfb-7b8b25d0ce7c",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"dokument",
+						"dc6dbacc-fd52-49aa-bcfb-7b8b25d0ce7c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOglasi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7030/api/oglas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"oglas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOglasById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7030/api/oglas/418af1d2-483f-4461-8d82-31b257527a4f",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"oglas",
+						"418af1d2-483f-4461-8d82-31b257527a4f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOglasOptions",
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7030/api/oglas",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"oglas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostOglas",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "PutOglas",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"oglasId\": \"486184e4-fc52-43cb-b6f0-c27079e4b468\",\r\n  \"dokumentId\": \"e4be32f2-da5e-47d5-9fbf-b860eb1d79b3\",\r\n  \"brNadmetanjaJmbg\": \"72829Izmena2\",\r\n  \"brNadmetanjaMaticniBrojPreduzeca\": \"84994\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7030/api/oglas/486184e4-fc52-43cb-b6f0-c27079e4b468",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"oglas",
+						"486184e4-fc52-43cb-b6f0-c27079e4b468"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteOglas",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7030/api/oglas/ce7925db-ef6a-410f-9dc5-af2614b11834",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"oglas",
+						"ce7925db-ef6a-410f-9dc5-af2614b11834"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPredloziPlanaProjekta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7030/api/predlogPlanaProjekta",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"predlogPlanaProjekta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPredlogPlanaProjektaById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7030/api/predlogPlanaProjekta/b708754f-b5e9-481b-8898-ca3682107e9c",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"predlogPlanaProjekta",
+						"b708754f-b5e9-481b-8898-ca3682107e9c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPredlogPlanaProjektaOptions",
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7030/api/predlogPlanaProjekta",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"predlogPlanaProjekta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostPredlogPlanaProjekta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"predlogId\": \"E0B64280-BFB5-411F-84B3-FEC6189E71D9\",\r\n  \"dokumentId\": \"418af1d2-483f-4461-8d82-31b257527a4f\",\r\n  \"zavodniBr\": \"trtfggfg5\",\r\n  \"datumPredlog\": \"2023-02-16T10:43:03.829Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7030/api/predlogPlanaProjekta",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"predlogPlanaProjekta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutPredlogPlanaProjekta",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"predlogId\": \"E0B64280-BFB5-411F-84B3-FEC6189E71D9\",\r\n  \"dokumentId\": \"418af1d2-483f-4461-8d82-31b257527a4f\",\r\n  \"zavodniBr\": \"Izmena123\",\r\n  \"datumPredlog\": \"2023-02-16T10:43:03.829Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7030/api/predlogPlanaProjekta/E0B64280-BFB5-411F-84B3-FEC6189E71D9",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"predlogPlanaProjekta",
+						"E0B64280-BFB5-411F-84B3-FEC6189E71D9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePredlogPlanaProjekta",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7030/api/predlogPlanaProjekta/4ff44338-8d0b-415a-8b44-dfce3d4c311d",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"predlogPlanaProjekta",
+						"4ff44338-8d0b-415a-8b44-dfce3d4c311d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetResenjaStrucnaKomisija",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7030/api/resenjeStrucnaKomisija",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"resenjeStrucnaKomisija"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetResenjeStrucnaKomisijaById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7030/api/resenjeStrucnaKomisija/22b74319-edb5-4945-b792-76d0b1b81d88",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"resenjeStrucnaKomisija",
+						"22b74319-edb5-4945-b792-76d0b1b81d88"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetResenjeStrucnaKomisijaOptions",
+			"request": {
+				"method": "OPTIONS",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7030/api/resenjeStrucnaKomisija",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"resenjeStrucnaKomisija"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostResenjeStrucnaKomisija",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"resenjeId\": \"ae409cb0-6aef-4194-b560-61b97e24569f\",\r\n        \"dokumentId\": \"e4be32f2-da5e-47d5-9fbf-b860eb1d79b3\",\r\n        \"zavodnibr\": \"PSPG-9/2022\",\r\n        \"datumResenje\": \"2023-02-11T20:21:58.656834\",\r\n        \"imeClanaKomisije\": \"ime\",\r\n        \"prezClanaKomisije\": \"prezime\",\r\n        \"predsednikKomisije\": \"predsednik\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7030/api/resenjeStrucnaKomisija",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"resenjeStrucnaKomisija"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutResenjeStrucnaKomisija",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"resenjeId\": \"ae409cb0-6aef-4194-b560-61b97e24569f\",\r\n        \"dokumentId\": \"e4be32f2-da5e-47d5-9fbf-b860eb1d79b3\",\r\n        \"zavodnibr\": \"PSPG-9/2022\",\r\n        \"datumResenje\": \"2023-02-11T20:21:58.656834\",\r\n        \"imeClanaKomisije\": \"imeIzmena\",\r\n        \"prezClanaKomisije\": \"prezimeIzmena\",\r\n        \"predsednikKomisije\": \"predsednikIzmena\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7030/api/resenjeStrucnaKomisija/ae409cb0-6aef-4194-b560-61b97e24569f",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"resenjeStrucnaKomisija",
+						"ae409cb0-6aef-4194-b560-61b97e24569f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteResenjeStrucnaKomisija",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7030/api/resenjeStrucnaKomisija/22b74319-edb5-4945-b792-76d0b1b81d88",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7030",
+					"path": [
+						"api",
+						"resenjeStrucnaKomisija",
+						"22b74319-edb5-4945-b792-76d0b1b81d88"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

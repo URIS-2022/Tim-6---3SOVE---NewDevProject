@@ -1,0 +1,83 @@
+﻿
+using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace KupacMicroservice.model.Kupac
+{
+
+    /// <summary>
+    /// dto za izmenu kupca
+    /// </summary>
+    public class UpdateKupacDto
+    {
+
+        /// <summary>
+        /// id kupca
+        /// </summary>
+        [Required(ErrorMessage = "Obavezno je uneti id kupca")]
+        public Guid KupacId { get; set; }
+
+        /// <summary>
+        /// adresa kupca
+        /// </summary>
+        [Required(ErrorMessage = "Obavezno je uneti adresu kupca")]
+        public string AdresaKupac { get; set; }
+
+        /// <summary>
+        /// ostvarena povrsina
+        /// </summary>
+        public double OstvarenaPovrsina { get; set; }
+
+
+        /// <summary>
+        /// ima zabranu
+        /// </summary>
+        public bool ImaZabranu { get; set; }
+
+        /// <summary>
+        /// datum pocetka zabrane
+        /// </summary>
+        [DataType(DataType.Date)]
+        public DateTime DatumPocetkaZabrane { get; set; }
+
+
+        /// <summary>
+        /// duzina trajanja zabrane godina
+        /// </summary>
+        public int DuzinaTrajanjaZabraneGod { get; set; }
+
+        /// <summary>
+        /// broj telefona 1
+        /// </summary>
+        public string BrojTelefona1 { get; set; }
+
+        /// <summary>
+        /// broj telefona 2
+        /// </summary>
+        public string BrojTelefona2 { get; set; }
+
+        /// <summary>
+        /// Email
+        /// </summary>
+        public string Email { get; set; }
+
+        /// <summary>
+        /// broj racuna
+        /// </summary>
+        public string BrojRacuna { get; set; }
+
+        /// <summary>
+        /// iznos uplata
+        /// </summary>
+        public string IznosUplata { get; set; }
+
+
+        /// <summary>
+        /// prioritet
+        /// </summary>
+        public string Prioritet { get; set; }
+
+
+
+    }
+}
