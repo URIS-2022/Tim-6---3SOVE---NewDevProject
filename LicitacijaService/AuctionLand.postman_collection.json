@@ -1,0 +1,515 @@
+{
+	"info": {
+		"_postman_id": "53b31d06-f571-4828-8634-2ca333a7042a",
+		"name": "AuctionLand",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PrijavaJnService",
+			"item": [
+				{
+					"name": "PrijavaJn",
+					"item": [
+						{
+							"name": "GetAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5222/api/prijavaJn",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5222",
+									"path": [
+										"api",
+										"prijavaJn"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5222/api/prijavaJn/9c7da699-77e3-49fe-904a-c42900f96cdd",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5222",
+									"path": [
+										"api",
+										"prijavaJn",
+										"9c7da699-77e3-49fe-904a-c42900f96cdd"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Head",
+							"request": {
+								"method": "HEAD",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5222/api/prijavaJn",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5222",
+									"path": [
+										"api",
+										"prijavaJn"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"brojPrijave\": \"string\",\r\n  \"datumPrijave\": \"2023-02-16T08:08:25.878Z\",\r\n  \"mestoPrijave\": \"string\",\r\n  \"satPrijave\": \"string\",\r\n  \"zatvorenaPonuda\": true,\r\n  \"dokFizickaLica\": \"string\",\r\n  \"dokPravnaLica\": \"string\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5222/api/prijavaJn",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5222",
+									"path": [
+										"api",
+										"prijavaJn"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"prijavaId\": \"9c7da699-77e3-49fe-904a-c42900f96cdd\",\r\n    \"brojPrijave\": \"brojtest\",\r\n    \"datumPrijave\": \"2023-02-16T08:08:25.878\",\r\n    \"mestoPrijave\": \"mestotest\",\r\n    \"satPrijave\": \"string\",\r\n    \"zatvorenaPonuda\": true,\r\n    \"dokFizickaLica\": \"string\",\r\n    \"dokPravnaLica\": \"string\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5222/api/prijavaJn",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5222",
+									"path": [
+										"api",
+										"prijavaJn"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Options",
+							"request": {
+								"method": "OPTIONS",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5222/api/prijavaJn",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5222",
+									"path": [
+										"api",
+										"prijavaJn"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5222/api/prijavaJn/9c7da699-77e3-49fe-904a-c42900f96cdd",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5222",
+									"path": [
+										"api",
+										"prijavaJn",
+										"9c7da699-77e3-49fe-904a-c42900f96cdd"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "LicitacijaService",
+			"item": [
+				{
+					"name": "Licitacija",
+					"item": [
+						{
+							"name": "GetAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5007/api/licitacija",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5007",
+									"path": [
+										"api",
+										"licitacija"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5007/api/licitacija/9d70d72c-7f57-4323-9eb7-1444ef348220",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5007",
+									"path": [
+										"api",
+										"licitacija",
+										"9d70d72c-7f57-4323-9eb7-1444ef348220"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Head",
+							"request": {
+								"method": "HEAD",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5007/api/licitacija",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5007",
+									"path": [
+										"api",
+										"licitacija"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"brojLicitacije\": 100,\r\n    \"godinaLicitacije\": 2020,\r\n    \"ogranicenjeLicitacije\": 10,\r\n    \"rokLicitacije\": \"2021-09-30T18:50:18.5108883\",\r\n    \"korakCeneLicitacije\": 2,\r\n    \"programEntitetProgramId\": \"58b116a2-d458-4f72-abe8-be6135ece89e\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5007/api/licitacija",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5007",
+									"path": [
+										"api",
+										"licitacija"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"brojLicitacije\": 42,\r\n    \"godinaLicitacije\": 2012,\r\n    \"ogranicenjeLicitacije\": 12,\r\n    \"rokLicitacije\": \"2021-09-29T18:50:18.5108883\",\r\n    \"korakCeneLicitacije\": 3,\r\n    \"programEntitetProgramId\": \"58b116a2-d458-4f72-abe8-be6135ece89e\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5007/api/licitacija/684c392b-7871-4d1c-a93d-9d8661adf9e9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5007",
+									"path": [
+										"api",
+										"licitacija",
+										"684c392b-7871-4d1c-a93d-9d8661adf9e9"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Options",
+							"request": {
+								"method": "OPTIONS",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5007/api/licitacija",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5007",
+									"path": [
+										"api",
+										"licitacija"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5007/api/licitacija/684c392b-7871-4d1c-a93d-9d8661adf9e9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5007",
+									"path": [
+										"api",
+										"licitacija",
+										"684c392b-7871-4d1c-a93d-9d8661adf9e9"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ProgramEntitet",
+					"item": [
+						{
+							"name": "GetAll",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5007/api/programEntitet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5007",
+									"path": [
+										"api",
+										"programEntitet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5007/api/programEntitet/3fa85f64-5717-4562-b3fc-2c963f66afa6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5007",
+									"path": [
+										"api",
+										"programEntitet",
+										"3fa85f64-5717-4562-b3fc-2c963f66afa6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Head",
+							"request": {
+								"method": "HEAD",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5007/api/programEntitet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5007",
+									"path": [
+										"api",
+										"programEntitet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"maksimalnaPovrsina\": 1000,\r\n  \"krugLicitacije\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5007/api/programEntitet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5007",
+									"path": [
+										"api",
+										"programEntitet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Put",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"programId\": \"33eea1d6-60ad-46b3-9bf9-37c20aabe840\",\r\n    \"maksimalnaPovrsina\": 5000,\r\n    \"krugLicitacije\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5007/api/programEntitet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5007",
+									"path": [
+										"api",
+										"programEntitet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5007/api/programEntitet/33eea1d6-60ad-46b3-9bf9-37c20aabe840",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5007",
+									"path": [
+										"api",
+										"programEntitet",
+										"33eea1d6-60ad-46b3-9bf9-37c20aabe840"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Options",
+							"request": {
+								"method": "OPTIONS",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5007/api/programEntitet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5007",
+									"path": [
+										"api",
+										"programEntitet"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
