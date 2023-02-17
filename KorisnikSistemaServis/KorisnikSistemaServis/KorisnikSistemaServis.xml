@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KorisnikSistemaServis</name>
+    </assembly>
+    <members>
+        <member name="M:KorisnikSistemaServis.Controllers.KorisnikController.GetAllKorisnik(System.String)">
+            <summary>
+            Vraća sve korisnike (i za zadati filter korisnickoIme).
+            </summary>
+            <param name="korisnickoIme">korisnickoIme = "sanja123"</param>
+            <returns>Lista korisnika</returns>
+            <response code="200">Vraća listu korisnika</response>
+            <response code="404">Nije pronađen nijedan korisnik</response>
+        </member>
+        <member name="M:KorisnikSistemaServis.Controllers.KorisnikController.GetKorisnikById(System.Guid)">
+            <summary>
+            Vraća jednog korisnika na osnovu ID-ja korisnika.
+            </summary>
+            <param name="korisnikId">ID korisnika</param>
+            <returns></returns>
+            <response code="200">Vraća traženog korisnika</response>
+        </member>
+        <member name="M:KorisnikSistemaServis.Controllers.KorisnikController.CreateKorisnik(KorisnikSistemaServis.Models.KorisnikCreationDto)">
+             <summary>
+             Kreira novog korisnika.
+             </summary>
+             <param name="korisnik">Model korisnika</param>
+             <returns>Potvrdu o kreiranom korisniku.</returns>
+             <remarks>
+             Primer zahtjeva za kreiranje novog korisnika \
+             POST /api/korisnici \
+             {     \
+                 "ime":"Sanja", \
+                 "prezime": "Tica", \
+                 "korisnickoIme": "sanja123", \
+                 "lozinka": "test123", \
+                 "tipKorisnika": 0 (administrator), \
+            }
+             </remarks>
+             <response code="200">Vraća kreiranog korisnika</response>
+             <response code="500">Došlo je do greške na serveru prilikom kreiranja korisnika</response>
+        </member>
+        <member name="M:KorisnikSistemaServis.Controllers.KorisnikController.DeleteKorisnik(System.Guid)">
+            <summary>
+            Vrši brisanje jednog korisnika sistema na osnovu ID-ja korisnika.
+            </summary>
+            <param name="korisnikId">ID prijave ispita</param>
+            <returns>Status 204 (NoContent)</returns>
+            <response code="204">Korisnik uspješno obrisan</response>
+            <response code="404">Nije pronađen korisnik za brisanje</response>
+            <response code="500">Došlo je do greške na serveru prilikom brisanja korisnika</response>
+        </member>
+        <member name="M:KorisnikSistemaServis.Controllers.KorisnikController.UpdateKorisnik(KorisnikSistemaServis.Models.KorisnikUpdateDto)">
+            <summary>
+            Ažurira jednog korisnika.
+            </summary>
+            <param name="examRegistration">Model korisnika koji se ažurira</param>
+            <returns>Potvrdu o modifikovanoj prijavi.</returns>
+            <response code="200">Vraća ažuriranog korisnika</response>
+            <response code="400">Korisnik koji se ažurira nije pronađen</response>
+            <response code="500">Došlo je do greške na serveru prilikom ažuriranja korisnika</response>
+        </member>
+        <member name="M:KorisnikSistemaServis.Controllers.KorisnikController.GetKorisnikOptions">
+            <summary>
+            Vraća opcije za rad sa korisnicima.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KorisnikSistemaServis.Migrations.users">
+            <inheritdoc />
+        </member>
+        <member name="M:KorisnikSistemaServis.Migrations.users.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:KorisnikSistemaServis.Migrations.users.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:KorisnikSistemaServis.Migrations.users.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:KorisnikSistemaServis.Migrations.Userswithoutsalt">
+            <inheritdoc />
+        </member>
+        <member name="M:KorisnikSistemaServis.Migrations.Userswithoutsalt.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:KorisnikSistemaServis.Migrations.Userswithoutsalt.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:KorisnikSistemaServis.Migrations.Userswithoutsalt.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:KorisnikSistemaServis.Migrations.Userwithhashedpass">
+            <inheritdoc />
+        </member>
+        <member name="M:KorisnikSistemaServis.Migrations.Userwithhashedpass.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:KorisnikSistemaServis.Migrations.Userwithhashedpass.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:KorisnikSistemaServis.Migrations.Userwithhashedpass.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

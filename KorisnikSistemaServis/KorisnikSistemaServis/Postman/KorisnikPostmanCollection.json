@@ -1,0 +1,308 @@
+{
+  "info": {
+    "_postman_id": "3cf9047c-a14f-4f61-b940-641f346b4467",
+    "name": "KorisnikPostmanCollection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": null
+      },
+      "response": []
+    },
+    {
+      "name": "Login Request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"korisnickoIme\":\"sanja123\",\r\n    \"lozinka\":\"test123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5087/api/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5087",
+          "path": [
+            "api",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET all korisnik",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY1NzI4MDUsImV4cCI6MTY3NjU4MDAwNSwiaWF0IjoxNjc2NTcyODA1fQ.ctrS4M6otHamdMyz5L4iJMIJj8e8kO90brIN27R-u54",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5087/api/korisnici",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5087",
+          "path": [
+            "api",
+            "korisnici"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET korisnik with korisnickoIme param",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY1NzI4MDUsImV4cCI6MTY3NjU4MDAwNSwiaWF0IjoxNjc2NTcyODA1fQ.ctrS4M6otHamdMyz5L4iJMIJj8e8kO90brIN27R-u54",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "korisnickoIme",
+            "value": "sanja123",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5087/api/korisnici?korisnickoIme=sanja123",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5087",
+          "path": [
+            "api",
+            "korisnici"
+          ],
+          "query": [
+            {
+              "key": "korisnickoIme",
+              "value": "sanja123"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET korisnik by id",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY1NzI4MDUsImV4cCI6MTY3NjU4MDAwNSwiaWF0IjoxNjc2NTcyODA1fQ.ctrS4M6otHamdMyz5L4iJMIJj8e8kO90brIN27R-u54",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5087/api/korisnici/2AC92E50-721D-4D8C-8FF8-08DB09E24969",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5087",
+          "path": [
+            "api",
+            "korisnici",
+            "2AC92E50-721D-4D8C-8FF8-08DB09E24969"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST korisnik",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY1NzI4MDUsImV4cCI6MTY3NjU4MDAwNSwiaWF0IjoxNjc2NTcyODA1fQ.ctrS4M6otHamdMyz5L4iJMIJj8e8kO90brIN27R-u54",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"ime\": \"Jovan\",\r\n  \"prezime\": \"Jovanovic\",\r\n  \"korisnickoIme\": \"jovan\",\r\n  \"lozinka\": \"jovan\",\r\n  \"tipKorisnika\": 6\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5087/api/korisnici",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5087",
+          "path": [
+            "api",
+            "korisnici"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PUT korisnik",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY1NzI4MDUsImV4cCI6MTY3NjU4MDAwNSwiaWF0IjoxNjc2NTcyODA1fQ.ctrS4M6otHamdMyz5L4iJMIJj8e8kO90brIN27R-u54",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"korisnikId\":\"F48CABA6-B3B3-42CE-7035-08DB104C16A1\",\r\n  \"ime\": \"Sandra\",\r\n  \"prezime\": \"Lazarevic\",\r\n  \"korisnickoIme\": \"saki\",\r\n  \"lozinka\": \"sandra\",\r\n  \"tipKorisnika\": 5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5087/api/korisnici",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5087",
+          "path": [
+            "api",
+            "korisnici"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE korisnik",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY1NzI4MDUsImV4cCI6MTY3NjU4MDAwNSwiaWF0IjoxNjc2NTcyODA1fQ.ctrS4M6otHamdMyz5L4iJMIJj8e8kO90brIN27R-u54",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"korisnikId\":\"F48CABA6-B3B3-42CE-7035-08DB104C16A1\",\r\n  \"ime\": \"Sandra\",\r\n  \"prezime\": \"Lazarevic\",\r\n  \"korisnickoIme\": \"saki\",\r\n  \"lozinka\": \"sandra\",\r\n  \"tipKorisnika\": 5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5087/api/korisnici/041BFAAF-8126-42B5-1B64-08DB0F5DC97E",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5087",
+          "path": [
+            "api",
+            "korisnici",
+            "041BFAAF-8126-42B5-1B64-08DB0F5DC97E"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "OPTIONS korisnik",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY1NzI4MDUsImV4cCI6MTY3NjU4MDAwNSwiaWF0IjoxNjc2NTcyODA1fQ.ctrS4M6otHamdMyz5L4iJMIJj8e8kO90brIN27R-u54",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "OPTIONS",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"korisnikId\":\"F48CABA6-B3B3-42CE-7035-08DB104C16A1\",\r\n  \"ime\": \"Sandra\",\r\n  \"prezime\": \"Lazarevic\",\r\n  \"korisnickoIme\": \"saki\",\r\n  \"lozinka\": \"sandra\",\r\n  \"tipKorisnika\": 5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5087/api/korisnici",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5087",
+          "path": [
+            "api",
+            "korisnici"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
