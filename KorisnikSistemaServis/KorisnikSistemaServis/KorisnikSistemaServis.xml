@@ -45,7 +45,7 @@
             <summary>
             Vrši brisanje jednog korisnika sistema na osnovu ID-ja korisnika.
             </summary>
-            <param name="korisnikId">ID prijave ispita</param>
+            <param name="korisnikId">ID korisnika</param>
             <returns>Status 204 (NoContent)</returns>
             <response code="204">Korisnik uspješno obrisan</response>
             <response code="404">Nije pronađen korisnik za brisanje</response>
