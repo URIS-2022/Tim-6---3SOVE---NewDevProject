@@ -11,6 +11,8 @@ using System.Data;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Routing;
 using DokumentMicroservice.Models.PredlogPlanaProjekta;
+using DokumentMicroservice.Services.Mock;
+using DokumentMicroservice.Services;
 
 namespace DokumentMicroservice.Controllers
 {
@@ -26,11 +28,16 @@ namespace DokumentMicroservice.Controllers
 
         private readonly IOglasRepository _oglasRepository;
         private readonly IMapper _mapper;
+        private readonly IConfiguration _configuration;
+        private readonly IServiceCall<ZalbaDto> _mikroservisZalba;
 
-        public OglasController(IMapper mapper, IOglasRepository oglasRepository)
+        public OglasController(IMapper mapper, IOglasRepository oglasRepository, IConfiguration configuration, IServiceCall<ZalbaDto> mikroservisZalba)
         {
             _mapper = mapper;
             _oglasRepository = oglasRepository;
+            _configuration = configuration;
+            _mikroservisZalba = mikroservisZalba;
+
 
         }
 
@@ -42,7 +49,7 @@ namespace DokumentMicroservice.Controllers
         /// <response code="204">Nije pronadjen nijedan oglas</response>
         /// <response code="500">Greška prilikom vraćanja liste oglasa</response>
         ///// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -59,10 +66,31 @@ namespace DokumentMicroservice.Controllers
                     
                     return NoContent();
                 }
+                
+                var oglasiDto = new List<OglasDto>();
+                string url = _configuration["Services:MikroservisZalba"];
+                foreach(var oglas in oglasi)
+                {
+                    var oglasDto = _mapper.Map<OglasDto>(oglas);
+                    if (oglas.zalbaID is not null)
+                    {
+                        var zalbaDto = await _mikroservisZalba.SendGetRequestAsync(url + oglas.zalbaID);
+                        if(zalbaDto is not null)
+                        {
+                            oglasDto.Zalba = zalbaDto.Naziv + ", "
+                                             + zalbaDto.Obrazlozenje + ",";
+                                             
+                                                
+                        }
 
-               
 
-                return Ok(_mapper.Map<List<OglasDto>>(oglasi));
+                    }
+                    oglasiDto.Add(oglasDto);
+                }
+
+
+
+                return Ok(oglasiDto);
             }
             catch (Exception ex)
             {
@@ -81,7 +109,7 @@ namespace DokumentMicroservice.Controllers
         /// <response code="404">Nije pronadjen oglas za uneti ID</response>
         /// <response code="500">Greška prilikom vraćanja oglasa</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
         [HttpGet("{oglasId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -119,7 +147,7 @@ namespace DokumentMicroservice.Controllers
         /// <response code="201">Vraća kreirani oglas</response>
         /// <response code="500">Greška prilikom kreiranja oglasa</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, PrvaKomisija")]
         [HttpPost]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -156,7 +184,7 @@ namespace DokumentMicroservice.Controllers
         /// <response code="200">Izmenjen oglas</response>
         /// <response code="404">Nije pronađen oglas za uneti ID</response>
         /// <response code="500">Serverska greška tokom izmene oglasa </response>
-        //[Authorize(Roles = "Administrator, Superuser,  PrvaKomisija,Manager, OperaterNadmetanja")]
+        [Authorize(Roles = "Administrator, Superuser,  PrvaKomisija,Manager, OperaterNadmetanja")]
         [HttpPut("{oglasId:guid}")]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -201,7 +229,7 @@ namespace DokumentMicroservice.Controllers
         /// <response code="404">Nije pronadjen oglas za uneti ID</response>
         /// <response code="500">Greška prilikom brisanja oglasa</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, PrvaKomisija")]
         [HttpDelete("{oglasId:guid}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -242,7 +270,7 @@ namespace DokumentMicroservice.Controllers
         /// </summary>
         /// <response code="200">Vraća listu opcija u header-u</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
         [HttpOptions]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]

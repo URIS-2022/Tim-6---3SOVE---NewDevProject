@@ -3,6 +3,7 @@ using KupacMicroservice.Data.Interfaces;
 using KupacMicroservice.Entities;
 using KupacMicroservice.Entities.DataConfirmations;
 using KupacMicroservice.model.Kupac;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 namespace KupacMicroservice.Controllers
@@ -36,7 +37,7 @@ namespace KupacMicroservice.Controllers
         /// <response code="204">Nije pronadjen nijedan kupac</response>
         /// <response code="500">Greška prilikom vraćanja liste kupaca</response>
         ///// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar, Menadzer")]
+        [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar, Menadzer")]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -75,7 +76,7 @@ namespace KupacMicroservice.Controllers
         /// <response code="404">Nije pronadjen kupac za uneti ID</response>
         /// <response code="500">Greška prilikom vraćanja kupca</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar, Menadzer")]
+        [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar, Menadzer")]
         [HttpGet("{kupacId:guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -110,12 +111,12 @@ namespace KupacMicroservice.Controllers
         /// <summary>
         ///     Kreira novog kupca
         /// </summary>
-        /// <param name="dokumentDto">Model kupca </param>
+        /// <param name="kupacDto">Model kupca </param>
         /// <returns>Dokument</returns>
         /// <response code="201">Vraća kreiranog kupca</response>
         /// <response code="500">Greška prilikom kreiranja kupca</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar")]
         [HttpPost]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -151,7 +152,7 @@ namespace KupacMicroservice.Controllers
         /// <response code="200">Izmenjen kupac</response>
         /// <response code="404">Nije pronađen kupac za uneti ID</response>
         /// <response code="500">Serverska greška tokom izmene </response>
-        //[Authorize(Roles = "Administrator, Superuser,  PrvaKomisija,Manager, OperaterNadmetanja")]
+        [Authorize(Roles = "Administrator, Superuser,  PrvaKomisija,Manager, OperaterNadmetanja")]
         [HttpPut("{kupacId:guid}")]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -193,7 +194,7 @@ namespace KupacMicroservice.Controllers
         /// <response code="404">Nije pronadjen kupac za uneti ID</response>
         /// <response code="500">Greška prilikom brisanja kupca</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar")]
         [HttpDelete("{kupacId:guid}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -234,7 +235,7 @@ namespace KupacMicroservice.Controllers
         /// </summary>
         /// <response code="200">Vraća listu opcija u header-u</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar, Menadzer")]
         [HttpOptions]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]

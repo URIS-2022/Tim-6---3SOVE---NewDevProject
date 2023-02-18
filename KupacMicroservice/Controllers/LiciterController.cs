@@ -7,7 +7,7 @@ using KupacMicroservice.model.Kupac;
 using KupacMicroservice.Model.Liciter;
 using Microsoft.AspNetCore.Mvc;
 using System;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace KupacMicroservice.Controllers
 {
@@ -39,7 +39,7 @@ namespace KupacMicroservice.Controllers
         /// <response code="204">Nije pronadjen nijedan liciter</response>
         /// <response code="500">Greška prilikom vraćanja liste licitera</response>
         ///// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar, Menadzer")]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -77,7 +77,7 @@ namespace KupacMicroservice.Controllers
         /// <response code="404">Nije pronadjen kupac za uneti ID</response>
         /// <response code="500">Greška prilikom vraćanja kupca</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar, Menadzer")]
         [HttpGet("{liciterId:guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -117,7 +117,7 @@ namespace KupacMicroservice.Controllers
         /// <response code="201">Vraća kreiranog licitera</response>
         /// <response code="500">Greška prilikom kreiranja licitera</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, PrvaKomisija")]
+         [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar")]
         [HttpPost]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -153,7 +153,7 @@ namespace KupacMicroservice.Controllers
         /// <response code="200">Izmenjen liciter</response>
         /// <response code="404">Nije pronađen liciter za uneti ID</response>
         /// <response code="500">Serverska greška tokom izmene </response>
-        //[Authorize(Roles = "Administrator, Superuser,  PrvaKomisija,Manager, OperaterNadmetanja")]
+        [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar")]
         [HttpPut("{liciterId:guid}")]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -195,7 +195,7 @@ namespace KupacMicroservice.Controllers
         /// <response code="404">Nije pronadjen liciter za uneti ID</response>
         /// <response code="500">Greška prilikom brisanja licitera</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar")]
         [HttpDelete("{liciterId:guid}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -235,7 +235,7 @@ namespace KupacMicroservice.Controllers
         /// </summary>
         /// <response code="200">Vraća listu opcija u header-u</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar, Menadzer")]
         [HttpOptions]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]

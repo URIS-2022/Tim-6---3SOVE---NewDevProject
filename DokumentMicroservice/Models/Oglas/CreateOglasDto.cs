@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DokumentMicroservice.Services.Mock;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace DokumentMicroservice.Models.Oglas
@@ -30,6 +31,10 @@ namespace DokumentMicroservice.Models.Oglas
         /// </summary>
         [Required(ErrorMessage = "Obavezno je uneti BrojNadmetanjaMaticniBrojPreduzeca.")]
         public string BrNadmetanjaMaticniBrojPreduzeca { get; set; }
- 
+
+        public Guid? zalbaID { get; set; }
+
+        public ZalbaDto Zalba { get; set; }
+
     }
 }

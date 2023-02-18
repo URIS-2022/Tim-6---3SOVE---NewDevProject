@@ -29,5 +29,7 @@ namespace DokumentMicroservice.Models.Oglas
         /// </summary>
         public string BrNadmetanjaMaticniBrojPreduzeca { get; set; }
 
+        public string Zalba { get; set; }
+
     }
 }

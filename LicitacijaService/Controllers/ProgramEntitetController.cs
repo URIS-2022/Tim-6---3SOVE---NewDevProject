@@ -39,7 +39,7 @@ namespace LicitacijaService.Controllers
         /// <response code="200">Vraća listu programa</response>
         /// <response code="404">Nije pronađen nijedan program</response>
 
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer")]
+        [Authorize(Roles = "Administrator, Superuser, Menadzer")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [HttpGet]
@@ -63,7 +63,7 @@ namespace LicitacijaService.Controllers
         /// <response code="200">Vraća traženi program</response>
         /// <response code="404">Nije pronađen program za uneti ID</response>
         ///
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer")]
+        [Authorize(Roles = "Administrator, Superuser, Menadzer")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("{programId}")]
@@ -96,7 +96,7 @@ namespace LicitacijaService.Controllers
         /// <response code="500">Desila se greška prilikom unosa novog programa</response>
         /// 
 
-        //[Authorize(Roles = "Administrator, Superuser")]
+        [Authorize(Roles = "Administrator, Superuser")]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -130,7 +130,7 @@ namespace LicitacijaService.Controllers
         /// <response code="500">Serverska greška tokom modifikacije programa</response>
         ///
 
-        //[Authorize(Roles = "Administrator, Superuser")]
+        [Authorize(Roles = "Administrator, Superuser")]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -168,7 +168,7 @@ namespace LicitacijaService.Controllers
         /// <response code="404">Nije pronađen program za uneti ID</response>
         /// <response code="500">Serverska greška tokom brisanja programa</response>
         /// 
-        //[Authorize(Roles = "Administrator, Superuser")]
+        [Authorize(Roles = "Administrator, Superuser")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -199,7 +199,7 @@ namespace LicitacijaService.Controllers
         /// </summary>
         /// <returns></returns>
 
-        //[Authorize(Roles = "Administrator, Superuser")]
+        [Authorize(Roles = "Administrator, Superuser")]
         [HttpOptions]
         public IActionResult GetProgramEntitetOptions()
         {

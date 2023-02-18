@@ -94,6 +94,9 @@ namespace DokumentMicroservice.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("zalbaID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("DokumentId", "OglasId");
 
                     b.HasIndex("DokumentId")
@@ -107,14 +110,16 @@ namespace DokumentMicroservice.Migrations
                             DokumentId = new Guid("9a2d9ea6-d264-494a-88f8-51808a1c3196"),
                             OglasId = new Guid("011c616c-14db-4bc3-a9c9-c2f642b22f73"),
                             BrNadmetanjaJmbg = "2906000855008",
-                            BrNadmetanjaMaticniBrojPreduzeca = "24905678"
+                            BrNadmetanjaMaticniBrojPreduzeca = "24905678",
+                            zalbaID = new Guid("946d1fee-3863-4fb5-b76b-1970fbb4894e")
                         },
                         new
                         {
                             DokumentId = new Guid("9e2474b3-caf5-4123-944d-11b4ab186b6b"),
                             OglasId = new Guid("9151a095-2890-49c8-a3ac-f5813b92ffac"),
                             BrNadmetanjaJmbg = "2906000855002",
-                            BrNadmetanjaMaticniBrojPreduzeca = "23905678"
+                            BrNadmetanjaMaticniBrojPreduzeca = "23905678",
+                            zalbaID = new Guid("7d5213e5-f1bb-4226-b034-ae061c672780")
                         });
                 });
 
@@ -145,14 +150,14 @@ namespace DokumentMicroservice.Migrations
                         {
                             DokumentId = new Guid("e4be32f2-da5e-47d5-9fbf-b860eb1d79b3"),
                             PredlogId = new Guid("4ff44338-8d0b-415a-8b44-dfce3d4c311d"),
-                            DatumPredlog = new DateTime(2023, 2, 16, 13, 30, 51, 934, DateTimeKind.Local).AddTicks(6551),
+                            DatumPredlog = new DateTime(2023, 2, 18, 0, 11, 35, 621, DateTimeKind.Local).AddTicks(205),
                             ZavodniBr = "PSPG-1/2022"
                         },
                         new
                         {
                             DokumentId = new Guid("d762b24f-2730-427f-9789-3d840a5f7e39"),
                             PredlogId = new Guid("b708754f-b5e9-481b-8898-ca3682107e9c"),
-                            DatumPredlog = new DateTime(2023, 2, 16, 13, 30, 51, 934, DateTimeKind.Local).AddTicks(6561),
+                            DatumPredlog = new DateTime(2023, 2, 18, 0, 11, 35, 621, DateTimeKind.Local).AddTicks(222),
                             ZavodniBr = "PSPG-5/2022"
                         });
                 });
@@ -196,7 +201,7 @@ namespace DokumentMicroservice.Migrations
                         {
                             DokumentId = new Guid("c8e97d45-4bfc-4dca-ba07-20d1e93049d6"),
                             ResenjeId = new Guid("22b74319-edb5-4945-b792-76d0b1b81d88"),
-                            DatumResenje = new DateTime(2023, 2, 16, 13, 30, 51, 934, DateTimeKind.Local).AddTicks(6601),
+                            DatumResenje = new DateTime(2023, 2, 18, 0, 11, 35, 621, DateTimeKind.Local).AddTicks(259),
                             ImeClanaKomisije = "Marko",
                             PredsednikKomisije = "PredPetarPetrovic",
                             PrezClanaKomisije = "Markovic",
@@ -206,7 +211,7 @@ namespace DokumentMicroservice.Migrations
                         {
                             DokumentId = new Guid("418af1d2-483f-4461-8d82-31b257527a4f"),
                             ResenjeId = new Guid("e3eab479-b0aa-4161-bbc9-d2281f43f332"),
-                            DatumResenje = new DateTime(2023, 2, 16, 13, 30, 51, 934, DateTimeKind.Local).AddTicks(6611),
+                            DatumResenje = new DateTime(2023, 2, 18, 0, 11, 35, 621, DateTimeKind.Local).AddTicks(269),
                             ImeClanaKomisije = "Luka",
                             PredsednikKomisije = "PredDraganDraganovic",
                             PrezClanaKomisije = "Markovic",

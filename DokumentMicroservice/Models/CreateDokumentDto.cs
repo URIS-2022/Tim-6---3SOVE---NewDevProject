@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DokumentMicroservice.Services.Mock;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace DokumentMicroservice.Models
@@ -20,6 +21,8 @@ namespace DokumentMicroservice.Models
 
         [Required(ErrorMessage = "Obavezno je uneti datum donosenja oglasa.")]
         public DateTime DatumDonosenjaDokumenta { get; set; }
+
+        
 
 
 

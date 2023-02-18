@@ -106,6 +106,7 @@ namespace DokumentMicroservice.DataContext
                      DokumentId = Guid.Parse("9A2D9EA6-D264-494A-88F8-51808A1C3196"),
                      BrNadmetanjaJmbg = "2906000855008",
                      BrNadmetanjaMaticniBrojPreduzeca = "24905678",
+                     zalbaID = Guid.Parse("946D1FEE-3863-4FB5-B76B-1970FBB4894E")
 
                  }
                  , new Oglas
@@ -114,7 +115,9 @@ namespace DokumentMicroservice.DataContext
                      OglasId = Guid.Parse("9151A095-2890-49C8-A3AC-F5813B92FFAC"),
                      DokumentId = Guid.Parse("9E2474B3-CAF5-4123-944D-11B4AB186B6B"),
                      BrNadmetanjaJmbg = "2906000855002",
-                     BrNadmetanjaMaticniBrojPreduzeca = "23905678"
+                     BrNadmetanjaMaticniBrojPreduzeca = "23905678",
+                     zalbaID = Guid.Parse("7D5213E5-F1BB-4226-B034-AE061C672780")
+
 
                  });
                  

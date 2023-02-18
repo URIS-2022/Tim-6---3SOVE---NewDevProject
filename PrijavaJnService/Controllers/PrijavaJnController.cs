@@ -16,6 +16,7 @@ namespace PrijavaJnService.Controllers
     /// </summary>
     [Route("api/prijavaJn")]
     [ApiController]
+    [Produces("application/json", "application/xml")]
     public class PrijavaJnController : ControllerBase
     {
         private readonly IPrijavaJnRepository _prijavaJnRepository;
@@ -47,7 +48,7 @@ namespace PrijavaJnService.Controllers
         /// <response code="200">Vraća listu prijavaJn</response>
         /// <response code="404">Nije pronađena nijedna prijavaJn</response>
         /// 
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer, OperaterNadmetanja, Licitant")]
+        [Authorize(Roles = "Administrator, Superuser, Menadzer, OperaterNadmetanja, Licitant")]
         [HttpGet]
         [HttpHead]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -91,7 +92,7 @@ namespace PrijavaJnService.Controllers
         /// <response code="200">Vraća traženu prijavuJn</response>
         /// <response code="404">Nije pronađena prijavaJn za uneti ID</response>
         /// 
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer, OperaterNadmetanja, Licitant")]
+        [Authorize(Roles = "Administrator, Superuser, Menadzer, OperaterNadmetanja, Licitant")]
         [HttpGet("{prijavaId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -127,7 +128,7 @@ namespace PrijavaJnService.Controllers
         /// <response code="201">Vraća kreiranu prijavuJn</response>
         /// <response code="500">Desila se greška prilikom unosa nove prijaveJn</response>
         ///
-        //[Authorize(Roles = "Administrator, Superuser, OperaterNadmetanja")]
+        [Authorize(Roles = "Administrator, Superuser, OperaterNadmetanja")]
         [HttpPost]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -159,7 +160,7 @@ namespace PrijavaJnService.Controllers
         /// <response code="404">Nije pronađena prijavaJn za uneti ID</response>
         /// <response code="500">Serverska greška tokom modifikacije prijaveJn</response>
         /// 
-        //[Authorize(Roles = "Administrator, Superuser, OperaterNadmetanja")]
+        [Authorize(Roles = "Administrator, Superuser, OperaterNadmetanja")]
         [HttpPut]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -200,7 +201,7 @@ namespace PrijavaJnService.Controllers
         /// <response code="404">Nije pronađena prijavaJn za uneti ID</response>
         /// <response code="500">Serverska greška tokom brisanja prijaveJn</response>
         /// 
-        //[Authorize(Roles = "Administrator, Superuser, OperaterNadmetanja")]
+        [Authorize(Roles = "Administrator, Superuser, OperaterNadmetanja")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -231,7 +232,7 @@ namespace PrijavaJnService.Controllers
         /// Vraća opcije za rad sa prijavamaJn
         /// </summary>
         /// <returns></returns>
-        //[Authorize(Roles = "Administrator, Superuser, OperaterNadmetanja")]
+        [Authorize(Roles = "Administrator, Superuser, OperaterNadmetanja")]
         [HttpOptions]
         public IActionResult GetPrijavaJnOptions()
         {
