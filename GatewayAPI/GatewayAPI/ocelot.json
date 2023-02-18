@@ -1,0 +1,1635 @@
+{
+  "Routes": [
+    //KORISNIK
+    {
+      "DownstreamPathTemplate": "/api/korisnici",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 65447
+        }
+      ],
+      "UpstreamPathTemplate": "/korisnici",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "OPTIONS" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Korisnik"
+    },
+    {
+      "DownstreamPathTemplate": "/api/login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 65447
+        }
+      ],
+      "UpstreamPathTemplate": "/login",
+      "UpstreamHttpMethod": [  "POST"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Korisnik"
+    },
+    {
+      "DownstreamPathTemplate": "/api/korisnici/{korisnikId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 65447
+        }
+      ],
+      "UpstreamPathTemplate": "/korisnici/{korisnikId}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Korisnik"
+    },
+    //DEO PARCELE
+    {
+      "DownstreamPathTemplate": "/api/DeoParcele",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6772
+        }
+      ],
+      "UpstreamPathTemplate": "/DeoParcele",
+      "UpstreamHttpMethod": [ "GET", "POST"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Deo parcele"
+    },
+    {
+      "DownstreamPathTemplate": "/api/DeoParcele/{deoParceleID}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6772
+        }
+      ],
+      "UpstreamPathTemplate": "/DeoParcele/{deoParceleID}",
+      "UpstreamHttpMethod": [ "GET","PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Deo parcele"
+    },
+    //KATASTARSKA OPSTINA
+    {
+      "DownstreamPathTemplate": "/api/KatastarskaOpstina",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6772
+        }
+      ],
+      "UpstreamPathTemplate": "/KatastarskaOpstina",
+      "UpstreamHttpMethod": [ "GET", "POST"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Katastarska opstina"
+    },
+    {
+      "DownstreamPathTemplate": "/api/KatastarskaOpstina/{brojKO}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6772
+        }
+      ],
+      "UpstreamPathTemplate": "/KatastarskaOpstina/{brojKO}",
+      "UpstreamHttpMethod": [ "GET","PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Katastarska opstina"
+    },
+    //PARCELA
+    {
+      "DownstreamPathTemplate": "/api/Parcela",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6772
+        }
+      ],
+      "UpstreamPathTemplate": "/Parcela",
+      "UpstreamHttpMethod": [ "GET", "POST"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Parcela"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Parcela/{brojKO}/{brojParcele}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6772
+        }
+      ],
+      "UpstreamPathTemplate": "/Parcela/{brojKO}/{brojParcele}",
+      "UpstreamHttpMethod": [ "GET","PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Parcela"
+    },
+    //ZONA
+    {
+      "DownstreamPathTemplate": "/api/Zona",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6772
+        }
+      ],
+      "UpstreamPathTemplate": "/Zona",
+      "UpstreamHttpMethod": [ "GET", "POST"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Zona"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Zona/{zonaID}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6772
+        }
+      ],
+      "UpstreamPathTemplate": "/Zona/{zonaID}",
+      "UpstreamHttpMethod": [ "GET","PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Zona"
+    },
+    //ZALBA
+    {
+      "DownstreamPathTemplate": "/api/Zalba",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5058
+        }
+      ],
+      "UpstreamPathTemplate": "/Zalba",
+      "UpstreamHttpMethod": [ "GET", "POST"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Zalba"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Zalba/{zalbaID}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5058
+        }
+      ],
+      "UpstreamPathTemplate": "/Zalba/{zalbaID}",
+      "UpstreamHttpMethod": [ "GET", "PUT","DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Zalba"
+    },
+    //TIP ZALBE
+    {
+      "DownstreamPathTemplate": "/api/TipZalbe",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5058
+        }
+      ],
+      "UpstreamPathTemplate": "/TipZalbe",
+      "UpstreamHttpMethod": [ "GET", "POST"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Tip zalbe"
+    },
+    {
+      "DownstreamPathTemplate": "/api/TipZalbe/{tipZalbeID}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5058
+        }
+      ],
+      "UpstreamPathTemplate": "/TipZalbe/{tipZalbeID}",
+      "UpstreamHttpMethod": [ "GET","PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Tip zalbe"
+    },
+    //UGOVOR O ZAKUPU
+    {
+      "DownstreamPathTemplate": "/api/UgovorOZakupu",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5058
+        }
+      ],
+      "UpstreamPathTemplate": "/UgovorOZakupu",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Ugovor o zakupu"
+    },
+    {
+      "DownstreamPathTemplate": "/api/UgovorOZakupu/{idUgovor}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5058
+        }
+      ],
+      "UpstreamPathTemplate": "/UgovorOZakupu/{idUgovor}",
+      "UpstreamHttpMethod": [ "GET","PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Ugovor o zakupu"
+    },
+    //PRIJAVA NA LICITACIJU
+    {
+      "DownstreamPathTemplate": "/api/PrijavaNaLicitaciju",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 59054
+        }
+      ],
+      "UpstreamPathTemplate": "/PrijavaNaLicitaciju",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Prijava na licitaciju"
+    },
+    {
+      "DownstreamPathTemplate": "/api/PrijavaNaLicitaciju/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 59054
+        }
+      ],
+      "UpstreamPathTemplate": "/PrijavaNaLicitaciju/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Prijava na licitaciju"
+    },
+    //CLAN
+    {
+      "DownstreamPathTemplate": "/api/Clan",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 53552
+        }
+      ],
+      "UpstreamPathTemplate": "/Clan",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Clan"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Clan/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 53552
+        }
+      ],
+      "UpstreamPathTemplate": "/Clan/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Clan"
+    },
+    //KOMISIJA
+    {
+      "DownstreamPathTemplate": "/api/Komisija",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 53552
+        }
+      ],
+      "UpstreamPathTemplate": "/Komisija",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Komisija"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Komisija/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 53552
+        }
+      ],
+      "UpstreamPathTemplate": "/Komisija/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Komisija"
+    },
+    //KOMISIJA CLAN
+    {
+      "DownstreamPathTemplate": "/api/KomisijaClan",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 53552
+        }
+      ],
+      "UpstreamPathTemplate": "/KomisijaClan",
+      "UpstreamHttpMethod": [ "GET", "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Komisija clan"
+    },
+    {
+      "DownstreamPathTemplate": "/api/KomisijaClan/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 53552
+        }
+      ],
+      "UpstreamPathTemplate": "/KomisijaClan/{id}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Komisija Clan"
+    },
+    //PRIJAVA NA JAVNO NADMETANJE
+    {
+      "DownstreamPathTemplate": "/api/prijavaJn",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 48907
+        }
+      ],
+      "UpstreamPathTemplate": "/prijavaJn",
+      "UpstreamHttpMethod": [ "GET", "HEAD", "POST", "OPTIONS" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Prijava na javno nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/prijavaJn/{prijavaId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 48907
+        }
+      ],
+      "UpstreamPathTemplate": "/prijavaJn/{prijavaId}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Prijava na javno nadmetanje"
+    },
+    //LICITACIJA
+    {
+      "DownstreamPathTemplate": "/api/licitacija",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 2710
+        }
+      ],
+      "UpstreamPathTemplate": "/licitacija",
+      "UpstreamHttpMethod": [ "GET", "HEAD", "POST", "OPTIONS" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Licitacija"
+    },
+    {
+      "DownstreamPathTemplate": "/api/licitacija/{licitacijaId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 2710
+        }
+      ],
+      "UpstreamPathTemplate": "/licitacija/{licitacijaId}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Licitacija"
+    },
+    //PROGRAM
+    {
+      "DownstreamPathTemplate": "/api/programEntitet",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 2710
+        }
+      ],
+      "UpstreamPathTemplate": "/programEntitet",
+      "UpstreamHttpMethod": [ "GET", "HEAD", "POST", "OPTIONS" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Program"
+    },
+    {
+      "DownstreamPathTemplate": "/api/programEntitet/{programId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 2710
+        }
+      ],
+      "UpstreamPathTemplate": "/programEntitet/{programId}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Program"
+    },
+    //ETAPA
+    {
+      "DownstreamPathTemplate": "/api/Etapa/getAllEtapas",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Etapa/getAllEtapas",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Etapa"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Etapa/getEtapaById/{etapaId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Etapa/getEtapaById/{etapaId}",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Etapa"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Etapa/save",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Etapa/save",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Etapa"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Etapa/getAllEtapasByLicitacijaId/{licitacijaId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Etapa/getAllEtapasByLicitacijaId/{licitacijaId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Etapa"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Etapa/remove/{etapaId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Etapa/remove/{etapaId}",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Etapa"
+    },
+    //NADMETANJE
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/getAllNadmetanja",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/getAllNadmetanja",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/getAllNadmetanjaByEtapaId/{etapaId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/getAllNadmetanjaByEtapaId/{etapaId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/save",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/save",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/getNadmetanjeById/{NadmetanjeId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/getNadmetanjeById/{NadmetanjeId}",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/remove/{NadmetanjeId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/remove/{NadmetanjeId}",
+      "UpstreamHttpMethod": [ "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/getTipoviForOptions",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/getTipoviForOptions",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/getStatusiForOptions",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/getStatusiForOptions",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/getKrugForOptions",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/getKrugForOptions",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/getStatusiDrugiKrugForOptions",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/getStatusiDrugiKrugForOptions",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/setTipNadmetanjaDefault/{TipNadmetanja}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/setTipNadmetanjaDefault/{TipNadmetanja}",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/setCenaPoHektaruNadmetanjaDefault/{dataIn}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/setCenaPoHektaruNadmetanjaDefault/{dataIn}",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/setDuzinaZakupaNadmetanjaDefault/{dataIn}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/setDuzinaZakupaNadmetanjaDefault/{dataIn}",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/getVrednostJavnogNadmetanja/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/getVrednostJavnogNadmetanja/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/CreateEtapaAndConnectToNadmetanja",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/CreateEtapaAndConnectToNadmetanja",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/setStatusNadmetanja",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/setStatusNadmetanja",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/setStatusDrugiKrugNadmetanja",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/setStatusDrugiKrugNadmetanja",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/setKrugNadmetanja",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/setKrugNadmetanja",
+      "UpstreamHttpMethod": [ "POST" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/getAllByStatusNadmetanja/{dataIn}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/getAllByStatusNadmetanja/{dataIn}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/getAllByStatusDrugiKrugAsync/{dataIn}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/getAllByStatusDrugiKrugAsync/{dataIn}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/getAllByKrugNadmetanjaAsync/{dataIn}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/getAllByKrugNadmetanjaAsync/{dataIn}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/pokretanjeDrugogKruga",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/pokretanjeDrugogKruga",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/getUkupnaZakupljenaPovrsinaByKupacId/{kupacId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/getUkupnaZakupljenaPovrsinaByKupacId/{kupacId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Nadmetanje/getMaksimalnaPovrsina/{nadmetanjeId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 45400
+        }
+      ],
+      "UpstreamPathTemplate": "/Nadmetanje/MaksimalnaPovrsina/{nadmetanjeId}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Nadmetanje"
+    },
+    //FIZICKO LICE
+    {
+      "DownstreamPathTemplate": "/api/fizickolice",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7017
+        }
+      ],
+      "UpstreamPathTemplate": "/fizickolice",
+      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Fizicko lice"
+    },
+    {
+      "DownstreamPathTemplate": "/api/fizickolice/{fizickoliceId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7017
+        }
+      ],
+      "UpstreamPathTemplate": "/fizickolice/{fizickoliceId}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Fizicko lice"
+    },
+    //KUPAC
+    {
+      "DownstreamPathTemplate": "/api/kupac",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 31239
+        }
+      ],
+      "UpstreamPathTemplate": "/kupac",
+      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Kupac"
+    },
+    {
+      "DownstreamPathTemplate": "/api/kupac/{kupacId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 31239
+        }
+      ],
+      "UpstreamPathTemplate": "/kupac/{kupacId}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Kupac"
+    },
+    //PRAVNO LICE
+    {
+      "DownstreamPathTemplate": "/api/pravnolice",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 31239
+        }
+      ],
+      "UpstreamPathTemplate": "/pravnolice",
+      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Pravno lice"
+    },
+    {
+      "DownstreamPathTemplate": "/api/pravnolice/{pravnoliceId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 31239
+        }
+      ],
+      "UpstreamPathTemplate": "/pravnolice/{pravnoliceId}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Pravno lice"
+    },
+    //LICITER
+    {
+      "DownstreamPathTemplate": "/api/liciter",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 31239
+        }
+      ],
+      "UpstreamPathTemplate": "/liciter",
+      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Liciter"
+    },
+    {
+      "DownstreamPathTemplate": "/api/liciter/{liciterId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 31239
+        }
+      ],
+      "UpstreamPathTemplate": "/liciter/{liciterId}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Liciter"
+    },
+    //DOKUMENT
+    {
+      "DownstreamPathTemplate": "/api/dokument",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 2160
+        }
+      ],
+      "UpstreamPathTemplate": "/dokument",
+      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Dokument"
+    },
+    {
+      "DownstreamPathTemplate": "/api/dokument/{dokumentId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 2160
+        }
+      ],
+      "UpstreamPathTemplate": "/dokument/{dokumentId}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Dokument"
+    },
+    //OGLAS
+    {
+      "DownstreamPathTemplate": "/api/oglas",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 2160
+        }
+      ],
+      "UpstreamPathTemplate": "/oglas",
+      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Oglas"
+    },
+    {
+      "DownstreamPathTemplate": "/api/oglas/{oglasId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 2160
+        }
+      ],
+      "UpstreamPathTemplate": "/oglas/{oglasId}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Oglas"
+    },
+    //PREDLOG PLANA PROJEKTA
+    {
+      "DownstreamPathTemplate": "/api/predlogPlanaProjekta",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 2160
+        }
+      ],
+      "UpstreamPathTemplate": "/predlogPlanaProjekta",
+      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Predlog plana projekta"
+    },
+    {
+      "DownstreamPathTemplate": "/api/predlogPlanaProjekta/{predlogId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7030
+        }
+      ],
+      "UpstreamPathTemplate": "/predlogPlanaProjekta/{predlogId}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Predlog plana projekta"
+    },
+    //RESENJE STRUCNE KOMISIJE
+    {
+      "DownstreamPathTemplate": "/api/resenjeStrucnaKomisija",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 2160
+        }
+      ],
+      "UpstreamPathTemplate": "/resenjeStrucnaKomisija",
+      "UpstreamHttpMethod": [ "GET", "POST", "OPTIONS" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Resenje strucna komisija"
+    },
+    {
+      "DownstreamPathTemplate": "/api/resenjeStrucnaKomisija/{resenjeId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 2160
+        }
+      ],
+      "UpstreamPathTemplate": "/resenjeStrucnaKomisija/{resenjeId}",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Resenje strucna komisija"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "Korisnik",
+      "Config": [
+        {
+          "Name": "Korisnik API",
+          "Version": "v1",
+          "Url": "http://localhost:65447/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Deo parcele",
+      "Config": [
+        {
+          "Name": "Deo parcele API",
+          "Version": "v1",
+          "Url": "http://localhost:6772/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Katastarska opstina",
+      "Config": [
+        {
+          "Name": "Katastarska opstina API",
+          "Version": "v1",
+          "Url": "http://localhost:6772/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Parcela",
+      "Config": [
+        {
+          "Name": "Parcela",
+          "Version": "v1",
+          "Url": "http://localhost:6772/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Zona",
+      "Config": [
+        {
+          "Name": "Zona API",
+          "Version": "v1",
+          "Url": "http://localhost:6772/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Zalba",
+      "Config": [
+        {
+          "Name": "Zalba API",
+          "Version": "v1",
+          "Url": "http://localhost:21953/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Tip zalbe",
+      "Config": [
+        {
+          "Name": "Tip zalbe API",
+          "Version": "v1",
+          "Url": "http://localhost:21953/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Ugovor o zakupu",
+      "Config": [
+        {
+          "Name": "Ugovor o zakupu API",
+          "Version": "v1",
+          "Url": "http://localhost:21953/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Prijava na licitaciju",
+      "Config": [
+        {
+          "Name": "Prijava na licitaciju API",
+          "Version": "v1",
+          "Url": "http://localhost:59054/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Clan",
+      "Config": [
+        {
+          "Name": "Clan API",
+          "Version": "v1",
+          "Url": "http://localhost:53552/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Komisija",
+      "Config": [
+        {
+          "Name": "Komisija API",
+          "Version": "v1",
+          "Url": "http://localhost:53552/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Komisija clan",
+      "Config": [
+        {
+          "Name": "Komisija clan API",
+          "Version": "v1",
+          "Url": "http://localhost:53552/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Prijava na javno nadmetanje",
+      "Config": [
+        {
+          "Name": "Prijava na javno nadmetanje API",
+          "Version": "v1",
+          "Url": "http://localhost:48907/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Licitacija",
+      "Config": [
+        {
+          "Name": "Licitacija API",
+          "Version": "v1",
+          "Url": "http://localhost:2710/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Program",
+      "Config": [
+        {
+          "Name": "Program API",
+          "Version": "v1",
+          "Url": "http://localhost:2710/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Etapa",
+      "Config": [
+        {
+          "Name": "Etapa API",
+          "Version": "v1",
+          "Url": "http://localhost:45400/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Nadmetanje",
+      "Config": [
+        {
+          "Name": "Nadmetanje API",
+          "Version": "v1",
+          "Url": "http://localhost:45400/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Fizicko lice",
+      "Config": [
+        {
+          "Name": "Fizicko lice API",
+          "Version": "v1",
+          "Url": "http://localhost:31239/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Pravno lice",
+      "Config": [
+        {
+          "Name": "Pravno lice API",
+          "Version": "v1",
+          "Url": "http://localhost:31239/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Kupac",
+      "Config": [
+        {
+          "Name": "Kupac API",
+          "Version": "v1",
+          "Url": "http://localhost:31239/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Liciter",
+      "Config": [
+        {
+          "Name": "Liciter API",
+          "Version": "v1",
+          "Url": "http://localhost:31239/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Dokument",
+      "Config": [
+        {
+          "Name": "Dokument API",
+          "Version": "v1",
+          "Url": "http://localhost:2160/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Oglas",
+      "Config": [
+        {
+          "Name": "Oglas API",
+          "Version": "v1",
+          "Url": "http://localhost:2160/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Predlog plana projekta",
+      "Config": [
+        {
+          "Name": "Predlog plana projekta API",
+          "Version": "v1",
+          "Url": "http://localhost:2160/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "Resenje strucna komisija",
+      "Config": [
+        {
+          "Name": "Deo Parcele API",
+          "Version": "v1",
+          "Url": "http://localhost:2160/swagger/v1/swagger.json"
+        }
+      ]
+    }
+
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost"
+  }
+}
