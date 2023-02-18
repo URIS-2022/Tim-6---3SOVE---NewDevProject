@@ -116,10 +116,7 @@ namespace nadmetanje_microservice
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger(options =>
-                {
-                    options.SerializeAsV2 = true;
-                });
+                app.UseSwagger();
                 app.UseSwaggerUI(options =>
                 {
                     options.SwaggerEndpoint("/swagger/v1/swagger.json", "Nadmetanje API");
