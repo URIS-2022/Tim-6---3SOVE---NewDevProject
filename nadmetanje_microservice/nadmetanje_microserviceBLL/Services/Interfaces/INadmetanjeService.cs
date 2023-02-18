@@ -43,8 +43,8 @@ namespace nadmetanje_microserviceBLL.Services.Interfaces
 
         Task<ResponsePackageNoData> PokretanjeDrugogKruga();
         //komunikacija sa drugim servisima
-        Task<ActionResult<ResponsePackage<double>>> GetUkupnaZakupljenaPovrsinaByKupacId(Guid kupacId);
-        Task<ActionResult<ResponsePackage<double>>> GetMaksimalnaPovrsina(Guid nadmetanjeId);
+        Task<ResponsePackage<double>> GetUkupnaZakupljenaPovrsinaByKupacId(Guid kupacId);
+        Task<ResponsePackage<double>> GetMaksimalnaPovrsina(Guid nadmetanjeId);
 
     }
 }

@@ -262,9 +262,11 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
             return new ResponsePackageNoData(ResponseStatus.OK, "Drugi krug uspjesno pokrenut");
         }
 
-        public async Task<ActionResult<ResponsePackage<double>>> GetUkupnaZakupljenaPovrsinaByKupacId(Guid kupacId)
+        public async Task<ResponsePackage<double>> GetUkupnaZakupljenaPovrsinaByKupacId(Guid kupacId)
         {
             var nadmetanjaIds = await _nadmetanjeRepository.GetAllNadmetanjeIdsByKupacId(kupacId);
+            if (nadmetanjaIds.Count == 0 || nadmetanjaIds == null)
+                return new ResponsePackage<double>(ResponseStatus.NotFound, "Nepostoji nijedno nadmetanje dobijeno od strane specificiranog kupca.");
             //Dobavljam iz servisa za parcele
             StringBuilder sb = new StringBuilder();
             nadmetanjaIds.ForEach(x => sb.Append(x.ToString()+','));
@@ -273,9 +275,11 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
             return new ResponsePackage<double>(ukupnaPovrsinaKupca, ResponseStatus.OK);
         }
 
-        public async Task<ActionResult<ResponsePackage<double>>> GetMaksimalnaPovrsina(Guid nadmetanjeId)
+        public async Task<ResponsePackage<double>> GetMaksimalnaPovrsina(Guid nadmetanjeId)
         {
             var nadmetanje = await _nadmetanjeRepository.GetByIdAsync(nadmetanjeId, x => x.Etapa);
+            if (nadmetanje == null)
+                return new ResponsePackage<double>(ResponseStatus.NotFound, "Nije pronadjeno nijedno nadmetanje sa specificiranim idijem.");
             var licitacijaId = nadmetanje.Etapa.LicitacijaId;
             //Dobavljam iz servisa za licitaciju
             double maksimalnaPovrsina = 1;
