@@ -14,7 +14,6 @@ namespace KorisnikSistemaServis.Profiles
             CreateMap<Korisnik, Korisnik>();
             CreateMap<KorisnikConfirmation, Korisnik>();
             CreateMap<Korisnik, KorisnikConfirmationDtocs>();
-            //CreateMap<Korisnik, Kredencijali>();
         }
     }
 }
