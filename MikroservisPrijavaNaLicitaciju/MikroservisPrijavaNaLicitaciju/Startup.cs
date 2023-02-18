@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
+
 namespace MikroservisPrijavaNaLicitaciju
 {
     public class Startup
@@ -142,7 +142,6 @@ namespace MikroservisPrijavaNaLicitaciju
             }
 
             app.UseHttpsRedirection();
-            //app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
