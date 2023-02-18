@@ -110,7 +110,7 @@ namespace DokumentMicroservice.Controllers
         /// <response code="500">Greška prilikom vraćanja oglasa</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
         [Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
-        [HttpGet("{oglasId}")]
+        [HttpGet("{oglasId:guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]

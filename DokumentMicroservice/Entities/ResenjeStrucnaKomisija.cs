@@ -17,11 +17,11 @@ namespace DokumentMicroservice.Entities
 
         public DateTime DatumResenje { get; set; } = DateTime.Now;
 
-        public string ImeClanaKomisije { get; set; }
+        public string? ImeClanaKomisije { get; set; }
 
-        public string PrezClanaKomisije { get; set; }
+        public string? PrezClanaKomisije { get; set; }
 
-        public string PredsednikKomisije { get; set; }
+        public string? PredsednikKomisije { get; set; }
 
 
     }

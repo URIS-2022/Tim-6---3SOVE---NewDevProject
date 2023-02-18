@@ -150,14 +150,14 @@ namespace DokumentMicroservice.Migrations
                         {
                             DokumentId = new Guid("e4be32f2-da5e-47d5-9fbf-b860eb1d79b3"),
                             PredlogId = new Guid("4ff44338-8d0b-415a-8b44-dfce3d4c311d"),
-                            DatumPredlog = new DateTime(2023, 2, 18, 0, 11, 35, 621, DateTimeKind.Local).AddTicks(205),
+                            DatumPredlog = new DateTime(2023, 2, 18, 18, 2, 50, 619, DateTimeKind.Local).AddTicks(6655),
                             ZavodniBr = "PSPG-1/2022"
                         },
                         new
                         {
                             DokumentId = new Guid("d762b24f-2730-427f-9789-3d840a5f7e39"),
                             PredlogId = new Guid("b708754f-b5e9-481b-8898-ca3682107e9c"),
-                            DatumPredlog = new DateTime(2023, 2, 18, 0, 11, 35, 621, DateTimeKind.Local).AddTicks(222),
+                            DatumPredlog = new DateTime(2023, 2, 18, 18, 2, 50, 619, DateTimeKind.Local).AddTicks(6671),
                             ZavodniBr = "PSPG-5/2022"
                         });
                 });
@@ -174,15 +174,12 @@ namespace DokumentMicroservice.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ImeClanaKomisije")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PredsednikKomisije")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PrezClanaKomisije")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Zavodnibr")
@@ -201,7 +198,7 @@ namespace DokumentMicroservice.Migrations
                         {
                             DokumentId = new Guid("c8e97d45-4bfc-4dca-ba07-20d1e93049d6"),
                             ResenjeId = new Guid("22b74319-edb5-4945-b792-76d0b1b81d88"),
-                            DatumResenje = new DateTime(2023, 2, 18, 0, 11, 35, 621, DateTimeKind.Local).AddTicks(259),
+                            DatumResenje = new DateTime(2023, 2, 18, 18, 2, 50, 619, DateTimeKind.Local).AddTicks(6711),
                             ImeClanaKomisije = "Marko",
                             PredsednikKomisije = "PredPetarPetrovic",
                             PrezClanaKomisije = "Markovic",
@@ -211,7 +208,7 @@ namespace DokumentMicroservice.Migrations
                         {
                             DokumentId = new Guid("418af1d2-483f-4461-8d82-31b257527a4f"),
                             ResenjeId = new Guid("e3eab479-b0aa-4161-bbc9-d2281f43f332"),
-                            DatumResenje = new DateTime(2023, 2, 18, 0, 11, 35, 621, DateTimeKind.Local).AddTicks(269),
+                            DatumResenje = new DateTime(2023, 2, 18, 18, 2, 50, 619, DateTimeKind.Local).AddTicks(6724),
                             ImeClanaKomisije = "Luka",
                             PredsednikKomisije = "PredDraganDraganovic",
                             PrezClanaKomisije = "Markovic",

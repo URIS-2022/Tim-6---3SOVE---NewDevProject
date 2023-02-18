@@ -7,10 +7,10 @@ namespace DokumentMicroservice.Services
     public class ServiceCall<T> : IServiceCall<T>
     {
 
-        //private readonly ILoggerService _loggerService;
+        
         public ServiceCall()
         {
-            // _loggerService = loggerService;
+            
         }
 
         public async Task<T> SendGetRequestAsync(string url, string token)

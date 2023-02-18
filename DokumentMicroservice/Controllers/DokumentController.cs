@@ -195,7 +195,7 @@ namespace DokumentMicroservice.Controllers
         /// <summary>
         ///     Brisanje dokumenta na osnovu ID-a
         /// </summary>
-        /// <param name="id">ID dokumenta</param>
+        /// <param name="dokumentId">ID dokumenta</param>
         /// <response code="204">Dokument je uspešno obrisan</response>
         /// <response code="404">Nije pronadjen dokument za uneti ID</response>
         /// <response code="500">Greška prilikom brisanja dokumenta</response>

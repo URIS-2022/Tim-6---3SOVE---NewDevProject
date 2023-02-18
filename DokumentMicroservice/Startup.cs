@@ -146,7 +146,7 @@ namespace DokumentMicroservice
                 c.IncludeXmlComments(xmlPath);
 
             });
-            //services.AddMvc();
+            
             services.AddControllers();
             services.AddDbContext<DokumentDbContext>();
         }
@@ -161,7 +161,7 @@ namespace DokumentMicroservice
             }
 
             app.UseHttpsRedirection();
-            //app.UseStaticFiles();
+            
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

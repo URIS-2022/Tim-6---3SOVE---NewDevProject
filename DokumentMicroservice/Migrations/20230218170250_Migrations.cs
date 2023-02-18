@@ -75,9 +75,9 @@ namespace DokumentMicroservice.Migrations
                     DokumentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Zavodnibr = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DatumResenje = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ImeClanaKomisije = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PrezClanaKomisije = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PredsednikKomisije = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ImeClanaKomisije = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PrezClanaKomisije = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PredsednikKomisije = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -117,8 +117,8 @@ namespace DokumentMicroservice.Migrations
                 columns: new[] { "DokumentId", "PredlogId", "DatumPredlog", "ZavodniBr" },
                 values: new object[,]
                 {
-                    { new Guid("d762b24f-2730-427f-9789-3d840a5f7e39"), new Guid("b708754f-b5e9-481b-8898-ca3682107e9c"), new DateTime(2023, 2, 18, 0, 11, 35, 621, DateTimeKind.Local).AddTicks(222), "PSPG-5/2022" },
-                    { new Guid("e4be32f2-da5e-47d5-9fbf-b860eb1d79b3"), new Guid("4ff44338-8d0b-415a-8b44-dfce3d4c311d"), new DateTime(2023, 2, 18, 0, 11, 35, 621, DateTimeKind.Local).AddTicks(205), "PSPG-1/2022" }
+                    { new Guid("d762b24f-2730-427f-9789-3d840a5f7e39"), new Guid("b708754f-b5e9-481b-8898-ca3682107e9c"), new DateTime(2023, 2, 18, 18, 2, 50, 619, DateTimeKind.Local).AddTicks(6671), "PSPG-5/2022" },
+                    { new Guid("e4be32f2-da5e-47d5-9fbf-b860eb1d79b3"), new Guid("4ff44338-8d0b-415a-8b44-dfce3d4c311d"), new DateTime(2023, 2, 18, 18, 2, 50, 619, DateTimeKind.Local).AddTicks(6655), "PSPG-1/2022" }
                 });
 
             migrationBuilder.InsertData(
@@ -126,8 +126,8 @@ namespace DokumentMicroservice.Migrations
                 columns: new[] { "DokumentId", "ResenjeId", "DatumResenje", "ImeClanaKomisije", "PredsednikKomisije", "PrezClanaKomisije", "Zavodnibr" },
                 values: new object[,]
                 {
-                    { new Guid("418af1d2-483f-4461-8d82-31b257527a4f"), new Guid("e3eab479-b0aa-4161-bbc9-d2281f43f332"), new DateTime(2023, 2, 18, 0, 11, 35, 621, DateTimeKind.Local).AddTicks(269), "Luka", "PredDraganDraganovic", "Markovic", "PSPG-9/2022" },
-                    { new Guid("c8e97d45-4bfc-4dca-ba07-20d1e93049d6"), new Guid("22b74319-edb5-4945-b792-76d0b1b81d88"), new DateTime(2023, 2, 18, 0, 11, 35, 621, DateTimeKind.Local).AddTicks(259), "Marko", "PredPetarPetrovic", "Markovic", "PSPG-2/2022" }
+                    { new Guid("418af1d2-483f-4461-8d82-31b257527a4f"), new Guid("e3eab479-b0aa-4161-bbc9-d2281f43f332"), new DateTime(2023, 2, 18, 18, 2, 50, 619, DateTimeKind.Local).AddTicks(6724), "Luka", "PredDraganDraganovic", "Markovic", "PSPG-9/2022" },
+                    { new Guid("c8e97d45-4bfc-4dca-ba07-20d1e93049d6"), new Guid("22b74319-edb5-4945-b792-76d0b1b81d88"), new DateTime(2023, 2, 18, 18, 2, 50, 619, DateTimeKind.Local).AddTicks(6711), "Marko", "PredPetarPetrovic", "Markovic", "PSPG-2/2022" }
                 });
 
             migrationBuilder.CreateIndex(

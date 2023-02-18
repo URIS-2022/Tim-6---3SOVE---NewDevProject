@@ -106,7 +106,7 @@ namespace DokumentMicroservice.Controllers
         /// <summary>
         ///     Kreira novi predlog plana projekta
         /// </summary>
-        /// <param name="PredlogPlanaprojektaDto">Model predloga plana projekta</param>
+        /// <param name="redlogPlanaprojektaDto">Model predloga plana projekta</param>
         /// <returns>Dokument</returns>
         /// <response code="201">Vraća kreirani dokument</response>
         /// <response code="500">Greška prilikom kreiranja dokumenta</response>
