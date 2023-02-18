@@ -110,14 +110,8 @@ namespace ms_parcela.Data
         }
         public async Task<int> GetUkupnaPovrsinaDelovaByNadmetanjeId(List<Guid?> nadmetanja)
         {
-            /*var relevantniDelovi= await dbContext.Set<DeoParcele>()
-                .Where(dp => dp.NadmetanjeId == nadmetanjeID).Select(dp=>dp.NadmetanjeId).ToListAsync(); //nademtanja
-
-            int totalArea = deloviParcele
-            .Where(dp => dp.NadmetanjeId == nadmetanjeID)
-            .Sum(p => p.povrsinaDelaParcele);
-
-            return totalArea;*/
+            //var relevantniDelovi= await dbContext.Set<DeoParcele>()
+                //.Where(dp => dp.NadmetanjeId == nadmetanjeID).Select(dp=>dp.NadmetanjeId).ToListAsync(); //nademtanja
 
             int ukupnaPovrsina=0;
             var relevantniDeloviParcele = await dbContext.DeoParceles.Where(dp => nadmetanja.Contains(dp.NadmetanjeId)).ToListAsync();

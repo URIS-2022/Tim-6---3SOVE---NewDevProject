@@ -11,9 +11,6 @@ namespace ms_parcela.Profiles
             CreateMap<KatastarskaOpstina, KatastarskaOpstinaDto>();
             CreateMap<KatastarskaOpstinaCreationDto, KatastarskaOpstina>();
             CreateMap<KatastarskaOpstinaUpdateDto, KatastarskaOpstina>();
-            //CreateMap<List<KatastarskaOpstinaUpdateDto>, KatastarskaOpstinaDto>();
-            //CreateMap<List<KatastarskaOpstina>, KatastarskaOpstinaDto>();
-
         }
     }
 }

@@ -127,7 +127,7 @@ namespace ms_parcela.Controllers
         public async Task<ActionResult<ParcelaConfirmationDto>> UpdateParcela([FromBody] ParcelaUpdateDto updateParcelaRequest, [FromRoute] Guid brojKo,int brojParcele, Kultura k, Obradivost o, OblikSvojine os, Odvodnjavanje odv, Klasa kl)
         {
             Parcela parcelaUpdate = mapper.Map<Parcela>(updateParcelaRequest);
-            ParcelaConfirmation parcelaConfirm = await parceleRepository.UpdateParcela(parcelaUpdate, brojKo,brojParcele,k,o,os,odv,kl);
+            ParcelaConfirmation? parcelaConfirm = await parceleRepository.UpdateParcela(parcelaUpdate, brojKo,brojParcele,k,o,os,odv,kl);
 
             if (parceleRepository.GetParcelaByID(updateParcelaRequest.brojKatastraskaOpstina, updateParcelaRequest.brojParcele) != null)
             {

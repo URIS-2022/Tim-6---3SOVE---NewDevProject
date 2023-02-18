@@ -111,6 +111,7 @@
              </summary>
              <param name="updateKoRequest">Model katastarske opštine</param>
             <param name="brojKO">Broj katastarske opštine koja se menja</param>
+            <param name="o">Naziv katastarske opštine</param>
              <returns>Potvrda o izmeni katastarske opštine</returns>
              <response code="200">Izmena katastarske opštine</response>
              <response code="404">Nije pronađena katastarska opština za uneti broj</response>
@@ -212,6 +213,15 @@
             <response code="200">Vraća listu zona</response>
             <response code="404">Nije pronađena ni jedna zona</response>
             
+        </member>
+        <member name="M:ms_parcela.Controllers.ZonaController.GetZonaById(System.Guid)">
+            <summary>
+            Vraća jednu zonu na osnovu ID-ja
+            </summary>
+            <param name="zonaID">ID zone</param>
+            <returns>Zona</returns>
+            <response code="200">Vraća traženu zonu</response>
+            <response code="404">Nije pronađena zona za uneti ID</response>
         </member>
         <member name="M:ms_parcela.Controllers.ZonaController.AddZona(ms_parcela.Models.ZonaModel.ZonaCreationDto,ms_parcela.Entities.brojevi_zona)">
             <summary>

@@ -14,9 +14,5 @@ namespace ms_parcela.Entities
 
         public brojevi_zona brojZona { get; set; }
 
-        //public IEnumerable<Parcela> Parcela { get; set; }
-
-
-
     }
 }

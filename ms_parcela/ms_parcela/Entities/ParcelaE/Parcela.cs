@@ -23,8 +23,5 @@ namespace ms_parcela.Entities.ParcelaE
         public OblikSvojine oblikSvojine { get; set; }
         public Odvodnjavanje odvodnjavanje { get; set; }
 
-        //[ForeignKey("Zonas")]
-        //public Guid zonaID { get; set; }
-        //public IEnumerable<DeoParcele> DeoParcela { get; set; }
     }
 }

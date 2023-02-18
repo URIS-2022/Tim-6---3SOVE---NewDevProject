@@ -37,7 +37,6 @@ namespace ms_parcela.Controllers
         {
             return Ok(mapper.Map<List<ZonaDto>>(await zonaRepository.GetAllZona()));
         }
-        [HttpGet]
         /// <summary>
         /// Vraća jednu zonu na osnovu ID-ja
         /// </summary>
@@ -45,6 +44,7 @@ namespace ms_parcela.Controllers
         /// <returns>Zona</returns>
         /// <response code="200">Vraća traženu zonu</response>
         /// <response code="404">Nije pronađena zona za uneti ID</response>
+        [HttpGet]
         [Route("{zonaID}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

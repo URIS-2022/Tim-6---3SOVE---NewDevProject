@@ -15,6 +15,6 @@ namespace ms_parcela.Models.DeoParceleModel
         public Guid brojKatastraskaOpstina { get; set; }
         
         public int brojParcele { get; set; }
-        public NadmetanjeDto Nadmetanje { get; set; }
+        public NadmetanjeDto? Nadmetanje { get; set; }
     }
 }

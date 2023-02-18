@@ -99,7 +99,7 @@ namespace ms_parcela
                 // serialize enums as strings in api responses (e.g. Role)
                 x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
             });
-            //services.AddDbContext<AuctionLandAPIContext>();
+            
 
             services.AddSwaggerGen(c =>
             {
@@ -134,7 +134,7 @@ namespace ms_parcela
                     {
                         Name = "Sandra Lazarević",
                         Email = "sandra.lazarevic123@gmail.com",
-                        //Url = new Uri(Configuration["Swagger:Github"])
+                        Url = new Uri(Configuration["Swagger:Github"])
                     }
 
                 });
@@ -143,7 +143,7 @@ namespace ms_parcela
                 c.IncludeXmlComments(xmlCommentsPath);
             });
            
-            //services.AddMvc();
+            
             //services.AddControllers();
             services.AddDbContext<AuctionLandAPIContext>();
         }
@@ -158,7 +158,6 @@ namespace ms_parcela
             }
 
             app.UseHttpsRedirection();
-            //app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

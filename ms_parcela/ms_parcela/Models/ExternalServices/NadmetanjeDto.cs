@@ -7,7 +7,7 @@
         public int Status { get; set; }
         public double CenaPoHektaru { get; set; }
         public int DuzinaZakupa { get; set; }
-        public string RedniBroj { get; set; }
+        public string? RedniBroj { get; set; }
         public Guid? EtapaId { get; set; }
         public int KrugNadmetanja { get; set; }
         public int? StatusDrugiKrug { get; set; }

@@ -92,6 +92,7 @@ namespace ms_parcela.Controllers
         /// </summary>
         /// <param name="updateKoRequest">Model katastarske opštine</param>
         ///<param name="brojKO">Broj katastarske opštine koja se menja</param>
+        ///<param name="o">Naziv katastarske opštine</param>
         /// <returns>Potvrda o izmeni katastarske opštine</returns>
         /// <response code="200">Izmena katastarske opštine</response>
         /// <response code="404">Nije pronađena katastarska opština za uneti broj</response>
