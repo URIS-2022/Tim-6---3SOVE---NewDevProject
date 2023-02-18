@@ -6,12 +6,11 @@ namespace ms_zalba.Entities.UgovorOZakupuE
 {
     public class UgovorOZakupu
     {
-        //public Guid JavnoNadmetanje { get; set; }
-        //public Guid Odluka { get; set; }
+      
         [Key]
         public Guid idUgovor { get; set; }
         public string tipGarancije { get; set; }
-        //public Guid lice { get; set; }
+
         [DataType(DataType.Date)]
         [Column(TypeName = "date")]
         public DateTime rokDospeca { get; set; }

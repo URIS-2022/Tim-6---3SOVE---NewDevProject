@@ -49,11 +49,6 @@ namespace ms_zalba.Database
                 .HasConversion<string>()
             .HasMaxLength(50);
 
-            
-            
-
-            
-
         }
         public DbSet<TipZalbe> TipZalbes { get; set; }
         public DbSet<Zalba> Zalbas { get; set; }

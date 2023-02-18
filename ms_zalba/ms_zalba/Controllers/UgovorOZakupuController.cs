@@ -18,11 +18,10 @@ namespace ms_zalba.Controllers
         private readonly IMapper mapper;
         private readonly IConfiguration configuration;
 
-        public UgovorOZakupuController(IUgovorOZakupuRepository ugovorOZakupuRepository,IMapper mapper,IConfiguration configuration)
+        public UgovorOZakupuController(IUgovorOZakupuRepository ugovorOZakupuRepository,IMapper mapper )
         {
             this.ugovorOZakupuRepository = ugovorOZakupuRepository;
             this.mapper = mapper;
-            this.configuration = configuration;
         }
         /// <summary>
         ///  Vraća sve ugovore o zakupu

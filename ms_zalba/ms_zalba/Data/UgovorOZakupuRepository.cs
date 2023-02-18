@@ -24,11 +24,9 @@ namespace ms_zalba.Data
         {
             var ugovorOZ = new UgovorOZakupu()
             {
-                //JavnoNadmetanje = Guid.NewGuid(),
-                //Odluka=Guid.NewGuid(),
+                
                 idUgovor=addUgovorOZakupuRequest.idUgovor,
-                tipGarancije=addUgovorOZakupuRequest.tipGarancije,
-                //lice=Guid.NewGuid(),
+                tipGarancije=addUgovorOZakupuRequest.tipGarancije, 
                 rokDospeca=addUgovorOZakupuRequest.rokDospeca,
                 zavodniBroj=addUgovorOZakupuRequest.zavodniBroj,
                 datumZavodjanja=addUgovorOZakupuRequest.datumZavodjanja,
@@ -78,18 +76,15 @@ namespace ms_zalba.Data
             var ugovor = await dbContext.UgovorOZakupus.FindAsync(idUgovora);
             if (ugovor != null)
             {
-                //JavnoNadmetanje = Guid.NewGuid(),
-                //Odluka=Guid.NewGuid(),
+                
                 ugovor.idUgovor = updateUgovorOZakupuRequest.idUgovor;
                 ugovor.tipGarancije = updateUgovorOZakupuRequest.tipGarancije;
-                //lice=Guid.NewGuid(),
                 ugovor.rokDospeca = updateUgovorOZakupuRequest.rokDospeca;
                 ugovor.zavodniBroj = updateUgovorOZakupuRequest.zavodniBroj;
                 ugovor.datumZavodjanja = updateUgovorOZakupuRequest.datumZavodjanja;
                 ugovor.rokZaVracanjeZemljista = updateUgovorOZakupuRequest.rokZaVracanjeZemljista;
                 ugovor.mestoPotpisivanja = updateUgovorOZakupuRequest.mestoPotpisivanja;
                 ugovor.datumPotpisa = updateUgovorOZakupuRequest.datumPotpisa;
-
                 await dbContext.SaveChangesAsync();
                 //var ugovorUpd = await dbContext.UgovorOZakupus.ToListAsync();
                 return mapper.Map<UgovorOZakupuConfirmation>(ugovor);
