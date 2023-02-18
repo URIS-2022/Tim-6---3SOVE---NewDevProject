@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>nadmetanje_microserviceWebApp</name>
+    </assembly>
+    <members>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.EtapaController.GetAllEtapas">
+            <summary>
+            Vraća sve etape.
+            </summary>
+            <returns>Lista etapa</returns>
+            <response code="200">Vraća listu etapa</response>
+            <response code="404">Nije pronađeno nijedna etapa</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.EtapaController.GetAllEtapasByLicitacijaId(System.Guid)">
+            <summary>
+            Vraća sve etape na osnovu licitacija idija.
+            </summary>
+            <param name="licitacijaId">ID licitacije</param>
+            <returns>Lista etapa</returns>
+            <response code="200">Vraća listu etapa sadrzanih na odredjenoj licitaciji</response>
+            <response code="404">Nije pronađeno nijedno etapa na specificiranoj licitaciji</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.EtapaController.Save(nadmetanje_microserviceBLL.DTOs.Etapa.DataIn.EtapaSaveDataIn)">
+             <summary>
+             Kreira novu etapu ili izmjenjuje staru u zavisnosti da li je prosledjen id etape.
+             </summary>
+             <param name="dataIn">Ulazni model etape</param>
+             <returns>Potvrdu o kreiranoj ili izmjenjenoj etapi.</returns>
+             <remarks>
+             Primer zahtjeva za kreiranje nove etape\
+             POST /api/etapa/save \
+             {\
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",\
+            "licitacijaId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",\
+            "datum": "2023-02-18T00:02:22.245Z",\
+            "vremePocetka": "00:00:00",\
+            "vremeZavrsetka": "00:00:00"\
+             }\
+             </remarks>
+             <response code="200">Vraća poruku o uspjesnom kreiranju/izmjeni etape.</response>
+             <response code="500">Došlo je do greške na serveru prilikom kreiranja etape.</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.EtapaController.GetEtapaById(System.Guid)">
+            <summary>
+            Vraća jednu etapu na osnovu ID-ja etape.
+            </summary>
+            <param name="etapaId">ID etape</param>
+            <returns>etapu</returns>
+            <response code="200">Vraća traženu etapu</response>
+            <response code="404">Nije pronađena nijedna etapa sa specificiranim IDijem</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.EtapaController.Remove(System.Guid)">
+            <summary>
+            Vrši brisanje jedne etape sistema na osnovu ID-ja etape.
+            </summary>
+            <param name="etapaId">ID etape</param>
+            <returns>Poruka o uspjesnom brisanju etape ili o gresci.</returns>
+            <response code="204">Etapa uspješno obrisana</response>
+            <response code="404">Nije pronađena etapa za brisanje</response>
+            <response code="500">Došlo je do greške na serveru prilikom brisanja etape</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.GetAllNadmetanjes">
+            <summary>
+            Vraća sva nadmetanja.
+            </summary>
+            <returns>Lista nadmetanja</returns>
+            <response code="200">Vraća listu nadmetanja</response>
+            <response code="404">Nije pronađeno nijedno nadmetanje</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.GetAllNadmetanjaByEtapaId(System.Guid)">
+            <summary>
+            Vraća sva nadmetanja na osnovu id etape.
+            </summary>
+            <param name="etapaId">ID etape</param>
+            <returns>Lista nadmetanja</returns>
+            <response code="200">Vraća listu nadmetanja sadrzanih na odredjenoj etapi</response>
+            <response code="404">Nije pronađeno nijedno nadmetanje na specificiranoj etapi</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.Save(nadmetanje_microserviceBLL.DTOs.Nadmetanje.DataIn.NadmetanjeDataIn)">
+             <summary>
+             Kreira novo nadmetanje ili izmjenjuje staro u zavisnosti da li je prosledjen id nadmetanja.
+             </summary>
+             <param name="dataIn">Ulazni model nadmetanja</param>
+             <returns>Potvrdu o kreiranom ili izmjenjenom nadmetanju.</returns>
+             <remarks>
+             Primer zahtjeva za kreiranje novog nadmetanja \
+             POST /api/nadmetanje/save \
+             {     \
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",\
+            "tip": 1,\
+            "status": 1,\
+            "cenaPoHektaru": 50,\
+            "duzinaZakupa": 2,\
+            "etapaId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",\
+            "krugNadmetanja": 1,\
+            "statusDrugiKrug": null\
+            }
+             </remarks>
+             <response code="200">Vraća poruku o uspjesnom kreiranju/izmjeni nadmetanja.</response>
+             <response code="500">Došlo je do greške na serveru prilikom kreiranja nadmetanja</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.GetNadmetanjeById(System.Guid)">
+            <summary>
+            Vraća jedno nadmetanje na osnovu ID-ja nadmetanja.
+            </summary>
+            <param name="NadmetanjeId">ID nadmetanja</param>
+            <returns></returns>
+            <response code="200">Vraća traženo nadmetanje</response>
+            <response code="404">Nije pronađeno nijedno nadmetanje sa specificiranim IDijem</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.Remove(System.Guid)">
+            <summary>
+            Vrši brisanje jednog nadmetanja sistema na osnovu ID-ja nadmetanja.
+            </summary>
+            <param name="NadmetanjeId">ID etape</param>
+            <returns>Poruka o uspjesnom brisanju nadmetanja ili o gresci.</returns>
+            <response code="204">Nadmetanje uspješno obrisano</response>
+            <response code="404">Nije pronađeno nadmetanje za brisanje</response>
+            <response code="500">Došlo je do greške na serveru prilikom brisanja nadmetanja</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.GetTipoviForOptions">
+            <summary>
+            Vraća sve tipove nadmetanja (enumeracija).
+            </summary>
+            <returns>Lista (key, value) predstavljena enumeracija po vrijednosti i imenu</returns>
+            <response code="200">Lista (key, value) za tipove nadmetanja</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.GetStatusiForOptions">
+            <summary>
+            Vraća sve statuse nadmetanja (enumeracija).
+            </summary>
+            <returns>Lista (key, value) predstavljena enumeracija po vrijednosti i imenu</returns>
+            <response code="200">Lista (key, value) za statuse nadmetanja</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.GetKrugForOptions">
+            <summary>
+            Vraća sve krugove nadmetanja (enumeracija).
+            </summary>
+            <returns>Lista (key, value) predstavljena enumeracija po vrijednosti i imenu</returns>
+            <response code="200">Lista (key, value) za krugove nadmetanja</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.GetStatusiDrugiKrugForOptions">
+            <summary>
+            Vraća sve statuse drugog kruga nadmetanja (enumeracija).
+            </summary>
+            <returns>Lista (key, value) predstavljena enumeracija po vrijednosti i imenu</returns>
+            <response code="200">Lista (key, value) za statuse drugog kruga nadmetanja</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.SetTipNadmetanjaDefault(System.Nullable{nadmetanje_microserviceDLL.Model.TipNadmetanja})">
+            <summary>
+            Vrši setovanje default-nog tipa nadmetanja.
+            </summary>
+            <param name="TipNadmetanja">Vrijednost default-nog tipa</param>
+            <returns>Poruka o uspjesnom postavljanju default-nog tipa nadmetanja</returns>
+            <response code="200">Default-ni tip uspjesno postavljen.</response>
+            <response code="500">Došlo je do greške na serveru prilikom postavljanja default tipa</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.SetCenaPoHektaruNadmetanjaDefault(System.Nullable{System.Double})">
+            <summary>
+            Vrši setovanje default-ne cijene po hektaru nadmetanja.
+            </summary>
+            <param name="dataIn">Vrijednost default-ne cijene po hektaru</param>
+            <returns>Poruka o uspjesnom postavljanju default-ne cijene po hektaru nadmetanja</returns>
+            <response code="200">default-na cijena po hektaru uspjesno postavljen.</response>
+            <response code="500">Došlo je do greške na serveru prilikom postavljanja default-ne cijene po hektaru</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.SetDuzinaZakupaNadmetanjaDefault(System.Nullable{System.Int32})">
+            <summary>
+            Vrši setovanje default-ne duzine zakupa nadmetanja.
+            </summary>
+            <param name="dataIn">Vrijednost default-ne duzine zakupa</param>
+            <returns>Poruka o uspjesnom postavljanju default-ne duzine zakupa nadmetanja</returns>
+            <response code="200">default-na duzina zakupa uspjesno postavljen.</response>
+            <response code="500">Došlo je do greške na serveru prilikom postavljanja default-ne duzine zakupa</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.GetVrednostJavnogNadmetanja(System.Guid)">
+            <summary>
+            Vraca ukupnu vrijednost javnog nadmetanja.
+            </summary>
+            <param name="id">ID javnog nadmetanja</param>
+            <response code="200">Ukupna vrijednost javnog nadmetanja (double)</response>
+            <response code="404">Nije pronađeno javno nadmetanje</response>
+            <response code="500">Došlo je do greške na serveru prilikom dobavljanja ukupne vrijednosti javnog nadmetanja.</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.CreateEtapaAndConnectToNadmetanja(nadmetanje_microserviceBLL.DTOs.Nadmetanje.DataIn.CreateEtapaAndConnectToNadmetanjaDataIn)">
+             <summary>
+             Kreira novu etapu i povezuje selektovana nadmetanja sa njom
+             </summary>
+             <param name="dataIn">Ulazni model sastavljen iz dva dijela : EtapaSaveDataIn kao i lista idijeva selektovanih nadmetanja.</param>
+             <returns>Potvrdu o kreiranoj etapi i povezivanju sa selektovanim nadmetanjima.</returns>
+             <remarks>
+             Primer zahtjeva za kreiranje etape i povezivanje sa selektovanim nadmetanjima \
+             POST /api/nadmetanje/createEtapaAndConnectToNadmetanja \
+            {\\
+              "etapaInfos": {\
+                "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",\
+                "licitacijaId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",\
+                "datum": "2023-02-17T23:30:35.541Z",\
+                "vremePocetka": "00:00:00",\
+                "vremeZavrsetka": "00:00:00"\
+              },\
+              "nadmetanjaIds": [\
+                "3fa85f64-5717-4562-b3fc-2c963f66afa6"\
+              ]\
+             }
+             </remarks>
+             <response code="200">Vraća poruku o uspjesnom kreiranju etape i povezivanju sa selektovanim nadmetanjima.</response>
+             <response code="500">Došlo je do greške na serveru prilikom kreiranju etape i povezivanju sa selektovanim nadmetanjima</response>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.SetStatusNadmetanja(nadmetanje_microserviceBLL.DTOs.Nadmetanje.DataIn.SetTipNadmetanjaDataIn{nadmetanje_microserviceDLL.Model.StatusNadmetanja})" -->
+        <!-- Badly formed XML comment ignored for member "M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.SetStatusDrugiKrugNadmetanja(nadmetanje_microserviceBLL.DTOs.Nadmetanje.DataIn.SetTipNadmetanjaDataIn{nadmetanje_microserviceDLL.Model.StatusDrugiKrug})" -->
+        <!-- Badly formed XML comment ignored for member "M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.SetKrugNadmetanja(nadmetanje_microserviceBLL.DTOs.Nadmetanje.DataIn.SetTipNadmetanjaDataIn{nadmetanje_microserviceDLL.Model.KrugNadmetanja})" -->
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.GetAllByStatusNadmetanja(nadmetanje_microserviceDLL.Model.StatusNadmetanja)">
+            <summary>
+            Vraća sva nadmetanja na osnovu prosledjene vrijednosti enumeracije.
+            </summary>
+            <param name="dataIn">vrijednost enumeracije status nadmetanja</param>
+            <returns>Lista nadmetanja</returns>
+            <response code="200">Vraća listu nadmetanja koja su odredjenog statusa</response>
+            <response code="404">Nije pronađeno nijedno nadmetanje sa specificiranim statusom</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.GetAllByStatusDrugiKrugAsync(nadmetanje_microserviceDLL.Model.StatusDrugiKrug)">
+            <summary>
+            Vraća sva nadmetanja na osnovu prosledjene vrijednosti enumeracije.
+            </summary>
+            <param name="dataIn">vrijednost enumeracije statusa drugog kruga nadmetanja</param>
+            <returns>Lista nadmetanja</returns>
+            <response code="200">Vraća listu nadmetanja koja su odredjenog statusa drugog kruga</response>
+            <response code="404">Nije pronađeno nijedno nadmetanje sa specificiranim statusom drugog kruga</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.GetAllByStatusDrugiKrugAsync(nadmetanje_microserviceDLL.Model.KrugNadmetanja)">
+            <summary>
+            Vraća sva nadmetanja na osnovu prosledjene vrijednosti enumeracije.
+            </summary>
+            <param name="dataIn">vrijednost enumeracije krug nadmetanja</param>
+            <returns>Lista nadmetanja</returns>
+            <response code="200">Vraća listu nadmetanja koja su odredjenog kruga</response>
+            <response code="404">Nije pronađeno nijedno nadmetanje sa specificiranim krugom</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.PokretanjeDrugogKruga">
+            <summary>
+            Inicira se proces pokretanja drugog kruga.
+            </summary>
+            <returns>Poruka o uspjehu</returns>
+            <response code="200">Drugi krug uspjesno pokrenut.</response>
+            <response code="500">Drugi krug nije pokrenut radi greske servera</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.GetUkupnaZakupljenaPovrsinaByKupacId(System.Guid)">
+            <summary>
+            Vraća ukupnu zakupljenu povrsinu za odredjenog kupca.
+            </summary>
+            <param name="kupacId">ID kupca</param>
+            <returns>(double) ukupnu povrsinu koju kupac ima zakupljenu na prethodnim nadmetanjima.</returns>
+            <response code="200">(double) Ukupnu povrsinu koju kupac ima zakupljenu na prethodnim nadmetanjima.</response>
+            <response code="404">Nije pronađeno nijedno nadmetanje sa specificiranim IDijem kupca</response>
+        </member>
+        <member name="M:nadmetanje_microserviceWebApp.Controllers.NadmetanjeController.GetMaksimalnaPovrsina(System.Guid)">
+            <summary>
+            Vraća maksimalnu povrsinu predvidjenu programom za dato nadmetanje.
+            </summary>
+            <param name="nadmetanjeId">ID nadmetanja</param>
+            <returns>(double) maksimalnu povrsinu predvidjenu programom za dato nadmetanje.</returns>
+            <response code="200">(double) maksimalnu povrsinu predvidjenu programom za dato nadmetanje.</response>
+            <response code="404">Nije pronađeno nijedno nadmetanje sa specificiranim IDijem nadmetanja</response>
+        </member>
+    </members>
+</doc>

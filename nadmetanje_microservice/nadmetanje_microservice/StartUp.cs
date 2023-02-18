@@ -8,6 +8,10 @@ using Microsoft.OpenApi.Models;
 using nadmetanje_microserviceBLL.Mappings;
 using Microsoft.OpenApi.Any;
 using System.ComponentModel.Design;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Reflection;
 
 namespace nadmetanje_microservice
 {
@@ -31,47 +35,74 @@ namespace nadmetanje_microservice
                        .AllowAnyHeader();
             }));
 
+            services.AddDatabaseDeveloperPageExceptionFilter();
+
+            var secret = Configuration["Jwt:Key"].ToString();
+            var key = Encoding.ASCII.GetBytes(secret);
+            services.AddAuthentication(option =>
+            {
+                option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+            {
+                options.RequireHttpsMetadata = false;
+                options.SaveToken = true;
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateIssuerSigningKey = true
+                };
+            });
+
+            services.AddSwaggerGen(c => {
+                var securitySchema = new OpenApiSecurityScheme
+                {
+                    Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "bearer",
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    }
+                };
+
+                c.AddSecurityDefinition("Bearer", securitySchema);
+
+                var securityRequirement = new OpenApiSecurityRequirement
+                {
+                    { securitySchema, new[] { "Bearer" } }
+                };
+
+                c.AddSecurityRequirement(securityRequirement);
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Nadmetanje sistema API",
+                    Version = "v1",
+                    Description = "Ovaj API odnosi se na nadmetanja sistema koji se implementira, i pruza osnovne CRUD kao i dodatne operacije.",
+                    Contact = new Microsoft.OpenApi.Models.OpenApiContact
+                    {
+                        Name = "Vukasin Stanisic IT26/2019",
+                        Email = "vukasin.vs23@@gmail.com",
+                        Url = new Uri(Configuration["Swagger:Github"])
+                    }
+
+                });
+                var xmlComments = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlCommentsPath = Path.Combine(AppContext.BaseDirectory, xmlComments);
+                c.IncludeXmlComments(xmlCommentsPath);
+            });
+
             services.AddDbContext<NadmetanjeContext>(options =>
                 options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"], sqlServerOptions =>
                 {
                     sqlServerOptions.EnableRetryOnFailure(5, TimeSpan.FromSeconds(10), null);
                     sqlServerOptions.CommandTimeout(40000);
                 }));
-
-            services.AddDatabaseDeveloperPageExceptionFilter();
-
-            services.AddSwaggerGen(c => {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Nadmetanje API", Version = "v1" });
-                c.MapType<TimeSpan>(() => new OpenApiSchema
-                {
-                    Type = "string",
-                    Example = new OpenApiString("00:00:00")
-                });
-                c.AddSecurityDefinition("Bearer",
-                    new OpenApiSecurityScheme
-                    {
-                        In = ParameterLocation.Header,
-                        Description =
-                            "Please enter into field the word 'Bearer' following by space and JWT",
-                        Name = "authorization",
-                        Type = SecuritySchemeType.ApiKey
-                    });
-                c.AddSecurityRequirement(new OpenApiSecurityRequirement() {
-                    {
-                        new OpenApiSecurityScheme {
-                            Reference =
-                                new OpenApiReference {
-                                    Type = ReferenceType.SecurityScheme, Id = "Bearer"
-                                },
-                            Scheme = "oauth2",
-                            Name = "Bearer",
-                            In = ParameterLocation.Header,
-                        },
-                        new List<string>()
-                    }
-                });
-                c.CustomSchemaIds(type => $"{type.Name}_{System.Guid.NewGuid()}");
-            });
 
             services.AddControllersWithViews();
             services.AddMvc();
@@ -92,7 +123,7 @@ namespace nadmetanje_microservice
                 app.UseSwaggerUI(options =>
                 {
                     options.SwaggerEndpoint("/swagger/v1/swagger.json", "Nadmetanje API");
-                    options.RoutePrefix = "apiDoc";
+                    options.RoutePrefix = "swagger";
                 });
             }
             else
@@ -106,6 +137,7 @@ namespace nadmetanje_microservice
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

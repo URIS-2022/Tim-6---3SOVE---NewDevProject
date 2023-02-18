@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using nadmetanje_microserviceBLL.DTOs.Etapa.DataIn;
 using nadmetanje_microserviceBLL.DTOs.Etapa.DataOut;
@@ -20,6 +21,7 @@ namespace nadmetanje_microserviceWebApp.Controllers
         /// <returns>Lista etapa</returns>
         /// <response code="200">Vraća listu etapa</response>
         /// <response code="404">Nije pronađeno nijedna etapa</response>
+        [Authorize(Roles = "Administrator, Superuser, OperaterNadmetanje, Menadzer")]
         [HttpGet("getAllEtapas")]
         public async Task<ActionResult<List<EtapaDataOut>>> GetAllEtapas()
         {
@@ -33,6 +35,7 @@ namespace nadmetanje_microserviceWebApp.Controllers
         /// <returns>Lista etapa</returns>
         /// <response code="200">Vraća listu etapa sadrzanih na odredjenoj licitaciji</response>
         /// <response code="404">Nije pronađeno nijedno etapa na specificiranoj licitaciji</response>
+        [Authorize(Roles = "Administrator, Superuser, OperaterNadmetanje, Menadzer")]
         [HttpGet("getAllEtapasByLicitacijaId/{licitacijaId}")]
         public async Task<ActionResult<List<EtapaDataOut>>> GetAllEtapasByLicitacijaId(Guid licitacijaId)
         {
@@ -57,6 +60,7 @@ namespace nadmetanje_microserviceWebApp.Controllers
         /// </remarks>
         /// <response code="200">Vraća poruku o uspjesnom kreiranju/izmjeni etape.</response>
         /// <response code="500">Došlo je do greške na serveru prilikom kreiranja etape.</response>
+        [Authorize(Roles = "Administrator, Superuser, OperaterNadmetanje")]
         [HttpPost("save")]
         public async Task<ActionResult<List<EtapaDataOut>>> Save([FromBody] EtapaSaveDataIn dataIn)
         {
@@ -70,6 +74,7 @@ namespace nadmetanje_microserviceWebApp.Controllers
         /// <returns>etapu</returns>
         /// <response code="200">Vraća traženu etapu</response>
         /// <response code="404">Nije pronađena nijedna etapa sa specificiranim IDijem</response>
+        [Authorize(Roles = "Administrator, Superuser, OperaterNadmetanje, Menadzer")]
         [HttpGet("getEtapaById/{etapaId}")]
         public async Task<ActionResult<List<EtapaDataOut>>> GetEtapaById(Guid etapaId)
         {
@@ -84,6 +89,7 @@ namespace nadmetanje_microserviceWebApp.Controllers
         /// <response code="204">Etapa uspješno obrisana</response>
         /// <response code="404">Nije pronađena etapa za brisanje</response>
         /// <response code="500">Došlo je do greške na serveru prilikom brisanja etape</response>
+        [Authorize(Roles = "Administrator, Superuser, OperaterNadmetanje")]
         [HttpDelete("remove/{etapaId}")]
         public async Task<ActionResult<List<EtapaDataOut>>> Remove(Guid etapaId)
         {

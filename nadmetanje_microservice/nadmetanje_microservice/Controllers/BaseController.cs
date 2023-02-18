@@ -4,8 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace nadmetanje_microserviceWebApp.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
-    //[Authorize]
+    //[ApiController]
     public class BaseController : ControllerBase
     { 
     }
