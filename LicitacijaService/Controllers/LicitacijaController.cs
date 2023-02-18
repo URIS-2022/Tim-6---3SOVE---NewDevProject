@@ -41,7 +41,7 @@ namespace LicitacijaService.Controllers
         /// <response code="200">Vraća listu licitacija</response>
         /// <response code="404">Nije pronađena nijedna licitacija</response>
         /// 
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer, OperaterNadmetanja, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, Menadzer, OperaterNadmetanja, PrvaKomisija")]
         [HttpGet]
         [HttpHead]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -66,7 +66,7 @@ namespace LicitacijaService.Controllers
         /// <response code="200">Vraća traženu licitaciju</response>
         /// <response code="404">Nije pronađena licitacija za uneti ID</response>
         /// 
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer, OperaterNadmetanja, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, Menadzer, OperaterNadmetanja, PrvaKomisija")]
         [HttpGet("{licitacijaId}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -103,7 +103,7 @@ namespace LicitacijaService.Controllers
         /// <response code="201">Vraća kreiranu licitaciju</response>
         /// <response code="500">Desila se greška prilikom unosa nove licitacije</response>
         /// 
-        //[Authorize(Roles = "Administrator, Superuser, OperaterNadmetanja, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, OperaterNadmetanja, PrvaKomisija")]
         [HttpPost]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -136,7 +136,7 @@ namespace LicitacijaService.Controllers
         /// <response code="404">Nije pronađena licitacija za uneti ID</response>
         /// <response code="500">Serverska greška tokom modifikacije licitacija</response>
         /// 
-        //[Authorize(Roles = "Administrator, Superuser,  OperaterNadmetanja, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser,  OperaterNadmetanja, PrvaKomisija")]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -174,7 +174,7 @@ namespace LicitacijaService.Controllers
         /// <response code="404">Nije pronađena licitacija za uneti ID</response>
         /// <response code="500">Serverska greška tokom brisanja licitacije</response>
         /// 
-        //[Authorize(Roles = "Administrator, Superuser,  OperaterNadmetanja, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser,  OperaterNadmetanja, PrvaKomisija")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -204,7 +204,7 @@ namespace LicitacijaService.Controllers
         /// </summary>
         /// <returns></returns>
 
-        //[Authorize(Roles = "Administrator, Superuser,  OperaterNadmetanja, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser,  OperaterNadmetanja, PrvaKomisija")]
         [HttpOptions]
         public IActionResult GetLicitacijaOptions()
         {
@@ -213,7 +213,7 @@ namespace LicitacijaService.Controllers
         }
 
 
-       [HttpGet("maksimalnaPovrsina/{licitacijaId}")]
+       [HttpGet("{licitacijaId}/maksimalnaPovrsina")]
         public async Task<ActionResult<int>> GetMaksimalnaPovrsina(Guid licitacijaId)
         {
             var licitacija = await _licitacijaRepository.GetLicitacijaById(licitacijaId);

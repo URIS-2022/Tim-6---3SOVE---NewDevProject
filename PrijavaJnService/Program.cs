@@ -1,4 +1,4 @@
-using PrijavaJnService.Data;
+/*using PrijavaJnService.Data;
 using PrijavaJnService.Data.Interfaces;
 using PrijavaJnService.Entities.DataContext;
 using AutoMapper;
@@ -38,7 +38,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         {securitySchema, new[] {"Bearer"} }
     };
-    c.AddSecurityRequirement(securityRequirement);*/
+    c.AddSecurityRequirement(securityRequirement);
     c.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "PrijavaJn Api",
@@ -60,7 +60,7 @@ builder.Services.AddSwaggerGen(c =>
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     c.IncludeXmlComments(xmlPath);
 });
-/*var secret = Configuration["Jwt:Key"].ToString();
+var secret = Configuration["Jwt:Key"].ToString();
 var key = Encoding.ASCII.GetBytes(secret);
 builder.Services.AddAuthentication(option =>
 {
@@ -77,7 +77,7 @@ builder.Services.AddAuthentication(option =>
         ValidateAudience = false,
         ValidateIssuerSigningKey = true
     };
-});*/
+});
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IPrijavaJnRepository, PrijavaJnRepository>();
 builder.Services.AddScoped<IServiceCall<KupacDto>, ServiceCallKupacMock<KupacDto>>();
@@ -99,4 +99,23 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+app.Run();*/
+
+namespace PrijavaJnService
+{
+    public static class Program
+    {
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
+    }
+}
+

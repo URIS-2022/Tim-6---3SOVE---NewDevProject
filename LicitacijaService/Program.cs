@@ -1,4 +1,4 @@
-using LicitacijaService.Data;
+/*using LicitacijaService.Data;
 using LicitacijaService.Data.Interfaces;
 using LicitacijaService.Entities.DataContext;
 using Microsoft.OpenApi.Models;
@@ -15,7 +15,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    /*var securitySchema = new OpenApiSecurityScheme
+    var securitySchema = new OpenApiSecurityScheme
     {
         Description = "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
         Name = "Authorization",
@@ -33,7 +33,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         {securitySchema, new[] {"Bearer"} }
     };
-    c.AddSecurityRequirement(securityRequirement);*/
+    c.AddSecurityRequirement(securityRequirement);
     c.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "Licitacija Api",
@@ -60,7 +60,7 @@ builder.Services.AddControllers().AddJsonOptions(options =>
     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
     options.JsonSerializerOptions.WriteIndented = true;
 });
-/*var secret = Configuraion["Jwt:Key"].ToString();
+var secret = Configuraion["Jwt:Key"].ToString();
 var key = Encoding.ASCII.GetBytes(secret);
 builder.Services.AddAuthentication(option =>
 {
@@ -77,7 +77,7 @@ builder.Services.AddAuthentication(option =>
         ValidateAudience = false,
         ValidateIssuerSigningKey = true
     };
-});*/
+});
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IProgramEntitetRepository, ProgramEntitetRepository>();
 builder.Services.AddScoped<ILicitacijaRepository, LicitacijaRepository>();
@@ -100,3 +100,32 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+*/
+
+using LicitacijaService;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace LicitacijaService
+{
+    public static class Program
+    {
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
+                });
+    }
+}
