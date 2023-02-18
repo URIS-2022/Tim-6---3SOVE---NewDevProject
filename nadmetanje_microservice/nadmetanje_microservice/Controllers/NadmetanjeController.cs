@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Net.Http.Headers;
 using nadmetanje_microserviceBLL.Common;
 using nadmetanje_microserviceBLL.DTOs.Etapa;
 using nadmetanje_microserviceBLL.DTOs.Nadmetanje.DataIn;
@@ -377,7 +378,8 @@ namespace nadmetanje_microserviceWebApp.Controllers
         [HttpGet("getUkupnaZakupljenaPovrsinaByKupacId/{kupacId}")]
         public async Task<ActionResult<ResponsePackage<double>>> GetUkupnaZakupljenaPovrsinaByKupacId(Guid kupacId)
         {
-            return Ok(await _nadmetanjeService.GetUkupnaZakupljenaPovrsinaByKupacId(kupacId));
+            var token = Request.Headers[HeaderNames.Authorization].ToString().Replace("Bearer ", "");
+            return Ok(await _nadmetanjeService.GetUkupnaZakupljenaPovrsinaByKupacId(kupacId, token));
         }
 
         /// <summary>
@@ -391,7 +393,8 @@ namespace nadmetanje_microserviceWebApp.Controllers
         [HttpGet("getMaksimalnaPovrsina/{nadmetanjeId}")]
         public async Task<ActionResult<ResponsePackage<double>>> GetMaksimalnaPovrsina(Guid nadmetanjeId)
         {
-            return Ok(await _nadmetanjeService.GetMaksimalnaPovrsina(nadmetanjeId));
+            var token = Request.Headers[HeaderNames.Authorization].ToString().Replace("Bearer ", "");
+            return Ok(await _nadmetanjeService.GetMaksimalnaPovrsina(nadmetanjeId, token));
         }
     }
 }

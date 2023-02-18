@@ -213,7 +213,7 @@ namespace LicitacijaService.Controllers
         }
 
 
-       [HttpGet("{licitacijaId}/maksimalnaPovrsina")]
+       [HttpGet("maksimalnaPovrsina/{licitacijaId}")]
         public async Task<ActionResult<int>> GetMaksimalnaPovrsina(Guid licitacijaId)
         {
             var licitacija = await _licitacijaRepository.GetLicitacijaById(licitacijaId);

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using nadmetanje_microserviceBLL.Common;
 using nadmetanje_microserviceBLL.DTOs;
 using nadmetanje_microserviceBLL.DTOs.Etapa;
@@ -25,13 +26,15 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
         private readonly IEtapaService _etapaService;
         private readonly IMapper _mapper;
         private readonly IHttpService<double> _httpService;
+        private readonly IConfiguration _configuration;
 
-        public NadmetanjeService(INadmetanjeRepository nadmetanjeRepository, IMapper mapper, IEtapaService etapaService, IHttpService<double> httpService)
+        public NadmetanjeService(IConfiguration configuration,INadmetanjeRepository nadmetanjeRepository, IMapper mapper, IEtapaService etapaService, IHttpService<double> httpService)
         {
             _nadmetanjeRepository = nadmetanjeRepository;
             _etapaService = etapaService;
             _mapper = mapper;
             _httpService = httpService;
+            _configuration = configuration;
         }
         public async Task<ResponsePackage<List<NadmetanjeDataOut>>> GetAllAsync()
         {
@@ -262,7 +265,7 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
             return new ResponsePackageNoData(ResponseStatus.OK, "Drugi krug uspjesno pokrenut");
         }
 
-        public async Task<ResponsePackage<double>> GetUkupnaZakupljenaPovrsinaByKupacId(Guid kupacId)
+        public async Task<ResponsePackage<double>> GetUkupnaZakupljenaPovrsinaByKupacId(Guid kupacId, string token)
         {
             var nadmetanjaIds = await _nadmetanjeRepository.GetAllNadmetanjeIdsByKupacId(kupacId);
             if (nadmetanjaIds.Count == 0 || nadmetanjaIds == null)
@@ -275,14 +278,15 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
             return new ResponsePackage<double>(ukupnaPovrsinaKupca, ResponseStatus.OK);
         }
 
-        public async Task<ResponsePackage<double>> GetMaksimalnaPovrsina(Guid nadmetanjeId)
+        public async Task<ResponsePackage<double>> GetMaksimalnaPovrsina(Guid nadmetanjeId, string token)
         {
             var nadmetanje = await _nadmetanjeRepository.GetByIdAsync(nadmetanjeId, x => x.Etapa);
             if (nadmetanje == null)
                 return new ResponsePackage<double>(ResponseStatus.NotFound, "Nije pronadjeno nijedno nadmetanje sa specificiranim idijem.");
             var licitacijaId = nadmetanje.Etapa.LicitacijaId;
             //Dobavljam iz servisa za licitaciju
-            double maksimalnaPovrsina = 1;
+            double maksimalnaPovrsina = await _httpService
+                .SendGetRequestAsync(_configuration["GatewayUrl"] + "licitacija/maksimalnaPovrsina/" + licitacijaId, token);
             //
             return new ResponsePackage<double>(maksimalnaPovrsina, ResponseStatus.OK);
         }
