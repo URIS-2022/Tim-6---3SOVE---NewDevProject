@@ -112,19 +112,19 @@ namespace PrijavaJnService
                 c.AddSecurityRequirement(securityRequirement);
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "PrijavaJn Api",
+                    Title = "Prijava na javno nadmetanje API",
                     Version = "v1",
                     Description = "An API to perform PrijavaJn operations",
                     Contact = new OpenApiContact
                     {
                         Name = "Eva Lukac",
                         Email = "evalukac00@gmail.com",
-                        Url = new Uri("http://www.ftn.uns.ac.rs/")
+                        Url = new Uri(Configuration["Swagger:Website"])
                     },
                     License = new OpenApiLicense
                     {
                         Name = "FTN licence",
-                        Url = new Uri("http://www.ftn.uns.ac.rs/"),
+                        Url = new Uri(Configuration["Swagger:Website"]),
                     }
                 });
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -140,11 +140,10 @@ namespace PrijavaJnService
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PrijavaJn_Mikroservis v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Prijava na javno nadmetanje API v1"));
             }
 
             app.UseHttpsRedirection();
-            //app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

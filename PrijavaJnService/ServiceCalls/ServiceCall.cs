@@ -9,10 +9,8 @@ namespace PrijavaJnService.ServiceCalls
 {
     public class ServiceCall<T> : IServiceCall<T>
     {
-        //private readonly ILoggerService _loggerService;
         public ServiceCall()
         {
-           // _loggerService = loggerService;
         }
 
         public async Task<T> SendGetRequestAsync(string url)
@@ -23,7 +21,6 @@ namespace PrijavaJnService.ServiceCalls
 
                 var request = new HttpRequestMessage(HttpMethod.Get, url);
                 request.Headers.Add("Accept", "application/json");
-                //httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 var response = await httpClient.SendAsync(request);
 

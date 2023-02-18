@@ -36,8 +36,7 @@ namespace PrijavaJnService.Models.PrijavaJn
         /// Zatvorena ponuda
         /// </summary>
         public bool ZatvorenaPonuda { get; set; }
-        //public OvlascenoLiceDto OvlascenoLice { get; set; }
-
+        
         /// <summary>
         /// Dokumentacija fizicka lica
         /// </summary>

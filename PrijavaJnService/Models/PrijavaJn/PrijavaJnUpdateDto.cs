@@ -50,6 +50,5 @@ namespace PrijavaJnService.Models.PrijavaJn
         /// Dokumentacija pravna lica
         /// </summary>
         public string DokPravnaLica { get; set; }
-        //public OvlascenoLiceDto OvlascenoLice { get; set; }
     }
 }

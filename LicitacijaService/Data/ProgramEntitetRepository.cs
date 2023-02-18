@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-//using AutoMapper;
 
 namespace LicitacijaService.Data
 {
@@ -22,7 +21,6 @@ namespace LicitacijaService.Data
         public async Task<List<ProgramEntitet>> GetAllProgramEntitet()
         {
             return await _context.ProgramEntitet
-                //.Where(pr => (nazivStatusaZalbe == null || sz.NazivStatusaZalbe == nazivStatusaZalbe))
                 .ToListAsync();
         }
 

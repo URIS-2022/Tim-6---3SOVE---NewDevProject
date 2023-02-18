@@ -46,8 +46,7 @@ namespace PrijavaJnService.Models.PrijavaJn
         /// Dokumentacija pravna lica
         /// </summary>
         public string DokPravnaLica { get; set; }
-        //public Guid? OvlascenoLiceId { get; set; }
-
+       
         /// <summary>
         /// ID kupca koji podnisi prijavu
         /// </summary>

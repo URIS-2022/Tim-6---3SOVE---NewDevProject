@@ -161,7 +161,7 @@ namespace LicitacijaService.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Update licitacija error");
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
         }
 
@@ -195,7 +195,7 @@ namespace LicitacijaService.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Delete licitacija error");
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
             }
         }
 

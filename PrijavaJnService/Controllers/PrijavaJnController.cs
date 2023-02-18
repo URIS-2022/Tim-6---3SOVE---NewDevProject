@@ -31,7 +31,8 @@ namespace PrijavaJnService.Controllers
         /// <param name="prijavaJnRepository">Repo prijaveJn</param>
         /// <param name="linkGenerator">Link generator za create zahtev</param>
         /// <param name="mapper">AutoMapper</param>
-
+        /// <param name="kupacService">KupacService</param>
+        /// <param name="configuration">Configuration</param>
         public PrijavaJnController(IPrijavaJnRepository prijavaJnRepository, LinkGenerator linkGenerator, IMapper mapper, IServiceCall<KupacDto> kupacService, IConfiguration configuration)
         {
             _prijavaJnRepository = prijavaJnRepository;

@@ -54,9 +54,5 @@ namespace PrijavaJnService.Entities
         public string DokPravnaLica { get; set; }
 
         public Guid? KupacId { get; set; }
-
-        //[ForeignKey("OvlascenoLice")]
-        //public Guid? OvlascenoLiceId { get; set; }
-        //public List<Guid> JavnoNadmetanje { get; set; }
     }
 }

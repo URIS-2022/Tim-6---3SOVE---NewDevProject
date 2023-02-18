@@ -117,12 +117,12 @@ namespace LicitacijaService
                     {
                         Name = "Eva Lukac",
                         Email = "evalukac00@gmail.com",
-                        Url = new Uri("http://www.ftn.uns.ac.rs/")
+                        Url = new Uri(Configuration["Swagger:Website"])
                     },
                     License = new OpenApiLicense
                     {
                         Name = "FTN licence",
-                        Url = new Uri("http://www.ftn.uns.ac.rs/"),
+                        Url = new Uri(Configuration["Swagger:Website"]),
                     }
                 });
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
