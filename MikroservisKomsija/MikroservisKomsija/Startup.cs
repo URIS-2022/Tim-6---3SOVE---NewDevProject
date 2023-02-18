@@ -110,7 +110,7 @@ namespace MikroservisKomsija
                 {
                     { securitySchema, new[] { "Bearer" } }
                 };
-
+                var url = "http://www.ftn.uns.ac.rs/";
                 c.AddSecurityRequirement(securityRequirement);
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
@@ -121,12 +121,12 @@ namespace MikroservisKomsija
                     {
                         Name = "Ognjen Dupljanin",
                         Email = "dupljaninognjen5@gmail.com",
-                        Url = new Uri("http://www.ftn.uns.ac.rs/")
+                        Url = new Uri(url)
                     },
                     License = new OpenApiLicense
                     {
                         Name = "FTN licence",
-                        Url = new Uri("http://www.ftn.uns.ac.rs/"),
+                        Url = new Uri(url)
                     }
                 });
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
