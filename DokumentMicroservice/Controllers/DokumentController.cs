@@ -4,6 +4,7 @@ using DokumentMicroservice.Data.Interfaces;
 using DokumentMicroservice.Entities;
 using DokumentMicroservice.Entities.DataConfirmations;
 using DokumentMicroservice.Models;
+using DokumentMicroservice.Models.Oglas;
 using DokumentMicroservice.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -60,7 +61,9 @@ namespace DokumentMicroservice.Controllers
                     
                     return NoContent();
                 }
-               
+
+                //var dokumentiDto = new List<Komisija>();
+                //string url = _configuration["Services:MikroservisKomisija"];
 
                 return Ok(_mapper.Map<List<DokumentDto>>(dokumenti));
             }
