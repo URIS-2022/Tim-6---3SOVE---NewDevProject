@@ -92,6 +92,24 @@
       "FileCacheOptions": { "TtlSeconds": 30 },
       "SwaggerKey": "Deo parcele"
     },
+    {
+      "DownstreamPathTemplate": "/api/DeoParcele/nadmetanja",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6772
+        }
+      ],
+      "UpstreamPathTemplate": "/DeoParcele/nadmetanja",
+      "UpstreamHttpMethod": [ "GET", "PUT", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "FileCacheOptions": { "TtlSeconds": 30 },
+      "SwaggerKey": "Deo parcele"
+    },
     //KATASTARSKA OPSTINA
     {
       "DownstreamPathTemplate": "/api/KatastarskaOpstina",
