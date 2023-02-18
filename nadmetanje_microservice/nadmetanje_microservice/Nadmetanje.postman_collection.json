@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "7dafce0d-5e45-4a8b-bcc5-e6db72e16983",
+		"name": "Nadmetanje",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15928597"
+	},
+	"item": [
+		{
+			"name": "getAll",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY3MzEwMzQsImV4cCI6MTY3NjczODIzNCwiaWF0IjoxNjc2NzMxMDM0fQ.rhiLRfvFoo3Ux7rhF9gy0PrkShNrZHO4VR_V2TyOHkA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:45400/api/nadmetanje/getAllNadmetanja",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "45400",
+					"path": [
+						"api",
+						"nadmetanje",
+						"getAllNadmetanja"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAll by etapaId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY3MzEwMzQsImV4cCI6MTY3NjczODIzNCwiaWF0IjoxNjc2NzMxMDM0fQ.rhiLRfvFoo3Ux7rhF9gy0PrkShNrZHO4VR_V2TyOHkA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:45400/api/nadmetanje/getAllNadmetanjaByEtapaId/167dd964-1ead-4790-aa98-1048f2daed3c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "45400",
+					"path": [
+						"api",
+						"nadmetanje",
+						"getAllNadmetanjaByEtapaId",
+						"167dd964-1ead-4790-aa98-1048f2daed3c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save/update nadmetanje",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY3MzEwMzQsImV4cCI6MTY3NjczODIzNCwiaWF0IjoxNjc2NzMxMDM0fQ.rhiLRfvFoo3Ux7rhF9gy0PrkShNrZHO4VR_V2TyOHkA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": null,\r\n  \"tip\": 1,\r\n  \"status\": 1,\r\n  \"cenaPoHektaru\": 1,\r\n  \"duzinaZakupa\": 1,\r\n  \"etapaId\": \"167dd964-1ead-4790-aa98-1048f2daed3c\",\r\n  \"krugNadmetanja\": 1,\r\n  \"statusDrugiKrug\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:45400/api/nadmetanje/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "45400",
+					"path": [
+						"api",
+						"nadmetanje",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY3MzEwMzQsImV4cCI6MTY3NjczODIzNCwiaWF0IjoxNjc2NzMxMDM0fQ.rhiLRfvFoo3Ux7rhF9gy0PrkShNrZHO4VR_V2TyOHkA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:45400/api/nadmetanje/getNadmetanjeById/86c9be85-07af-4e14-8d91-4801dd2ca9bb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "45400",
+					"path": [
+						"api",
+						"nadmetanje",
+						"getNadmetanjeById",
+						"86c9be85-07af-4e14-8d91-4801dd2ca9bb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY3MzEwMzQsImV4cCI6MTY3NjczODIzNCwiaWF0IjoxNjc2NzMxMDM0fQ.rhiLRfvFoo3Ux7rhF9gy0PrkShNrZHO4VR_V2TyOHkA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:45400/api/nadmetanje/remove/86c9be85-07af-4e14-8d91-4801dd2ca9bb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "45400",
+					"path": [
+						"api",
+						"nadmetanje",
+						"remove",
+						"86c9be85-07af-4e14-8d91-4801dd2ca9bb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get zakupljena povrsina by kupac id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY3MzEwMzQsImV4cCI6MTY3NjczODIzNCwiaWF0IjoxNjc2NzMxMDM0fQ.rhiLRfvFoo3Ux7rhF9gy0PrkShNrZHO4VR_V2TyOHkA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:45400/api/nadmetanje/getUkupnaZakupljenaPovrsinaByKupacId/sadgfb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "45400",
+					"path": [
+						"api",
+						"nadmetanje",
+						"getUkupnaZakupljenaPovrsinaByKupacId",
+						"sadgfb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get maksimalna povrsina by nadmetanjeId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY3MzEwMzQsImV4cCI6MTY3NjczODIzNCwiaWF0IjoxNjc2NzMxMDM0fQ.rhiLRfvFoo3Ux7rhF9gy0PrkShNrZHO4VR_V2TyOHkA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:45400/api/nadmetanje/getMaksimalnaPovrsina/dec19a55-ac2d-43a9-880d-382e9a2b6b3e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "45400",
+					"path": [
+						"api",
+						"nadmetanje",
+						"getMaksimalnaPovrsina",
+						"dec19a55-ac2d-43a9-880d-382e9a2b6b3e"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY3MzEwMzQsImV4cCI6MTY3NjczODIzNCwiaWF0IjoxNjc2NzMxMDM0fQ.rhiLRfvFoo3Ux7rhF9gy0PrkShNrZHO4VR_V2TyOHkA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

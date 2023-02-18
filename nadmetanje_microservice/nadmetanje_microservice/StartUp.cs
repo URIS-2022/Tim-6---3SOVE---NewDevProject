@@ -116,10 +116,7 @@ namespace nadmetanje_microservice
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger(options =>
-                {
-                    options.SerializeAsV2 = true;
-                });
+                app.UseSwagger();
                 app.UseSwaggerUI(options =>
                 {
                     options.SwaggerEndpoint("/swagger/v1/swagger.json", "Nadmetanje API");
@@ -146,12 +143,12 @@ namespace nadmetanje_microservice
             });
         }
 
-        private void AddMappings(IServiceCollection services)
+        private static void AddMappings(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(EtapaProfile));
         }
 
-        private void BindServices(IServiceCollection services)
+        private static void BindServices(IServiceCollection services)
         {
             services.AddHttpContextAccessor();
             services.AddTransient<IEtapaService, EtapaService>();

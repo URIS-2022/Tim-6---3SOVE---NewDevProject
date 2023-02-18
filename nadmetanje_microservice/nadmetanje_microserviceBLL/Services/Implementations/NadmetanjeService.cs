@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using nadmetanje_microserviceBLL.Common;
 using nadmetanje_microserviceBLL.DTOs;
 using nadmetanje_microserviceBLL.DTOs.Etapa;
@@ -25,13 +26,15 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
         private readonly IEtapaService _etapaService;
         private readonly IMapper _mapper;
         private readonly IHttpService<double> _httpService;
+        private readonly IConfiguration _configuration;
 
-        public NadmetanjeService(INadmetanjeRepository nadmetanjeRepository, IMapper mapper, IEtapaService etapaService, IHttpService<double> httpService)
+        public NadmetanjeService(IConfiguration configuration,INadmetanjeRepository nadmetanjeRepository, IMapper mapper, IEtapaService etapaService, IHttpService<double> httpService)
         {
             _nadmetanjeRepository = nadmetanjeRepository;
             _etapaService = etapaService;
             _mapper = mapper;
             _httpService = httpService;
+            _configuration = configuration;
         }
         public async Task<ResponsePackage<List<NadmetanjeDataOut>>> GetAllAsync()
         {
@@ -72,21 +75,28 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
             return new ResponsePackageNoData(ResponseStatus.OK, "Nadmetanje uspesno izbrisano.");
         }
 
-        public async Task<ResponsePackageNoData> Save(NadmetanjeDataIn dataIn)
+        private string getRedniBroj(Nadmetanje firstByRedniBroj)
         {
-            string redniBroj = "";
             int rB = 0;
-            var firstByRedniBroj = await _nadmetanjeRepository.GetFirstSortedByRedniBroj();
             if (firstByRedniBroj == null)
-                redniBroj = "001";
+                return "001";
             else
             {
                 if (int.TryParse(firstByRedniBroj.RedniBroj, out rB))
                 {
                     rB++;
-                    redniBroj = rB.ToString().PadLeft(3, '0');
+                    return rB.ToString().PadLeft(3, '0');
                 }
+                else
+                    return "001";
             }
+        }
+
+
+        public async Task<ResponsePackageNoData> Save(NadmetanjeDataIn dataIn)
+        {
+            var firstByRedniBroj = await _nadmetanjeRepository.GetFirstSortedByRedniBroj();
+            string redniBroj = getRedniBroj(firstByRedniBroj);
             var nadmetanje = _mapper.Map<Nadmetanje>(dataIn);
             //create
             if (dataIn.Id == null)
@@ -116,6 +126,14 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
             var nadmetanjeDb = await _nadmetanjeRepository.GetByIdAsync(nadmetanje.Id);
             if (nadmetanjeDb == null)
                 return new ResponsePackageNoData(ResponseStatus.NotFound, "Nadmetanje nije pronadjeno u bazi.");
+            UpdateNadmetanje(nadmetanje,nadmetanjeDb);
+
+            await _nadmetanjeRepository.CompleteAsync();
+            return new ResponsePackageNoData(ResponseStatus.OK, "nadmetanje uspesno izmenjena.");
+        }
+
+        private void UpdateNadmetanje(Nadmetanje nadmetanje, Nadmetanje nadmetanjeDb)
+        {
             if (nadmetanjeDb.EtapaId != nadmetanje.EtapaId)
                 nadmetanjeDb.EtapaId = nadmetanje.EtapaId;
             if (nadmetanjeDb.Tip != nadmetanje.Tip)
@@ -126,15 +144,12 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
                 nadmetanjeDb.CenaPoHektaru = nadmetanje.CenaPoHektaru;
             if (nadmetanjeDb.DuzinaZakupa != nadmetanje.DuzinaZakupa)
                 nadmetanjeDb.DuzinaZakupa = nadmetanje.DuzinaZakupa;
-            if (nadmetanjeDb.RedniBroj != nadmetanje.RedniBroj)
-                nadmetanjeDb.RedniBroj = nadmetanje.RedniBroj;
+            //if (nadmetanjeDb.RedniBroj != nadmetanje.RedniBroj)
+            //    nadmetanjeDb.RedniBroj = nadmetanje.RedniBroj;
             if (nadmetanjeDb.KrugNadmetanja != nadmetanje.KrugNadmetanja)
                 nadmetanjeDb.KrugNadmetanja = nadmetanje.KrugNadmetanja;
             if (nadmetanjeDb.StatusDrugiKrug != nadmetanje.StatusDrugiKrug)
                 nadmetanjeDb.StatusDrugiKrug = nadmetanje.StatusDrugiKrug;
-
-            await _nadmetanjeRepository.CompleteAsync();
-            return new ResponsePackageNoData(ResponseStatus.OK, "nadmetanje uspesno izmenjena.");
         }
 
         public List<DictionaryItem<string>> GetTipoviForOptions()
@@ -218,9 +233,9 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
             return new ResponsePackageNoData(ResponseStatus.OK, "Uspjesno setovan novi status nadmetanju.");
         }
 
-        public async Task<ResponsePackage<List<Nadmetanje>>> GetAllByStatusNadmetanja(StatusNadmetanja status)
+        public async Task<ResponsePackage<List<Nadmetanje>>> GetAllByStatusNadmetanja(StatusNadmetanja dataIn)
         {
-            var nadmetanja = await _nadmetanjeRepository.GetAllByStatusAsync(status);
+            var nadmetanja = await _nadmetanjeRepository.GetAllByStatusAsync(dataIn);
             return new ResponsePackage<List<Nadmetanje>>(nadmetanja,ResponseStatus.OK);
         }
 
@@ -234,9 +249,9 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
             return new ResponsePackageNoData(ResponseStatus.OK, "Uspjesno setovan novi status drugog kruga nadmetanju.");
         }
 
-        public async Task<ResponsePackage<List<Nadmetanje>>> GetAllByStatusDrugiKrugAsync(StatusDrugiKrug status)
+        public async Task<ResponsePackage<List<Nadmetanje>>> GetAllByStatusDrugiKrugAsync(StatusDrugiKrug dataIn)
         {
-            var nadmetanja = await _nadmetanjeRepository.GetAllByStatusDrugiKrugAsync(status);
+            var nadmetanja = await _nadmetanjeRepository.GetAllByStatusDrugiKrugAsync(dataIn);
             return new ResponsePackage<List<Nadmetanje>>(nadmetanja, ResponseStatus.OK);
         }
 
@@ -250,9 +265,9 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
             return new ResponsePackageNoData(ResponseStatus.OK, "Uspjesno setovan novi status drugog kruga nadmetanju.");
         }
 
-        public async Task<ResponsePackage<List<Nadmetanje>>> GetAllByKrugNadmetanjaAsync(KrugNadmetanja status)
+        public async Task<ResponsePackage<List<Nadmetanje>>> GetAllByKrugNadmetanjaAsync(KrugNadmetanja dataIn)
         {
-            var nadmetanja = await _nadmetanjeRepository.GetAllByKrugNadmetanjaAsync(status);
+            var nadmetanja = await _nadmetanjeRepository.GetAllByKrugNadmetanjaAsync(dataIn);
             return new ResponsePackage<List<Nadmetanje>>(nadmetanja, ResponseStatus.OK);
         }
 
@@ -262,7 +277,7 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
             return new ResponsePackageNoData(ResponseStatus.OK, "Drugi krug uspjesno pokrenut");
         }
 
-        public async Task<ResponsePackage<double>> GetUkupnaZakupljenaPovrsinaByKupacId(Guid kupacId)
+        public async Task<ResponsePackage<double>> GetUkupnaZakupljenaPovrsinaByKupacId(Guid kupacId, string token)
         {
             var nadmetanjaIds = await _nadmetanjeRepository.GetAllNadmetanjeIdsByKupacId(kupacId);
             if (nadmetanjaIds.Count == 0 || nadmetanjaIds == null)
@@ -270,19 +285,21 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
             //Dobavljam iz servisa za parcele
             StringBuilder sb = new StringBuilder();
             nadmetanjaIds.ForEach(x => sb.Append(x.ToString()+','));
-            double ukupnaPovrsinaKupca = await _httpService.SendGetRequestAsync("tempUrl?ids"+sb.ToString(),"tempToken");
+            double ukupnaPovrsinaKupca = await _httpService
+                .SendGetRequestAsync(_configuration["GatewayUrl"] + "DeoParcele/nadmetanja/" + sb, token); ;
             //
             return new ResponsePackage<double>(ukupnaPovrsinaKupca, ResponseStatus.OK);
         }
 
-        public async Task<ResponsePackage<double>> GetMaksimalnaPovrsina(Guid nadmetanjeId)
+        public async Task<ResponsePackage<double>> GetMaksimalnaPovrsina(Guid nadmetanjeId, string token)
         {
             var nadmetanje = await _nadmetanjeRepository.GetByIdAsync(nadmetanjeId, x => x.Etapa);
             if (nadmetanje == null)
                 return new ResponsePackage<double>(ResponseStatus.NotFound, "Nije pronadjeno nijedno nadmetanje sa specificiranim idijem.");
             var licitacijaId = nadmetanje.Etapa.LicitacijaId;
             //Dobavljam iz servisa za licitaciju
-            double maksimalnaPovrsina = 1;
+            double maksimalnaPovrsina = await _httpService
+                .SendGetRequestAsync(_configuration["GatewayUrl"] + "licitacija/maksimalnaPovrsina/" + licitacijaId, token);
             //
             return new ResponsePackage<double>(maksimalnaPovrsina, ResponseStatus.OK);
         }

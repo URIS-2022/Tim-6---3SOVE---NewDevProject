@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
+
 namespace MikroservisPrijavaNaLicitaciju
 {
     public class Startup
@@ -138,11 +138,10 @@ namespace MikroservisPrijavaNaLicitaciju
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Korisnik_Mikroservis v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PrijavaNaLicitaciju_Mikroservis v1"));
             }
 
             app.UseHttpsRedirection();
-            //app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

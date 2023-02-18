@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "1b90977b-0f3e-4bb5-b178-474e6c16f1f6",
+		"name": "UgovorOZakupu Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15909877"
+	},
+	"item": [
+		{
+			"name": "GetAllUgovorOZakupu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5058/api/UgovorOZakupu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5058",
+					"path": [
+						"api",
+						"UgovorOZakupu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUgovroOZakupuById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5058/api/UgovorOZakupu/3fa85f64-5717-4562-b3fc-2c963f66afa6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5058",
+					"path": [
+						"api",
+						"UgovorOZakupu",
+						"3fa85f64-5717-4562-b3fc-2c963f66afa6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddUgovorOZakupu",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"tipGarancije\": \"string\",\r\n  \"rokDospeca\": \"2023-02-17\",\r\n  \"zavodniBroj\": 0,\r\n  \"datumZavodjanja\": \"2023-02-17\",\r\n  \"rokZaVracanjeZemljista\": \"2023-02-17\",\r\n  \"mestoPotpisivanja\": \"string\",\r\n  \"datumPotpisa\": \"2023-02-17\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5058/api/UgovorOZakupu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5058",
+					"path": [
+						"api",
+						"UgovorOZakupu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UodateOgovorOZakupu",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"idUgovor\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"tipGarancije\": \"tip 89\",\r\n  \"rokDospeca\": \"2023-02-17\",\r\n  \"zavodniBroj\": 0,\r\n  \"datumZavodjanja\": \"2023-02-17\",\r\n  \"rokZaVracanjeZemljista\": \"2023-02-17\",\r\n  \"mestoPotpisivanja\": \"string\",\r\n  \"datumPotpisa\": \"2023-02-17\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5058/api/UgovorOZakupu/3fa85f64-5717-4562-b3fc-2c963f66afa6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5058",
+					"path": [
+						"api",
+						"UgovorOZakupu",
+						"3fa85f64-5717-4562-b3fc-2c963f66afa6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUgovorOZakupu",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5058/api/UgovorOZakupu/3fa85f64-5717-4562-b3fc-2c963f66afa6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5058",
+					"path": [
+						"api",
+						"UgovorOZakupu",
+						"3fa85f64-5717-4562-b3fc-2c963f66afa6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "b9f07fc9-bd81-44fb-a860-d12c5f8f80de",
+		"name": "Zona Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15909877"
+	},
+	"item": [
+		{
+			"name": "GetAllZona",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5210/api/Zona",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5210",
+					"path": [
+						"api",
+						"Zona"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetZonaById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5210/api/Zona/1302ee6f-569f-47ae-a3ac-2de29ab9e94d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5210",
+					"path": [
+						"api",
+						"Zona",
+						"1302ee6f-569f-47ae-a3ac-2de29ab9e94d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddZona",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"brojZona\": \"zona1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5210/api/Zona",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5210",
+					"path": [
+						"api",
+						"Zona"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateZona",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"brojZona\": \"zona1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5210/api/Zona/1302ee6f-569f-47ae-a3ac-2de29ab9e94d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5210",
+					"path": [
+						"api",
+						"Zona",
+						"1302ee6f-569f-47ae-a3ac-2de29ab9e94d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteZona",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5210/api/Zona/1302ee6f-569f-47ae-a3ac-2de29ab9e94d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5210",
+					"path": [
+						"api",
+						"Zona",
+						"1302ee6f-569f-47ae-a3ac-2de29ab9e94d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -47,5 +47,11 @@ jobs:
           dotnet publish MikroservisPrijavaNaLicitaciju/MikroservisPrijavaNaLicitaciju.sln -c Debug -o out
           dotnet publish KorisnikSistemaServis/KorisnikSistemaServis.sln -c Debug -o out
           dotnet publish MikroservisKomsija/MikroservisKomsija.sln -c Debug -o out
+          dotnet publish DokumentMicroservice/DokumentMicroservice.sln -c Debug -o out
+          dotnet publish KupacMicroservice/KupacMicroservice.sln -c Debug -o out
+          dotnet publish ms_parcela/ms_parcela.sln -c Debug -o out
+          dotnet publish ms_zalba/ms_zalba.sln -c Debug -o out
+          dotnet publish PrijavaJnService/PrijavaJnService.sln -c Debug -o out
+          dotnet publish LicitacijaService/LicitacijaService.sln -c Debug -o out
           dotnet build 
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"

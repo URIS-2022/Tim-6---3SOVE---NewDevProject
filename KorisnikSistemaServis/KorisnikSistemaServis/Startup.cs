@@ -137,8 +137,6 @@ namespace KorisnikSistemaService
                 var xmlCommentsPath = Path.Combine(AppContext.BaseDirectory, xmlComments);
                 c.IncludeXmlComments(xmlCommentsPath);
             });
-            //services.AddMvc();
-            //services.AddControllers();
             services.AddDbContext<KorisnikContext>();
         }
 
@@ -152,7 +150,6 @@ namespace KorisnikSistemaService
             }
 
             app.UseHttpsRedirection();
-            //app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

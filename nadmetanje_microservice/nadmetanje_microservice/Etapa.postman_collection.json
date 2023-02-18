@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "93db6922-fea7-4454-ae0d-227b62eae196",
+		"name": "Etapa",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15928597"
+	},
+	"item": [
+		{
+			"name": "getAll",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY3MzEwMzQsImV4cCI6MTY3NjczODIzNCwiaWF0IjoxNjc2NzMxMDM0fQ.rhiLRfvFoo3Ux7rhF9gy0PrkShNrZHO4VR_V2TyOHkA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:45400/api/etapa/getAllEtapas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "45400",
+					"path": [
+						"api",
+						"etapa",
+						"getAllEtapas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllByLicitacijaId",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY3MzEwMzQsImV4cCI6MTY3NjczODIzNCwiaWF0IjoxNjc2NzMxMDM0fQ.rhiLRfvFoo3Ux7rhF9gy0PrkShNrZHO4VR_V2TyOHkA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:45400/api/etapa/getAllEtapasByLicitacijaId/3fa85f64-5717-4562-b3fc-2c963f66afa6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "45400",
+					"path": [
+						"api",
+						"etapa",
+						"getAllEtapasByLicitacijaId",
+						"3fa85f64-5717-4562-b3fc-2c963f66afa6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save/update etapa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY3MzEwMzQsImV4cCI6MTY3NjczODIzNCwiaWF0IjoxNjc2NzMxMDM0fQ.rhiLRfvFoo3Ux7rhF9gy0PrkShNrZHO4VR_V2TyOHkA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": null,\r\n  \"licitacijaId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"datum\": \"2023-02-18\",\r\n  \"vremePocetka\": \"10:00\",\r\n  \"vremeZavrsetka\": \"15:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:45400/api/etapa/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "45400",
+					"path": [
+						"api",
+						"etapa",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY3MzEwMzQsImV4cCI6MTY3NjczODIzNCwiaWF0IjoxNjc2NzMxMDM0fQ.rhiLRfvFoo3Ux7rhF9gy0PrkShNrZHO4VR_V2TyOHkA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:45400/api/etapa/getEtapaById/167dd964-1ead-4790-aa98-1048f2daed3c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "45400",
+					"path": [
+						"api",
+						"etapa",
+						"getEtapaById",
+						"167dd964-1ead-4790-aa98-1048f2daed3c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "remove etapa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY3MzEwMzQsImV4cCI6MTY3NjczODIzNCwiaWF0IjoxNjc2NzMxMDM0fQ.rhiLRfvFoo3Ux7rhF9gy0PrkShNrZHO4VR_V2TyOHkA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:45400/api/etapa/remove/167dd964-1ead-4790-aa98-1048f2daed3c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "45400",
+					"path": [
+						"api",
+						"etapa",
+						"remove",
+						"167dd964-1ead-4790-aa98-1048f2daed3c"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InNhbmphMTIzIiwicm9sZSI6IkFkbWluaXN0cmF0b3IiLCJuYmYiOjE2NzY3MzEwMzQsImV4cCI6MTY3NjczODIzNCwiaWF0IjoxNjc2NzMxMDM0fQ.rhiLRfvFoo3Ux7rhF9gy0PrkShNrZHO4VR_V2TyOHkA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

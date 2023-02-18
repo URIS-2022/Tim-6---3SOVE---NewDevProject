@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "10144e48-ff08-443f-a0e1-352b4062b272",
+		"name": "DeoParcele Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15909877"
+	},
+	"item": [
+		{
+			"name": "GetAllDeoParcele",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5210/api/DeoParcele",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5210",
+					"path": [
+						"api",
+						"DeoParcele"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDeoParceleById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5210/api/DeoParcele/848ba0c5-983a-4a18-b6bf-3043550e861e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5210",
+					"path": [
+						"api",
+						"DeoParcele",
+						"848ba0c5-983a-4a18-b6bf-3043550e861e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddDeoParcele",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"redniBrojDelaParcele\": 26,\r\n    \"povrsinaDelaParcele\": 1269,\r\n    \"brojKatastraskaOpstina\": \"c89a1670-4361-4d31-9758-18625c39a6b3\",\r\n    \"brojParcele\": 5,\r\n    \"nadmetanjeId\": \"c89a1670-4361-4d31-9758-18625c39a6c3\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5210/api/DeoParcele",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5210",
+					"path": [
+						"api",
+						"DeoParcele"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateDeoParcele",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deoParceleID\": \"848ba0c5-983a-4a18-b6bf-3043550e861e\",\r\n    \"redniBrojDelaParcele\": 17,\r\n    \"povrsinaDelaParcele\": 1234,\r\n    \"brojKatastraskaOpstina\": \"c89a1670-4361-4d31-9758-18625c39a6b3\",\r\n    \"brojParcele\": 5,\r\n    \"nadmetanjeId\": \"c89a1670-4361-4d31-9758-18625c39a6c3\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5210/api/DeoParcele",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5210",
+					"path": [
+						"api",
+						"DeoParcele"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteDeoParcele",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5210/api/DeoParcele/848ba0c5-983a-4a18-b6bf-3043550e861e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5210",
+					"path": [
+						"api",
+						"DeoParcele",
+						"848ba0c5-983a-4a18-b6bf-3043550e861e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

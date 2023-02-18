@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "d1bbc0f3-918e-4bb1-a36f-51026b1384e8",
+		"name": "ZalbaCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15909877"
+	},
+	"item": [
+		{
+			"name": "GetAllZalba",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5058/api/Zalba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5058",
+					"path": [
+						"api",
+						"Zalba"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetZalbaById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5058/api/Zalba/e7d0b9db-c60c-4aee-b3af-536ea9bc55c7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5058",
+					"path": [
+						"api",
+						"Zalba",
+						"e7d0b9db-c60c-4aee-b3af-536ea9bc55c7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddZalba",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"tipZalbe\": \"e376d941-9ab3-458e-b912-dd1578f1e67b\",\r\n  \"datumPodnosenjaZalbe\": \"2023-02-17\",\r\n  \"razlogZalbe\": \"string\",\r\n  \"obrazlozenje\": \"string\",\r\n  \"datumResenja\": \"2023-02-17\",\r\n  \"brojResenja\": \"string\",\r\n  \"statusZalbe\": \"usvojena\",\r\n  \"brojNadmetanja\": 0,\r\n  \"radnjaNaOsnovuZalbe\": \"JN_ide_u_drugi_krug_sa_novim_uslovima\",\r\n  \"podnosilacZalbe\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5058/api/Zalba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5058",
+					"path": [
+						"api",
+						"Zalba"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateZalba",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"zalbaID\": \"e7d0b9db-c60c-4aee-b3af-536ea9bc55c7\",\r\n  \"tipZalbe\": \"e376d941-9ab3-458e-b912-dd1578f1e67b\",\r\n  \"datumPodnosenjaZalbe\": \"2023-02-17T12:44:22.558Z\",\r\n  \"razlogZalbe\": \"string\",\r\n  \"obrazlozenje\": \"string\",\r\n  \"datumResenja\": \"2023-02-17T12:44:22.558Z\",\r\n  \"brojResenja\": \"string\",\r\n  \"statusZalbe\": \"usvojena\",\r\n  \"brojNadmetanja\": 0,\r\n  \"radnjaNaOsnovuZalbe\": \"JN_ide_u_drugi_krug_sa_novim_uslovima\",\r\n  \"podnosilacZalbe\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5058/api/Zalba/e7d0b9db-c60c-4aee-b3af-536ea9bc55c7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5058",
+					"path": [
+						"api",
+						"Zalba",
+						"e7d0b9db-c60c-4aee-b3af-536ea9bc55c7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteZalba",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5058/api/Zalba/e7d0b9db-c60c-4aee-b3af-536ea9bc55c7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5058",
+					"path": [
+						"api",
+						"Zalba",
+						"e7d0b9db-c60c-4aee-b3af-536ea9bc55c7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

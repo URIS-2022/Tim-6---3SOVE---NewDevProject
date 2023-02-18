@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "1d2b8be4-ae9c-4d87-b3b0-33d1cffc5fc0",
+		"name": "TipZalbe Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15909877"
+	},
+	"item": [
+		{
+			"name": "GetAllTipZalba",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5058/api/TipZalba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5058",
+					"path": [
+						"api",
+						"TipZalba"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTipZalbaById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5058/api/TipZalba/7c51a983-736a-40c5-852a-4e6a89635f91",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5058",
+					"path": [
+						"api",
+						"TipZalba",
+						"7c51a983-736a-40c5-852a-4e6a89635f91"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddTipZalba",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nazivTipaZalbe\": \"tip 6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5058/api/TipZalba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5058",
+					"path": [
+						"api",
+						"TipZalba"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateTipZalba",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idTipZalbe\": \"d86105be-5b37-45bd-a53d-fc12f5fdcbe9\",\r\n    \"nazivTipaZalbe\": \"tip 9\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5058/api/TipZalba/d86105be-5b37-45bd-a53d-fc12f5fdcbe9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5058",
+					"path": [
+						"api",
+						"TipZalba",
+						"d86105be-5b37-45bd-a53d-fc12f5fdcbe9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteTipZalba",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5058/api/TipZalba/d86105be-5b37-45bd-a53d-fc12f5fdcbe9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5058",
+					"path": [
+						"api",
+						"TipZalba",
+						"d86105be-5b37-45bd-a53d-fc12f5fdcbe9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

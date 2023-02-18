@@ -1,0 +1,333 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ms_parcela</name>
+    </assembly>
+    <members>
+        <member name="M:ms_parcela.Controllers.DeoParceleController.GetAllDeoParcele">
+            <summary>
+            Vraća sve delove parcela
+            </summary>
+            <returns>Lista delova parcela</returns>
+            <response code="200">Vraća listu delova parcela</response>
+            <response code="404">Nije pronadjen ni jedan deo parcele</response>
+        </member>
+        <member name="M:ms_parcela.Controllers.DeoParceleController.GetDeoParceleById(System.Guid)">
+            <summary>
+            Vraća jedan deo parcele na osnovu IDija dela
+            </summary>
+            <param name="deoParceleID">ID dela parcele</param>
+            <returns>Deo parcele</returns>
+            <response code="200">Vraća traženi deo parcele</response>
+            <response code="404">Nije pronadjen deo parcele za uneti ID</response>
+        </member>
+        <member name="M:ms_parcela.Controllers.DeoParceleController.AddDeoParcele(ms_parcela.Models.DeoParceleModel.DeoParceleCreationDto)">
+             <summary>
+             Kreira novi deo parcele
+             </summary>
+             <param name="addDeoPRequest">Model deo parcele</param>
+             <remarks>
+             Primer zahteva za kreiranje novog dela parcele \
+             POST /api/addDeoPRequest \
+             {   "redniBrojDelaParcele": 0,
+                 "povrsinaDelaParcele": 0,
+                 "brojKatastraskaOpstina": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                 "brojParcele": 0,
+                 "nadmetanjeId": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+            }
+             </remarks>
+             <returns>Potvrda o kreiranju dela parcele</returns>
+             <response code="201">Vraća kreirani deo parcele</response>
+             <response code="500">Desila se greška prilikom unosa novog dela parcele</response>
+        </member>
+        <member name="M:ms_parcela.Controllers.DeoParceleController.UpdateDeoParcele(ms_parcela.Models.DeoParceleModel.DeoParceleUpdateDto,System.Guid)">
+            <summary>
+            Izmena dela parcele
+            </summary>
+            <param name="deoParceleID">ID dela parcele</param>
+            <param name="updateDeoPRequest">Model deo parcele</param>
+            <returns>Potvrda o izmeni dela parcele</returns>
+            <response code="200">Izmenjeni deo parcele</response>
+            <response code="404">Nije pronadjen deo parcele za uneti ID</response>
+            <response code="500">Serverska greška tokom izmene dela parcele</response>
+        </member>
+        <member name="M:ms_parcela.Controllers.DeoParceleController.DeleteDeoParcele(System.Guid)">
+            <summary>
+            Izmena dela parcele
+            </summary>
+            <param name="deoParceleID">ID dela parcele</param>
+            <returns>Potvrda o izmeni dela parcele</returns>
+            <response code="200">Izmenjeni deo parcele</response>
+            <response code="404">Nije pronađen deo parcele za uneti ID</response>
+            <response code="500">Serverska greška tokom izmene dela parcele</response>
+        </member>
+        <member name="M:ms_parcela.Controllers.DeoParceleController.GetUkupnaPovrsinaDelovaByNadmetanjeId(System.Collections.Generic.List{System.Nullable{System.Guid}})">
+            <summary>
+            Računanje ukupne povšine delova za prosledjenu listu nadmetanja
+            </summary>
+            <param name="nadmetanjaIds">Lista id-jeva nadmetanja</param>
+            <returns>Potvrda o sabranoj površini</returns>
+            <response code="200">Sabrane površine delova</response>
+            <response code="404">Nije pronadjena lista nadmetanja</response>
+            <response code="500">Serverska greška tokom računanja površine za nadmetanja</response>
+        </member>
+        <member name="M:ms_parcela.Controllers.KatastarskaOpstinaController.GetAllKatastarskaOpstina">
+            <summary>
+            Vraća sve katastarske opštine
+            </summary>
+            <returns>Lista katastarskih opština</returns>
+            <response code="200">Vraća listu katastarskih opština</response>
+            <response code="404">Nije pronađena ni jedna katastarska opština</response>
+        </member>
+        <member name="M:ms_parcela.Controllers.KatastarskaOpstinaController.GetKatastarskaOpstinaByBroj(System.Guid)">
+            <summary>
+            Vraća jednu katastarsku opštinu na osnovu broja katastarske opštine
+            </summary>
+            <param name="brojKO">Broj katastarske opštine</param>
+            <returns>Katastarska opština</returns>
+            <response code="200">Vraća traženu katastarsku opštinu</response>
+            <response code="404">Nije pronađena katastarska opština za uneti broj</response>
+        </member>
+        <member name="M:ms_parcela.Controllers.KatastarskaOpstinaController.AddKatastarskaOpstina(ms_parcela.Models.KatastarskaOpstinaModel.KatastarskaOpstinaCreationDto,ms_parcela.Entities.opstine)">
+            <summary>
+            Kreira novu katastarsku opštinu
+            </summary>
+            <param name="addKoRequest">Model katastarske opštine</param>
+            <param name="o">Naziv katastarske opštine</param>
+            <remarks>
+            Primer zahteva za kreiranje nove katastarske opštine \
+            POST /api/KatastarskaOpstina \
+            {
+                  "nazivKatastarskeOpstine": "Naziv katastarske opštine"
+            }
+            </remarks>
+            <returns>Potvrda o kreiranju katastarske opštine</returns>
+            <response code="201">Vraća kreiranu katastarsku opštinu</response>
+            <responese code="500">Desila se greška prilikom unosa nove katastarske opštine</responese>
+        </member>
+        <member name="M:ms_parcela.Controllers.KatastarskaOpstinaController.UpdateKatastarskaOpstina(ms_parcela.Models.KatastarskaOpstinaModel.KatastarskaOpstinaUpdateDto,System.Guid,ms_parcela.Entities.opstine)">
+             <summary>
+             Izmena katastarske oštine
+             </summary>
+             <param name="updateKoRequest">Model katastarske opštine</param>
+            <param name="brojKO">Broj katastarske opštine koja se menja</param>
+            <param name="o">Naziv katastarske opštine</param>
+             <returns>Potvrda o izmeni katastarske opštine</returns>
+             <response code="200">Izmena katastarske opštine</response>
+             <response code="404">Nije pronađena katastarska opština za uneti broj</response>
+             <response code="500">Serverska greška tokom izmene katastarske opštine</response>
+        </member>
+        <member name="M:ms_parcela.Controllers.KatastarskaOpstinaController.DeleteKatastarskaOpstina(System.Guid)">
+            <summary>
+            Brisanje katastarske opštine
+            </summary>
+            <param name="brojKO"></param>
+            <returns>Status 204 (NoContent)</returns>
+            <response code="204">Katastarska opština je uspešno obrisana</response>
+            <response code="404">Nije pronađena katastarska opština za uneti broj</response>
+            <response code="500">Serverska greška tokom brisanja katastarske opštine</response>
+        </member>
+        <member name="M:ms_parcela.Controllers.ParcelaController.GetAllParcela">
+             <summary>
+             Vraća sve parcele
+             </summary>
+             <returns>Lista parcela</returns>
+             <response code="200">Vraća listu parcela</response>
+             <response code="404">Nije pronađena ni jedna parcela </response>
+            
+        </member>
+        <member name="M:ms_parcela.Controllers.ParcelaController.GetParcelaByID(System.Guid,System.Int32)">
+            <summary>
+            Vraća jednu parcelu na osnovu broja opštine u kojoj se parcela nalazi i njenog broja u njoj čija kombinacija predstavlja jedinstveni identifikator svake parcele
+            </summary>
+            <param name="brojKo">Broj katastarske opštine</param>
+            <param name="brojParcele">Broj parcele</param>
+            <returns>Parcela</returns>
+            <response code="200">Vraća traženu parcelu</response>
+            <response code="404">Nije pronađena parcela za uneti broj opštine i broj parcele</response>
+            
+        </member>
+        <member name="M:ms_parcela.Controllers.ParcelaController.AddParcela(ms_parcela.Entities.ParcelaE.Parcela,ms_parcela.Entities.ParcelaE.Kultura,ms_parcela.Entities.ParcelaE.Obradivost,ms_parcela.Entities.ParcelaE.OblikSvojine,ms_parcela.Entities.ParcelaE.Odvodnjavanje,ms_parcela.Entities.ParcelaE.Klasa)">
+            <summary>
+            Kreira novu parcelu
+            </summary>
+            <param name="addParceleRequest">Model parcele</param>
+            <param name="k">Kultura parcele</param>
+            <param name="o">Obradivost parcele</param>
+            <param name="os">Oblik svojine parcele</param>
+            <param name="odv">Odvodnjavanje parcele</param>
+            <param name="kl">Klasa parcele</param>
+            <remarks>
+            Primer zahteva za kreiranje nove parcele \
+            POST /api/Parcela \
+            {
+              "brojParcele": 0,
+              "brojKatastraskaOpstina": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+              "povrsina": 0,
+               "kultura": "njive",
+               "obradivost": "obradivo",
+               "klasa": "I",
+              "oblikSvojine": "privatna_svojina",
+               "odvodnjavanje": "linijsko_odvodnjavanje"
+            }
+            </remarks>
+            <returns>Potvrda o kreiranju parcele</returns>
+            <response code="201">Vraća kreiranu parcelu </response>
+            <response code="500">Desila se greška prilikom unosa nove parcele</response>
+            
+        </member>
+        <member name="M:ms_parcela.Controllers.ParcelaController.UpdateParcela(ms_parcela.Models.ParcelaModel.ParcelaUpdateDto,System.Guid,System.Int32,ms_parcela.Entities.ParcelaE.Kultura,ms_parcela.Entities.ParcelaE.Obradivost,ms_parcela.Entities.ParcelaE.OblikSvojine,ms_parcela.Entities.ParcelaE.Odvodnjavanje,ms_parcela.Entities.ParcelaE.Klasa)">
+            <summary>
+            Izmena parcele
+            </summary>
+            <param name="brojKo">Broj katastarske opštine</param>
+            <param name="brojParcele">Broj parcele</param>
+            <param name="updateParcelaRequest">Model parcele</param>
+            <param name="k">Kultura parcele</param>
+            <param name="o">Obradivost parcele</param>
+            <param name="os">Oblik svojine parcele</param>
+            <param name="odv">Odvodnjavanje parcele</param>
+            <param name="kl">Klasa parcele</param>
+            <returns>Potvrda o izmeni parcele</returns>
+            <response code="200">Izmenjena parcela</response>
+            <response code="404">Nije pronađena parcela za uneti broj opštine i broj parcele</response>
+            <response code="500">Serverska greška tokom izmene parcele</response>
+            
+        </member>
+        <member name="M:ms_parcela.Controllers.ParcelaController.DeleteParcela(System.Guid,System.Int32)">
+            <summary>
+            Brisanje parcele na osnovu broja katastarske opštine i broja parcele
+            </summary>
+            <param name="brojKo">Broj katastarske opštine</param>
+            <param name="brojParcele">Broj parcele</param>
+            <returns>Status 204 (NoContent)</returns>
+            <response code="204">Parcela je uspešno obrisan</response>
+            <response code="404">Nije pronađena parcela za uneti ID</response>
+            <response code="500">Serverska greška tokom brisanja parcele</response>
+        </member>
+        <member name="M:ms_parcela.Controllers.ZonaController.GetAllZona">
+            <summary>
+            Vraća sve zone u kojima su parcele
+            </summary>
+            <returns>Lista zona</returns>
+            <response code="200">Vraća listu zona</response>
+            <response code="404">Nije pronađena ni jedna zona</response>
+            
+        </member>
+        <member name="M:ms_parcela.Controllers.ZonaController.GetZonaById(System.Guid)">
+            <summary>
+            Vraća jednu zonu na osnovu ID-ja
+            </summary>
+            <param name="zonaID">ID zone</param>
+            <returns>Zona</returns>
+            <response code="200">Vraća traženu zonu</response>
+            <response code="404">Nije pronađena zona za uneti ID</response>
+        </member>
+        <member name="M:ms_parcela.Controllers.ZonaController.AddZona(ms_parcela.Models.ZonaModel.ZonaCreationDto,ms_parcela.Entities.brojevi_zona)">
+            <summary>
+            Kreira novu  zonu
+            </summary>
+            <param name="addZonaRequest">Model zone</param>
+            <param name="brz">Mogući brojevi zona </param>
+            <remarks>
+            Primer zahteva za kreiranje nove zone \
+            POST /api/Zona \
+            {
+                "brojZona": "zona1"
+            }
+            </remarks>
+            <returns>Potvrda o kreiranju zone</returns>
+            <response code="201">Vraća kreiranu zonu</response>
+            <response code="500">Desila se greška prilikom unosa nove zone</response>
+        </member>
+        <member name="M:ms_parcela.Controllers.ZonaController.UpdateZona(ms_parcela.Models.ZonaModel.ZonaUpdateDto,System.Guid,ms_parcela.Entities.brojevi_zona)">
+            <summary>
+            Izmena zone
+            </summary>
+            <param name="updateZona">Model zone</param>
+            <param name="zonaID">ID zone</param>
+            <param name="brz">Mogući brojevi zona </param>
+            <returns>Potvrda o izmeni zone</returns>
+            <response code="200">Izmenjena zona</response>
+            <response code="404">Nije pronađena zona za uneti ID</response>
+            <response code="500">Serverska greška tokom izmene zone</response>
+            
+        </member>
+        <member name="M:ms_parcela.Controllers.ZonaController.DeleteZona(System.Guid)">
+            <summary>
+            Brisanje zone na osnovu ID-ja
+            </summary>
+            <param name="zonaID">ID zone</param>
+            <returns>Status 204 (NoContent)</returns>
+            <response code="204">Zona je uspešno obrisana</response>
+            <response code="404">Nije pronađena zona za uneti ID</response>
+            <response code="500">Serverska greška tokom brisanja zone</response>
+            
+        </member>
+        <member name="P:ms_parcela.Entities.ParcelaE.Parcela.brojParcele">
+            <summary>
+            id za parcelu je broj parcele + broj ko
+            </summary>
+        </member>
+        <member name="T:msparcela.Migrations.InitialMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:msparcela.Migrations.InitialMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:msparcela.Migrations.InitialMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:msparcela.Migrations.InitialMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:msparcela.Migrations.SecondMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:msparcela.Migrations.SecondMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:msparcela.Migrations.SecondMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:msparcela.Migrations.SecondMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:msparcela.Migrations.FourthMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:msparcela.Migrations.FourthMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:msparcela.Migrations.FourthMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:msparcela.Migrations.FourthMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:msparcela.Migrations.FifthMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:msparcela.Migrations.FifthMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:msparcela.Migrations.FifthMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:msparcela.Migrations.FifthMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:msparcela.Migrations.NadmetanjeMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:msparcela.Migrations.NadmetanjeMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:msparcela.Migrations.NadmetanjeMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:msparcela.Migrations.NadmetanjeMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
