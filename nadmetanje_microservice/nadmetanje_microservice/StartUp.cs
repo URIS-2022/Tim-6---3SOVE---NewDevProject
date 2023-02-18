@@ -143,12 +143,12 @@ namespace nadmetanje_microservice
             });
         }
 
-        private void AddMappings(IServiceCollection services)
+        private static void AddMappings(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(EtapaProfile));
         }
 
-        private void BindServices(IServiceCollection services)
+        private static void BindServices(IServiceCollection services)
         {
             services.AddHttpContextAccessor();
             services.AddTransient<IEtapaService, EtapaService>();

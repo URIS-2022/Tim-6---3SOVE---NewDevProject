@@ -13,14 +13,10 @@ namespace nadmetanje_microserviceDLL.Context
         public NadmetanjeContext(DbContextOptions<NadmetanjeContext> options) : base(options)
         {
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-        }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
+            base.OnModelCreating(modelBuilder);
         }
 
         public virtual DbSet<Etapa> Etape { get; set; }
