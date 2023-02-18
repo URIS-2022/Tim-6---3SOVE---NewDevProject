@@ -84,7 +84,8 @@ namespace PrijavaJnService
             });
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<IPrijavaJnRepository, PrijavaJnRepository>();
-            services.AddScoped<IServiceCall<KupacDto>, ServiceCallKupacMock<KupacDto>>();
+            //services.AddScoped<IServiceCall<KupacDto>, ServiceCallKupacMock<KupacDto>>();
+            services.AddScoped<IServiceCall<KupacDto>, ServiceCall<KupacDto>>();
             services.AddDbContext<PrijavaJnContext>();
             services.AddSwaggerGen(c =>
             {

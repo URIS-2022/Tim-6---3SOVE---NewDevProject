@@ -8,6 +8,7 @@ using PrijavaJnService.Models.PrijavaJn;
 using PrijavaJnService.ServiceCalls;
 using PrijavaJnService.ServiceCalls.Mocks;
 using System.Text.Json.Serialization;
+using Microsoft.Net.Http.Headers;
 
 namespace PrijavaJnService.Controllers
 {
@@ -65,18 +66,28 @@ namespace PrijavaJnService.Controllers
 
             var prijaveJnDto = new List<PrijavaJnDto>();
             string url = _configuration["Services:KupacService"];
+            var token = Request.Headers[HeaderNames.Authorization].ToString().Replace("Bearer ", "");
             foreach (var prijavaJn in prijaveJn)
             {
                 var prijavaJnDto = _mapper.Map<PrijavaJnDto>(prijavaJn);
                 if (prijavaJn.KupacId is not null)
                 {
-                    var kupacDto = await _kupacService.SendGetRequestAsync(url + prijavaJn.KupacId);
+                    var kupacDto = await _kupacService.SendGetRequestAsync(url + prijavaJn.KupacId, token);
                     if (kupacDto is not null)
                     {
-                        prijavaJnDto.Kupac = kupacDto.Naziv + ", "
-                                                  + kupacDto.BrojTelefona + ", "
+                        /*prijavaJnDto.Kupac = kupacDto.AdresaKupac + ", "
+                                                  + kupacDto.OstvarenaPovrsina + ", "
+                                                  + kupacDto.ImaZabranu + ", "
+                                                  + kupacDto.DuzinaTrajanjaZabraneGod
+                                                  + kupacDto.BrojTelefona1 + ", "
+                                                  + kupacDto.BrojTelefona2 + ", "
                                                   + kupacDto.Email + ", "
-                                                  + kupacDto.BrojRacuna;
+                                                  + kupacDto.BrojRacuna + ", "
+                                                  + kupacDto.IznosUplata + ", "
+                                                  + kupacDto.Prioritet + ", "
+                                                  ;*/
+
+                        prijavaJnDto.Kupac = kupacDto;
                     }
                 }
                 prijaveJnDto.Add(prijavaJnDto);

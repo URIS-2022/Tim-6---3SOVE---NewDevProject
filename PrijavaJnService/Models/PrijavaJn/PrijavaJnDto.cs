@@ -47,6 +47,6 @@ namespace PrijavaJnService.Models.PrijavaJn
         /// </summary>
         public string DokPravnaLica { get; set; }
 
-        public string Kupac { get; set; }
+        public KupacDto Kupac { get; set; }
     }
 }
