@@ -285,7 +285,7 @@ namespace nadmetanje_microserviceBLL.Services.Implementations
             //Dobavljam iz servisa za parcele
             StringBuilder sb = new StringBuilder();
             nadmetanjaIds.ForEach(x => sb.Append(x.ToString()+','));
-            double ukupnaPovrsinaKupca = await _httpService.SendGetRequestAsync("tempUrl?ids"+sb.ToString(),"tempToken");
+            double ukupnaPovrsinaKupca = 1;
             //
             return new ResponsePackage<double>(ukupnaPovrsinaKupca, ResponseStatus.OK);
         }
