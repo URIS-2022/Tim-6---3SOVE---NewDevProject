@@ -4,7 +4,7 @@ namespace KorisnikSistemaServis.Data
 {
     public interface IKorisnikRepository
     {
-        List<Korisnik> GetAllKorisnik(string korisnickoIme = null);
+        List<Korisnik> GetAllKorisnik(string? korisnickoIme = null);
         Korisnik GetKorisnikById(Guid korisnikId);
         Korisnik GetKorisnikByKorisnickoIme(string korisnickoIme);
         KorisnikConfirmation CreateKorisnik(Korisnik korisnik);

@@ -55,7 +55,7 @@
             <summary>
             Ažurira jednog korisnika.
             </summary>
-            <param name="examRegistration">Model korisnika koji se ažurira</param>
+            <param name="korisnik">Model korisnika koji se ažurira</param>
             <returns>Potvrdu o modifikovanoj prijavi.</returns>
             <response code="200">Vraća ažuriranog korisnika</response>
             <response code="400">Korisnik koji se ažurira nije pronađen</response>

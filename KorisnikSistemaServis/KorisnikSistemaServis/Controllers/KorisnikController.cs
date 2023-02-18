@@ -87,15 +87,14 @@ namespace KorisnikSistemaServis.Controllers
         {
             try
             {
-                string lozinka = korisnik.Lozinka;
+                string? lozinka = korisnik.Lozinka;
                 string lozinka2 = BCrypt.Net.BCrypt.HashPassword(lozinka);
                 korisnik.Lozinka = lozinka2;
                 Korisnik user = mapper.Map<Korisnik>(korisnik);
                 KorisnikConfirmation confirmation = korisnikRepository.CreateKorisnik(user);
-                //roleManager.CreateAsync(korisnik.TipKorisnika.ToString());
                 korisnikRepository.SaveChanges();
-                string location = linkGenerator.GetPathByAction("GetKorisnikById", "Korisnik", new { korisnikId = confirmation.KorisnikId });
-                return Ok(user);
+                string? location = linkGenerator.GetPathByAction("GetKorisnikById", "Korisnik", new { korisnikId = confirmation.KorisnikId });
+                return Created(location,user);
             }
             catch
             {
@@ -105,7 +104,7 @@ namespace KorisnikSistemaServis.Controllers
         /// <summary>
         /// Vrši brisanje jednog korisnika sistema na osnovu ID-ja korisnika.
         /// </summary>
-        /// <param name="korisnikId">ID prijave ispita</param>
+        /// <param name="korisnikId">ID korisnika</param>
         /// <returns>Status 204 (NoContent)</returns>
         /// <response code="204">Korisnik uspješno obrisan</response>
         /// <response code="404">Nije pronađen korisnik za brisanje</response>
@@ -135,7 +134,7 @@ namespace KorisnikSistemaServis.Controllers
         /// <summary>
         /// Ažurira jednog korisnika.
         /// </summary>
-        /// <param name="examRegistration">Model korisnika koji se ažurira</param>
+        /// <param name="korisnik">Model korisnika koji se ažurira</param>
         /// <returns>Potvrdu o modifikovanoj prijavi.</returns>
         /// <response code="200">Vraća ažuriranog korisnika</response>
         /// <response code="400">Korisnik koji se ažurira nije pronađen</response>
@@ -158,9 +157,8 @@ namespace KorisnikSistemaServis.Controllers
             {
                 korisnik.Lozinka = BCrypt.Net.BCrypt.HashPassword(korisnik.Lozinka);
             }
-            string lozinka = korisnik.Lozinka;
+            string? lozinka = korisnik.Lozinka;
             string novaLozinka = BCrypt.Net.BCrypt.HashPassword(lozinka);
-            lozinka = novaLozinka;
             Korisnik korisnikEntity = mapper.Map<Korisnik>(korisnik);
             mapper.Map(korisnikEntity, oldUser);
             korisnikRepository.SaveChanges();

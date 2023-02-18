@@ -79,14 +79,6 @@ namespace KorisnikSistemaServis.Data
             user.KorisnickoIme = korisnik.KorisnickoIme;
             user.Lozinka = korisnik.Lozinka;
             user.TipKorisnika = korisnik.TipKorisnika;
-
-            /*return new KorisnikConfirmation
-            {
-                KorisnikId = user.KorisnikId,
-                Ime = user.Ime,
-                Prezime = user.Prezime,
-                TipKorisnika = user.TipKorisnika
-            };*/
         }
         public bool SaveChanges()
         {
