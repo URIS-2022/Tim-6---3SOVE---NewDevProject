@@ -15,13 +15,12 @@ namespace ms_zalba.Controllers
     {
         private readonly ITipZalbeRepository tipZalbeRepository;
         private readonly IMapper mapper;
-        private readonly IConfiguration configuration;
 
-        public TipZalbaController(ITipZalbeRepository tipZalbeRepository,IMapper mapper,IConfiguration configuration)
+        public TipZalbaController(ITipZalbeRepository tipZalbeRepository,IMapper mapper)
         {
             this.tipZalbeRepository = tipZalbeRepository;
             this.mapper = mapper;
-            this.configuration = configuration;
+           
         }
         /// <summary>
         /// Vraća sve tipove žalbi

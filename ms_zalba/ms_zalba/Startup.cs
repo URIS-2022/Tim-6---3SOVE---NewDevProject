@@ -93,8 +93,6 @@ namespace ms_zalba
                 x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
             });
             
-            //services.AddDbContext<AuctionLandAPIContext>();
-            
            
             services.AddSwaggerGen(c =>
             {
@@ -129,7 +127,7 @@ namespace ms_zalba
                     {
                         Name = "Sandra Lazarević",
                         Email = "sandra.lazarevic123@gmail.com",
-                        //Url = new Uri(Configuration["Swagger:Github"])
+                        Url = new Uri(Configuration["Swagger:Github"])
                     }
 
                 });
@@ -137,8 +135,7 @@ namespace ms_zalba
                 var xmlCommentsPath = Path.Combine(AppContext.BaseDirectory, xmlComments);
                 c.IncludeXmlComments(xmlCommentsPath);
             });
-            //services.AddMvc();
-            //services.AddControllers();
+
             services.AddDbContext<AuctionLandAPIContext>();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

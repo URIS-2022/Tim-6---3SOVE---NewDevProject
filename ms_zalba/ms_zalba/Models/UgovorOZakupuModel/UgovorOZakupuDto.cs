@@ -8,7 +8,7 @@ namespace ms_zalba.Models.UgovorOZakupuModel
     {
         public Guid idUgovor { get; set; }
         public string tipGarancije { get; set; }
-        //public Guid lice { get; set; }
+        
         [DataType(DataType.Date)]
         [Column(TypeName = "date")]
         public DateTime rokDospeca { get; set; }
