@@ -142,7 +142,7 @@ namespace MikroservisKomsija
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Korisnik_Mikroservis v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Komisija_Mikroservis v1"));
             }
 
             app.UseHttpsRedirection();
