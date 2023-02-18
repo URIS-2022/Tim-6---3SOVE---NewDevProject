@@ -7,6 +7,7 @@ using DokumentMicroservice.Entities.DataConfirmations;
 using DokumentMicroservice.Models;
 using DokumentMicroservice.Models.PredlogPlanaProjekta;
 using DokumentMicroservice.Models.ResenjeStrucnaKomisija;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DokumentMicroservice.Controllers
@@ -41,7 +42,7 @@ namespace DokumentMicroservice.Controllers
         /// <response code="204">Nije pronadjeno nijedano resenje strucne komisije</response>
         /// <response code="500">Greška prilikom vraćanja liste resenja strucne komisije</response>
         //// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -78,7 +79,7 @@ namespace DokumentMicroservice.Controllers
         /// <response code="404">Nije pronadjeno resenje strucne komisije za uneti ID</response>
         /// <response code="500">Greška prilikom vraćanja resenja strucne komisije</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
         [HttpGet("{resenjeId:guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -117,7 +118,7 @@ namespace DokumentMicroservice.Controllers
         /// <response code="200">Izmenjeno resenje strucne komisije</response>
         /// <response code="404">Nije pronađeno resenje za uneti ID resenja strucne komisije</response>
         /// <response code="500">Serverska greška tokom izmene resenja strucne komisije </response>
-        //[Authorize(Roles = "Administrator, Superuser,  PrvaKomisija,Manager, OperaterNadmetanja")]
+        [Authorize(Roles = "Administrator, Superuser,  PrvaKomisija")]
         [HttpPut("{resenjeId:guid}")]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -161,7 +162,7 @@ namespace DokumentMicroservice.Controllers
         /// <response code="201">Vraća kreirano resenje strucne komisije</response>
         /// <response code="500">Greška prilikom kreiranja resenja strucne komisije</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, PrvaKomisija")]
         [HttpPost]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -198,7 +199,7 @@ namespace DokumentMicroservice.Controllers
         /// <response code="404">Nije pronadjeno resenje za uneti ID strucne komisije</response>
         /// <response code="500">Greška prilikom brisanja resenja strucne komisije</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, PrvaKomisija")]
         [HttpDelete("{resenjeId:guid}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -234,7 +235,7 @@ namespace DokumentMicroservice.Controllers
         /// </summary>
         /// <response code="200">Vraća listu opcija u header-u</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
         [HttpOptions]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]

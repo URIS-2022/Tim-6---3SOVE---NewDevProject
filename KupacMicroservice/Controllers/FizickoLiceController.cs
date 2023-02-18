@@ -7,7 +7,7 @@ using KupacMicroservice.model.FizickoLice;
 using KupacMicroservice.model.Kupac;
 using Microsoft.AspNetCore.Mvc;
 using System;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace KupacMicroservice.Controllers
 {
@@ -39,7 +39,7 @@ namespace KupacMicroservice.Controllers
         /// <response code="204">Nije pronadjeno nijedno fizicko lice</response>
         /// <response code="500">Greška prilikom vraćanja liste fizickih lica</response>
         ///// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar, Menadzer")]
+        [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar, Menadzer")]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -77,7 +77,7 @@ namespace KupacMicroservice.Controllers
         /// <response code="404">Nije pronadjeno nijedno fizicko lice za uneti ID</response>
         /// <response code="500">Greška prilikom vraćanja fizickog lica</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar, Menadzer")]
+        [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar, Menadzer")]
         [HttpGet("{fizickoliceId:guid}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -114,7 +114,7 @@ namespace KupacMicroservice.Controllers
         /// <response code="201">Vraća kreirano fizicko lice</response>
         /// <response code="500">Greška prilikom kreiranja fizickog lica</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar")]
+        [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar")]
         [HttpPost]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -150,7 +150,7 @@ namespace KupacMicroservice.Controllers
         /// <response code="200">Izmenjeno fizicko lice</response>
         /// <response code="404">Nije pronađeno fizicko lice za uneti ID</response>
         /// <response code="500">Serverska greška tokom izmene fizickog lica</response>
-        //[Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar")]
+        [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar")]
         [HttpPut("{fizickoliceId:guid}")]
         [Consumes("application/json")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -193,7 +193,7 @@ namespace KupacMicroservice.Controllers
         /// <response code="404">Nije pronadjeno nijedno fizicko lice za uneti ID</response>
         /// <response code="500">Greška prilikom brisanja fizickog lica</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar")]
+        [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar")]
         [HttpDelete("{fizickoliceId:guid}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -232,7 +232,7 @@ namespace KupacMicroservice.Controllers
         /// </summary>
         /// <response code="200">Vraća listu opcija u header-u</response>
         /// <response code="401">Greška prilikom autentifikacije</response>
-        //[Authorize(Roles = "Administrator, Superuser, Menadzer, PrvaKomisija")]
+        [Authorize(Roles = "Administrator, Superuser, Licitant, OperaterNadmetanja, TehnickiSekretar, Menadzer")]
         [HttpOptions]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]

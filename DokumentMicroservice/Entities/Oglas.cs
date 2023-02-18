@@ -18,6 +18,8 @@ namespace DokumentMicroservice.Entities
 
         [Required] public string BrNadmetanjaMaticniBrojPreduzeca { get; set; }
 
+        public Guid? zalbaID { get; set; }
+
 
     }
 }
