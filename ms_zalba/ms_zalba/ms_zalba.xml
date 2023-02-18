@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ms_zalba</name>
+    </assembly>
+    <members>
+        <member name="M:ms_zalba.Controllers.TipZalbaController.GetAllTipZalbe">
+             <summary>
+             Vraća sve tipove žalbi
+             </summary>
+             <returns>Lista tipova žalbi</returns>
+             <response code="200">Vraća listu tipova žalbi</response>
+             <response code="204">Nije pronađen ni jedan tip žalbe</response>
+            
+        </member>
+        <member name="M:ms_zalba.Controllers.TipZalbaController.GetTipZalbeByID(System.Guid)">
+            <summary>
+            Vraća jedan tip žalbe na osnovu ID-ja
+            </summary>
+            <param name="tipZalbeID">ID tipa žalbe</param>
+            <returns>Tip žalbe</returns>
+            <response code="200">Vraća traženi tip žalbe</response>
+            <response code="404">Nije pronađen tip žalbe za uneti ID</response>
+            
+        </member>
+        <member name="M:ms_zalba.Controllers.TipZalbaController.AddTipZalbe(ms_zalba.Models.TipZalbeModel.TipZalbeCreationDto)">
+             <summary>
+             Kreira novi tip žalbe
+             </summary>
+             <param name="addTipZalbeRequest">Model tip žalbe</param>
+             <remarks>
+             Primer zahteva za kreiranje novog tipa žalbe \
+             POST /api/TipZalbe \
+             {   
+                 "NazivTipaZalbe": "Zalba na Odluku o davanju u zakup"
+            }
+             </remarks>
+             <returns>Potvrda o kreiranju tipa zalbe</returns>
+             <response code="201">Vraća kreiran tip zalbe</response>
+             <response code="400">Desila se greška prilikom unosa istih podataka za tip žalbe</response>
+             <response code="500">Desila se greška prilikom unosa novog tipa žalbe</response>
+             
+        </member>
+        <member name="M:ms_zalba.Controllers.TipZalbaController.UpdateTipZalbe(ms_zalba.Models.TipZalbeModel.TipZalbeUpdateDto,System.Guid)">
+            <summary>
+            Izmena tipa žalbe
+            </summary>
+            <param name="tipZalbeID">ID tipa žalbe</param>
+            <param name="updateTipZalbe">Model tip žalbe</param>
+            <returns>Potvrda o izmeni tipa žalbe</returns>
+            <response code="200">Izmenjen tip žalbe</response>
+            <response code="400">Desila se greška prilikom unosa istih podataka za tip žalbe</response>
+            <response code="404">Nije pronađen tip žalbe za uneti ID</response>
+            <response code="500">Serverska greška tokom modifikacije tipa žalbe</response>
+            
+        </member>
+        <member name="M:ms_zalba.Controllers.TipZalbaController.DeleteTipZalbe(System.Guid)">
+             <summary>
+             Brisanje tipa žalbe na osnovu ID-ja
+             </summary>
+             <param name="tipZalbeID">ID tipa žalbe</param>
+             <returns>Status 204 (No Content)</returns>
+             <response code="204">Tip žalbe je uspešno obrisan</response>
+             <response code="404">Nije pronađen tip žalbe za uneti ID</response>
+             <response code="500">Serverska greška tokom brisanja tipa žalbe</response>
+            
+        </member>
+        <member name="M:ms_zalba.Controllers.UgovorOZakupuController.GetAllUgovorOZakupu">
+            <summary>
+             Vraća sve ugovore o zakupu
+            </summary>
+            <returns>Lista ugovora o zakupu</returns>
+            <response code="200">Vraća listu ugovora o zakupu</response>
+            <response code="204">Nije pronadjen nijedan ugovor o zakupu</response>
+            <response code="500">Greška prilikom vraćanja liste ugovora o zakupu</response>
+            <response code="401">Greška prilikom autentifikacije</response>
+        </member>
+        <member name="M:ms_zalba.Controllers.UgovorOZakupuController.GetUgovorOZakupueByID(System.Guid)">
+            <summary>
+            Vraća jedan ugovor o zakupu na osnovu ID-ja
+            </summary>
+            <param name="idUgovor">ID ugovora o zakupu</param>
+            <returns>Ugovor o zakupu</returns>
+            <response code="200">Vraća traženi ugovor o zakupu</response>
+            <response code="404">Nije pronadjen ugovor o zakupu za uneti ID</response>
+            <response code="500">Greška prilikom vraćanja ugovora o zakupu</response>
+            <response code="401">Greška prilikom autentifikacije</response>
+        </member>
+        <member name="M:ms_zalba.Controllers.UgovorOZakupuController.AddUgovorOZakupu(ms_zalba.Models.UgovorOZakupuModel.UgovorOZakupuCreationDto)">
+            <summary>
+            Kreira novi ugovor o zakupu
+            </summary>
+            <param name="addUgovorOZakupuRequest">Model ugovora o zakupu za kreiranje</param>
+            <returns>Ugovor o zakupu</returns>
+            <response code="201">Vraća kreirani ugovor o zakupu</response>
+            <response code="500">Greška prilikom kreiranja ugovora o zakupu</response>
+            <response code="401">Greška prilikom autentifikacije</response>
+        </member>
+        <member name="M:ms_zalba.Controllers.UgovorOZakupuController.UpdateUgovorOZakupu(ms_zalba.Models.UgovorOZakupuModel.UgovorOZakupuUpdateDto,System.Guid)">
+            <summary>
+            Izmena ugovor o zakupu
+            </summary>
+            <param name="idUgovor">ID ugovora o zakupu</param>
+            <param name="updateUgovorOZakupuRequest">Model ugovora o zakupu za izmenu</param>
+            <returns>Status 204 (NoContent)</returns>
+            <response code="204">Potvrda o izmeni ugovora o zakupu</response>
+            <response code="404">Nije pronadjen ugovor o zakupu za uneti ID</response>
+            <response code="400">ID nije isti kao onaj proledjen u modelu ugovora o zakupu</response>
+            <response code="401">Greška prilikom autentifikacije</response>
+            <response code="500">Greška prilikom izmene ugovora o zakupu</response>
+        </member>
+        <member name="M:ms_zalba.Controllers.UgovorOZakupuController.DeleteUgovorOZakupu(System.Guid)">
+            <summary>
+            Brisanje ugovora o zakupu na osnovu ID-ja
+            </summary>
+            <param name="idUgovor">ID ugovora o zakupu</param>
+            <response code="204">Ugovor o zakupu je uspešno obrisan</response>
+            <response code="404">Nije pronadjen ugovor o zakupu za uneti ID</response>
+            <response code="401">Greška prilikom autentifikacije</response>
+            <response code="500">Greška prilikom brisanja ugovora o zakupu</response>
+        </member>
+        <member name="M:ms_zalba.Controllers.ZalbaController.GetAllZalba">
+            <summary>
+            Vraća sve žalbe
+            </summary>
+            <returns>Lista žalbi</returns>
+            <response code="200">Vraća listu žalbi</response>
+            <response code="404">Nije pronađena ni jedna žalba</response>
+            
+        </member>
+        <member name="M:ms_zalba.Controllers.ZalbaController.GetTipZalbeByID(System.Guid)">
+            <summary>
+            Vraća jednu žalbu na osnovu ID-ja
+            </summary>
+            <param name="zalbaID">ID žalbe</param>
+            <returns>Žalba</returns>
+            <response code="200">Vraća traženu žalbu</response>
+            <response code="404">Nije pronađena žalba za uneti ID</response>
+            
+        </member>
+        <member name="M:ms_zalba.Controllers.ZalbaController.AddZalba(ms_zalba.Models.ZalbaModel.ZalbaCreationDto,ms_zalba.Entities.ZalbaE.StatusZalbe,ms_zalba.Entities.ZalbaE.RadnjaNaOsnovuZalbe)">
+             <summary>
+             Kreira novu žalbu
+             </summary>
+             <param name="addZalbaRequest">Model žalba</param>
+             <param name="sz">Status žalbe</param>
+             <param name="radnjaNaOsnovuZalbe">Radnja na osnovu žalbe</param>
+             <remarks>
+             Primer zahteva za kreiranje nove žalbe \
+             POST /api/Zalba \
+             {   
+                 "tipZalbe": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                 "datumPodnosenjaZalbe": "2023-02-17",
+                 "razlogZalbe": "string",
+                 "obrazlozenje": "string",
+                 "datumResenja": "2023-02-17",
+                 "brojResenja": "string",
+                 "statusZalbe": "usvojena",
+                 "brojNadmetanja": 0,
+                 "radnjaNaOsnovuZalbe": "JN_ide_u_drugi_krug_sa_novim_uslovima",
+                 "podnosilacZalbe": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+            }
+             </remarks>
+             <returns>Potvrda o kreiranju žalbe</returns>
+             <response code="201">Vraća kreiranu žalbu</response>
+             <response code="500">Desila se greška prilikom unosa nove žalbe</response>
+             
+        </member>
+        <member name="M:ms_zalba.Controllers.ZalbaController.UpdateZalba(ms_zalba.Models.ZalbaModel.ZalbaUpdateDto,System.Guid,ms_zalba.Entities.ZalbaE.StatusZalbe,ms_zalba.Entities.ZalbaE.RadnjaNaOsnovuZalbe)">
+            <summary>
+            Izmena žalbe
+            </summary>
+            <param name="zalbaID">ID žalbe</param>
+            <param name="updateZalbaRequest">Model žalbe</param>
+            <param name="sz">Status žalbe</param>
+            <param name="radnjaNaOsnovuZalbe">Radnja na osnovu žalbe</param>
+            <returns>Potvrda o izmeni žalbe</returns>
+            <response code="200">Izmenjena žalba</response>
+            <response code="400">Desila se greška prilikom unosa istih podataka za žalbu</response>
+            <response code="404">Nije pronađena žalba za uneti ID</response>
+            <response code="500">Serverska greška tokom modifikacije žalbe</response>
+            
+        </member>
+        <member name="M:ms_zalba.Controllers.ZalbaController.DeleteZalba(System.Guid)">
+            <summary>
+            Brisanje žalbe na osnovu ID-ja
+            </summary>
+            <param name="zalbaID">ID žalbe</param>
+            <returns>Status 204 (NoContent)</returns>
+            <response code="204">Žalba je uspešno obrisana</response>
+            <response code="404">Nije pronađena žalba za uneti ID</response>
+            <response code="500">Serverska greška tokom brisanja žalbe</response>
+            
+        </member>
+        <member name="T:mszalba.Migrations.SecondMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:mszalba.Migrations.SecondMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:mszalba.Migrations.SecondMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:mszalba.Migrations.SecondMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:mszalba.Migrations.ThirdMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:mszalba.Migrations.ThirdMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:mszalba.Migrations.ThirdMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:mszalba.Migrations.ThirdMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
